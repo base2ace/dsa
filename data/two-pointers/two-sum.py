@@ -15,6 +15,11 @@ def twoSum(numbers, target):
             # If sum is greater than the target, move the right pointer to the left
             right -= 1
     
-    # If no solution is found
+    # If no solution is found (though the problem guarantees one solution)
     return []
 
+# Example usage:
+numbers = [2, 7, 11, 15]
+target = 9
+result = twoSum(numbers, target)
+print(result)  # Output: [1, 2]
