@@ -3828,7 +3828,7 @@ async function loadCode(filePath) {
       <div class="question-header">
         <span>${question.name}</span>
         <div>
-          <a href="${question.link}" target="_blank">Solve</a>
+          <a href="${question.link}" target="_blank">Try Yourself</a>
           <select class="language-dropdown">
             <option value="python">Python</option>
             <option value="cpp">C++</option>
