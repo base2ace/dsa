@@ -183,6 +183,28 @@ code[class*="language-"] {
   color: #333;
 }
 
+/* Difficulty Marker */
+.difficulty-marker {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+.difficulty-marker.easy {
+  background-color: #4CAF50; /* Green for easy */
+}
+
+.difficulty-marker.medium {
+  background-color: #FFC107; /* Yellow for medium */
+}
+
+.difficulty-marker.hard {
+  background-color: #F44336; /* Red for hard */
+}
+
+
 @media (max-width: 768px) {
   .dashboard {
     flex-direction: column;
