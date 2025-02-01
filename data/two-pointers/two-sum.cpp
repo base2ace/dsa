@@ -3,39 +3,28 @@
 using namespace std;
 
 vector<int> twoSum(vector<int>& numbers, int target) {
-    int left = 0, right = numbers.size() - 1;
-    
+    int left = 0, right = numbers.size() - 1;  // Initialize two pointers
+
     while (left < right) {
-        int current_sum = numbers[left] + numbers[right];
-        
-        if (current_sum == target) {
-            // Return the 1-indexed positions
-            return {left + 1, right + 1};
-        } else if (current_sum < target) {
-            // If sum is less than the target, move the left pointer to the right
-            left++;
-        } else {
-            // If sum is greater than the target, move the right pointer to the left
-            right--;
-        }
+        int total = numbers[left] + numbers[right];
+
+        if (total == target)
+            return {left + 1, right + 1};  // Return 1-indexed positions
+        else if (total < target)
+            left++;  // Move left pointer forward
+        else
+            right--;  // Move right pointer backward
     }
-    
-    // In case there is no solution, though the problem guarantees a solution
-    return {};
+
+    return {};  // Should never reach here if there's always a valid solution
 }
 
 int main() {
     vector<int> numbers = {2, 7, 11, 15};
     int target = 9;
-    
+
     vector<int> result = twoSum(numbers, target);
-    
-    // Output the result
-    if (!result.empty()) {
-        cout << "Indices: " << result[0] << ", " << result[1] << endl;
-    } else {
-        cout << "No solution found!" << endl;
-    }
-    
+    cout << "[" << result[0] << ", " << result[1] << "]" << endl;  // Output: [1, 2]
+
     return 0;
 }
