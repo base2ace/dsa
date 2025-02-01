@@ -679,6 +679,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy", // Add difficulty level				
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a 1-indexed array of integers \`numbers\` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target.
       Return the indices of the two numbers.
@@ -698,6 +699,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/3sum/",
                 complexity: "Time: O(n^2), Space: O(1)",
                 difficulty: "medium", 
+				companies: ["Google", "Adobe", "Bloomberg"],
 				problemStatement: `
       Given an integer array \`nums\`, return all the unique triplets \`[nums[i], nums[j], nums[k]]\` such that:
       - i ≠ j, i ≠ k, and j ≠ k
@@ -719,6 +721,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/container-with-most-water/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an integer array \`height\` where each element represents a vertical line at that index, find two lines that form a container with the most water.
     `,
@@ -737,6 +740,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a sorted array \`nums\`, remove the duplicates in-place such that each unique element appears only once.
     `,
@@ -755,6 +759,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/merge-sorted-array/",
                 complexity: "Time: O(m + n), Space: O(1)",
 				difficulty: "medium",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given two sorted arrays \`nums1\` and \`nums2\`, merge them into one sorted array.
     `,
@@ -774,6 +779,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/valid-palindrome/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a string \`s\`, return true if it is a palindrome considering only alphanumeric characters and ignoring cases.
     `,
@@ -792,6 +798,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/move-zeroes/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an integer array \`nums\`, move all 0's to the end while maintaining the relative order of non-zero elements.
     `,
@@ -809,6 +816,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/reverse-string/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Write a function that reverses a string. The input string is given as an array of characters.
     `,
@@ -826,6 +834,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/sort-colors/",
                 complexity: "Time: O(n), Space: O(1)",
 				difficulty: "hard",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an array \`nums\` with colors (0, 1, 2), sort them in-place without using extra space.
     `,
@@ -843,6 +852,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/remove-element/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an array \`nums\` and a value \`val\`, remove all instances of that value in-place.
     `,
@@ -863,6 +873,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
                 complexity: "Time: O(n), Space: O(min(n, m))",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a string \`s\`, find the length of the longest substring without repeating characters.
     `,
@@ -880,6 +891,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/sliding-window-maximum/",
                 complexity: "Time: O(n), Space: O(k)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an array \`nums\` and an integer \`k\`, return the maximum value in each sliding window of size \`k\`.
     `,
@@ -897,6 +909,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/minimum-size-subarray-sum/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an array of positive integers \`nums\` and a target sum \`target\`, find the minimal length of a contiguous subarray of which the sum is at least \`target\`.
     `,
@@ -914,6 +927,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/permutation-in-string/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given two strings \`s1\` and \`s2\`, return true if \`s2\` contains a permutation of \`s1\`.
     `,
@@ -931,6 +945,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given two strings \`s\` and \`p\`, return all start indices of \`p\`'s anagrams in \`s\`.
     `,
@@ -948,6 +963,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/longest-repeating-character-replacement/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a string \`s\` and an integer \`k\`, return the length of the longest substring that contains the same letter after at most \`k\` replacements.
     `,
@@ -965,6 +981,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/binary-subarrays-with-sum/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given a binary array \`nums\` and an integer \`goal\`, return the number of non-empty subarrays with sum equal to \`goal\`.
     `,
@@ -982,6 +999,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/fruit-into-baskets/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an integer array \`fruits\` where \`fruits[i]\` represents the type of fruit at index \`i\`, find the maximum number of fruits you can collect in two baskets.
     `,
@@ -999,6 +1017,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an array \`cardPoints\` and an integer \`k\`, return the maximum points you can get by picking exactly \`k\` cards from either the start or the end.
     `,
@@ -1016,6 +1035,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/subarrays-with-k-different-integers/",
                 complexity: "Time: O(n), Space: O(k)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
       Given an integer array \`nums\` and an integer \`k\`, return the number of subarrays that contain exactly \`k\` different integers.
     `,
@@ -1035,6 +1055,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/jump-game/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given an array of non-negative integers \`nums\`, you are initially positioned at the first index.
 		Each element in the array represents your maximum jump length at that position.
@@ -1054,6 +1075,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/gas-station/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		There are \`n\` gas stations along a circular route.
 		Given two integer arrays \`gas\` and \`cost\`, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
@@ -1078,6 +1100,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/maximum-subarray/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given an integer array \`nums\`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 	  `,
@@ -1095,6 +1118,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given an array \`prices\` where \`prices[i]\` is the price of a given stock on the \`i-th\` day, find the maximum profit you can achieve by buying and selling stocks multiple times.
 	  `,
@@ -1114,6 +1138,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/assign-cookies/",
                 complexity: "Time: O(n log n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Assume you are an awesome parent and want to give your children some cookies.
 		Given two integer arrays \`g\` (greed factor of children) and \`s\` (size of cookies), return the maximum number of content children.
@@ -1133,6 +1158,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
                 complexity: "Time: O(n log n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given an array of balloon intervals \`points\`, where \`points[i] = [x_start, x_end]\`, return the minimum number of arrows needed to burst all balloons.
 	  `,
@@ -1151,6 +1177,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/non-overlapping-intervals/",
                 complexity: "Time: O(n log n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given an array of intervals \`intervals\`, where \`intervals[i] = [start, end]\`, return the minimum number of intervals you need to remove to make the rest non-overlapping.
 	  `,
@@ -1168,6 +1195,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/task-scheduler/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given a characters array \`tasks\`, representing tasks CPU needs to do, and an integer \`n\`, representing the cooldown period between two same tasks, return the least number of units of time the CPU will take to finish all the tasks.
 	  `,
@@ -1185,6 +1213,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/partition-labels/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		Given a string \`s\`, partition the string into as many parts as possible so that each letter appears in at most one part.
 		Return a list of integers representing the size of these parts.
@@ -1203,6 +1232,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/lemonade-change/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "easy",
+				companies: ["To be added soon"],
 				problemStatement: `
 		At a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills).
 		Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill.
@@ -1226,6 +1256,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/knapsack-problem/",
                 "complexity": "Time: O(nW), Space: O(nW)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a set of items, each with a weight and a value, determine the maximum value that can be obtained by selecting items such that the total weight does not exceed a given capacity.
 	  `,
@@ -1243,6 +1274,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
                 "complexity": "Time: O(n^2), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array, return the length of the longest strictly increasing subsequence.
 	  `,
@@ -1260,6 +1292,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/coin-change/",
                 "complexity": "Time: O(n * amount), Space: O(amount)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array of coins and an integer amount, return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 	  `,
@@ -1277,6 +1310,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/longest-common-subsequence/",
                 "complexity": "Time: O(mn), Space: O(mn)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two strings, return the length of their longest common subsequence.
 	  `,
@@ -1294,6 +1328,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/unique-paths/",
                 "complexity": "Time: O(mn), Space: O(mn)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		There is a robot on an m x n grid. The robot starts at the top-left corner and can only move either down or right at any point in time. How many unique paths does the robot take to reach the bottom-right corner?
 	  `,
@@ -1311,6 +1346,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/edit-distance/",
                 "complexity": "Time: O(mn), Space: O(mn)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two strings, return the minimum number of operations required to convert one string to the other. Operations include insert, delete, or replace a character.
 	  `,
@@ -1328,6 +1364,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/house-robber/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and it will automatically contact the police if two adjacent houses are robbed.
 		Return the maximum amount of money you can rob tonight without alerting the police.
@@ -1346,6 +1383,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
                 "complexity": "Time: O(n * sum), Space: O(n * sum)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a set of positive integers, find whether there is a subset whose sum is equal to a given number.
 	  `,
@@ -1363,6 +1401,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/palindromic-substrings/",
                 "complexity": "Time: O(n^2), Space: O(n^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string, return the number of palindromic substrings in it.
 	  `,
@@ -1380,6 +1419,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/word-break/",
                 "complexity": "Time: O(n^2), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 	  `,
@@ -1399,6 +1439,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/n-queens/",
                 "complexity": "Time: O(N!), Space: O(N^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		The N-Queens puzzle is the problem of placing N chess queens on an N×N chessboard so that no two queens threaten each other. A queen can attack another queen if they share the same row, column, or diagonal.
 		Return all distinct solutions to the N-Queens puzzle.
@@ -1417,6 +1458,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/permutations/",
                 "complexity": "Time: O(n!), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of distinct integers, return all possible permutations of the array.
 	  `,
@@ -1434,6 +1476,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combinations/",
                 "complexity": "Time: O(n choose k), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
 	  `,
@@ -1451,6 +1494,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a set of positive integers, find whether there is a subset whose sum is equal to a given number.
 	  `,
@@ -1468,6 +1512,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/word-search/",
                 "complexity": "Time: O(m * n * 4^L), Space: O(m * n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an m x n board of characters and a string word, find if the word exists in the grid.
 		The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring.
@@ -1486,6 +1531,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/palindrome-partitioning/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string s, partition s such that every substring of the partition is a palindrome.
 		Return all possible palindrome partitioning of s.
@@ -1504,6 +1550,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum/",
                 "complexity": "Time: O(2^n), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.
 		The same repeated number may be chosen from candidates unlimited times.
@@ -1522,6 +1569,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/letter-case-permutation/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string s, you can transform every letter individually to be lowercase or uppercase to create a new string. Return all possible strings we could create.
 	  `,
@@ -1539,6 +1587,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum-ii/",
                 "complexity": "Time: O(2^n), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination.
 	  `,
@@ -1556,6 +1605,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sudoku-solver/",
                 "complexity": "Time: O(9^81), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Solve a Sudoku puzzle by filling the empty cells. Each number 1-9 must appear exactly once in each row, column, and 3x3 subgrid.
 	  `,
@@ -1575,6 +1625,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sort-an-array/",
                 "complexity": "Time: O(n log n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array in ascending order using the merge sort algorithm.
 		Merge Sort is a divide and conquer algorithm that divides the array into two halves, recursively sorts them, and merges them back together.
@@ -1593,6 +1644,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sort-an-array/",
                 "complexity": "Time: O(n log n), Space: O(log n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array in ascending order using the quick sort algorithm.
 		Quick Sort is a divide and conquer algorithm that picks a pivot element and partitions the array around the pivot. The algorithm is recursively applied to the subarrays.
@@ -1611,6 +1663,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/binary-search/",
                 "complexity": "Time: O(log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement binary search to find the target value in a sorted array.
 		Binary search divides the search interval in half, comparing the target value to the midpoint, and recursively narrows the search.
@@ -1629,6 +1682,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/find-peak-element/",
                 "complexity": "Time: O(log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		A peak element in an array is an element that is strictly greater than its neighbors.
 		Find a peak element in the array. The array may not be sorted, and you may not need to find all peaks.
@@ -1647,6 +1701,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/minimum-distance-between-bst-nodes/",
                 "complexity": "Time: O(n log n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of points, find the closest pair of points.
 		Use divide and conquer to efficiently solve this problem by dividing the points into smaller subsets.
@@ -1665,6 +1720,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/matrix-multiplication/",
                 "complexity": "Time: O(n^log7), Space: O(n^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement Strassen's matrix multiplication algorithm to multiply two matrices efficiently using divide and conquer.
 		This algorithm reduces the number of multiplications required for matrix multiplication.
@@ -1683,6 +1739,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/multiply-strings/",
                 "complexity": "Time: O(n^log3), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement Karatsuba's algorithm to multiply large numbers efficiently using divide and conquer.
 		Karatsuba reduces the number of multiplications needed for large number multiplication.
@@ -1701,6 +1758,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximum-subarray/",
                 "complexity": "Time: O(n log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the contiguous subarray (containing at least one number) which has the largest sum.
 		This can be solved using the divide and conquer approach.
@@ -1719,6 +1777,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/ternary-search/",
                 "complexity": "Time: O(log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement ternary search to find the target in a sorted array.
 		Ternary search divides the array into three parts and recursively narrows down the search.
@@ -1737,6 +1796,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/majority-element/",
                 "complexity": "Time: O(n log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of size n, find the majority element, which is the element that appears more than ⌊ n/2 ⌋ times.
 		Use a divide and conquer approach to solve this problem.
@@ -1757,6 +1817,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/number-of-islands/",
                 "complexity": "Time: O(V + E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement Depth First Search (DFS) to traverse or search through a graph.
 		DFS explores as far as possible along a branch before backtracking.
@@ -1775,6 +1836,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/clone-graph/",
                 "complexity": "Time: O(V + E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement Breadth First Search (BFS) to traverse or search through a graph.
 		BFS explores all the neighbors at the present depth level before moving on to nodes at the next depth level.
@@ -1793,6 +1855,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/course-schedule-ii/",
                 "complexity": "Time: O(V + E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Perform a topological sort on a Directed Acyclic Graph (DAG).
 		Topological sorting orders vertices of a directed graph such that for every directed edge (u, v), vertex u comes before vertex v in the ordering.
@@ -1811,6 +1874,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/network-delay-time/",
                 "complexity": "Time: O((V + E) log V), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the shortest path from a source vertex to all other vertices in a graph with non-negative edge weights using Dijkstra's Algorithm.
 	  `,
@@ -1828,6 +1892,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/shortest-path-in-undirected-graph-with-weights/",
                 "complexity": "Time: O(V * E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the shortest path from a source vertex to all other vertices in a graph, allowing negative edge weights using Bellman-Ford's Algorithm.
 	  `,
@@ -1845,6 +1910,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/shortest-path-in-graph-with-negative-edges/",
                 "complexity": "Time: O(V^3), Space: O(V^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Compute shortest paths between all pairs of vertices in a graph using the Floyd-Warshall Algorithm.
 		Works for graphs with negative weights but no negative weight cycles.
@@ -1863,6 +1929,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/minimum-spanning-tree/",
                 "complexity": "Time: O(E log E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the Minimum Spanning Tree (MST) of a graph using Kruskal's Algorithm.
 		Kruskal's algorithm sorts all edges and adds them to the MST if they do not form a cycle.
@@ -1881,6 +1948,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/minimum-spanning-tree/",
                 "complexity": "Time: O(E log V), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the Minimum Spanning Tree (MST) of a graph using Prim's Algorithm.
 		Prim's algorithm starts with an arbitrary vertex and grows the MST by adding the shortest edge that connects a vertex in the MST to a vertex outside of it.
@@ -1899,6 +1967,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/all-pairs-shortest-path/",
                 "complexity": "Time: O(V^2 log V + VE), Space: O(V^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Find the shortest paths between all pairs of vertices in a graph with negative weights using Johnson’s Algorithm.
 		This algorithm works by transforming the graph to make all edge weights non-negative and then running Bellman-Ford and Dijkstra's algorithms.
@@ -1917,6 +1986,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/course-schedule-ii/",
                 "complexity": "Time: O(V + E), Space: O(V)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Detect a cycle in a directed graph using Depth First Search (DFS).
 		DFS can be used to detect cycles by marking nodes during traversal and checking if we revisit a node.
@@ -1937,6 +2007,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/single-number/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 		You must implement a solution that runs in linear time and uses only constant space.
@@ -1955,6 +2026,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/power-of-two/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer n, return true if it is a power of two. Otherwise, return false.
 		An integer is a power of two if there exists an integer x such that n == 2^x.
@@ -1973,6 +2045,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/counting-bits/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
 	  `,
@@ -1990,6 +2063,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/reverse-bits/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Reverse the bits of a given 32-bit unsigned integer.
 	  `,
@@ -2007,6 +2081,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/missing-number/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
 	  `,
@@ -2024,6 +2099,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sum-of-two-integers/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two integers a and b, return their sum without using the operator + and -.
 	  `,
@@ -2041,6 +2117,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/single-number-ii/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array nums where every element appears three times except for one, which appears exactly once. Find that single one.
 	  `,
@@ -2058,6 +2135,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/add-binary/",
                 "complexity": "Time: O(max(m, n)), Space: O(max(m, n))",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two binary strings a and b, return their sum as a binary string.
 	  `,
@@ -2075,6 +2153,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/integer-to-roman/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Convert an integer to a Roman numeral.
 	  `,
@@ -2092,6 +2171,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/roman-to-integer/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Convert a Roman numeral to an integer.
 	  `,
@@ -2111,6 +2191,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/range-sum-query-immutable/",
                 "complexity": "Time: O(1) for queries, O(n) for building the array, Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement a prefix sum array to quickly compute the sum of elements in a given range.
 		You are given an integer array and you need to implement a method that computes the sum of the elements in a given range [i, j] inclusive in constant time.
@@ -2129,6 +2210,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
                 "complexity": "Time: O(1) for queries, O(m * n) for building the array, Space: O(m * n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement a 2D prefix sum array to calculate the sum of elements in a 2D submatrix.
 		You are given a 2D matrix and need to compute the sum of elements in a submatrix using the prefix sum array.
@@ -2147,6 +2229,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers and an integer k, find the total number of continuous subarrays whose sum equals k.
 		Using a prefix sum array helps to efficiently track sums of subarrays and avoid redundant computations.
@@ -2165,6 +2248,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximum-sum-of-subarray-of-size-k/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers and a number k, find the maximum sum of a subarray of size k.
 		You can use a sliding window approach along with a prefix sum array for efficient computation.
@@ -2183,6 +2267,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/product-of-array-except-self/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of n integers, return an array output such that output[i] is the product of all the elements of nums except nums[i].
 		Use prefix and suffix products to avoid using division.
@@ -2201,6 +2286,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subarray-xor-equals-k/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array and a value k, find the number of subarrays where the XOR of the elements equals k.
 		Using prefix XOR and hashmaps helps solve this problem efficiently.
@@ -2219,6 +2305,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subarray-sum-divisible-by-k/",
                 "complexity": "Time: O(n), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers and an integer k, return the total number of subarrays whose sum is divisible by k.
 		We can use a prefix sum array to calculate the sum of subarrays efficiently.
@@ -2237,6 +2324,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array and an integer k, find the length of the longest subarray such that the sum of its elements is at most k.
 		We can use a sliding window technique combined with a prefix sum for efficient computation.
@@ -2255,6 +2343,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/find-pivot-index/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers, find the pivot index where the sum of the elements on the left is equal to the sum of the elements on the right.
 		Use a prefix sum approach to efficiently calculate the sums.
@@ -2273,6 +2362,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximum-product-subarray/",
                 "complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array, find the contiguous subarray (containing at least one number) which has the largest product.
 		Using a prefix product array, we can solve this problem more efficiently.
@@ -2293,6 +2383,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/fibonacci-number/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. 
 		Write a function to return the nth Fibonacci number.
@@ -2311,6 +2402,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/climbing-stairs/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. 
 		How many distinct ways can you climb to the top?
@@ -2329,6 +2421,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/generate-parentheses/",
                 "complexity": "Time: O(4^n / sqrt(n)), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 	  `,
@@ -2346,6 +2439,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/permutations/",
                 "complexity": "Time: O(n!), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of distinct integers, return all the possible permutations.
 	  `,
@@ -2363,6 +2457,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subsets/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a set of distinct integers, return all possible subsets.
 	  `,
@@ -2380,6 +2475,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/n-queens/",
                 "complexity": "Time: O(n!), Space: O(n^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Implement the N-Queens puzzle. Solve the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
 	  `,
@@ -2397,6 +2493,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
                 "complexity": "Time: O(4^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
 		You can assume that the input is always valid.
@@ -2415,6 +2512,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of distinct integers and a target number, find all unique combinations of numbers that sum up to the target.
 		Each number in the array may be used more than once in the combination.
@@ -2433,6 +2531,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum-ii/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a collection of candidate numbers (which may have duplicates) and a target number, find all unique combinations that sum up to the target.
 	  `,
@@ -2450,6 +2549,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/unique-paths/",
                 "complexity": "Time: O(m * n), Space: O(m * n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		You are given a m x n grid, starting from the top-left corner. You can only move either down or right at any point in time. 
 		Find how many unique paths exist from the top-left corner to the bottom-right corner.
@@ -2470,6 +2570,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/merge-sorted-array/",
                 "complexity": "Time: O(n log n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the merge sort algorithm. Merge Sort is a divide and conquer algorithm that splits the array into two halves, 
 		recursively sorts each half, and then merges the two sorted halves.
@@ -2490,6 +2591,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
                 "complexity": "Time: O(n log n) on average, O(n^2) in the worst case, Space: O(log n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the quicksort algorithm. Quicksort is a divide and conquer algorithm that selects a pivot element and partitions
 		the array around it, recursively sorting the partitions.
@@ -2510,6 +2612,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sort-an-array/",
                 "complexity": "Time: O(n^2), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the bubble sort algorithm. Bubble sort works by repeatedly stepping through the list, comparing adjacent items
 		and swapping them if they are in the wrong order.
@@ -2530,6 +2633,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sort-an-array/",
                 "complexity": "Time: O(n^2), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the insertion sort algorithm. Insertion sort builds the final sorted array one item at a time by inserting 
 		each item into its correct position.
@@ -2550,6 +2654,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sort-an-array/",
                 "complexity": "Time: O(n^2), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the selection sort algorithm. Selection sort repeatedly selects the smallest element from the unsorted part 
 		and swaps it with the leftmost unsorted element.
@@ -2570,6 +2675,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
                 "complexity": "Time: O(n log n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the heap sort algorithm. Heap sort builds a max heap and repeatedly extracts the largest element to 
 		build the sorted array.
@@ -2590,6 +2696,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/counting-elements/",
                 "complexity": "Time: O(n+k), Space: O(n+k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the counting sort algorithm. Counting sort counts the occurrences of each element and then uses that 
 		information to place each element in its correct position.
@@ -2609,6 +2716,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/radix-sort/",
                 "complexity": "Time: O(nk), Space: O(n+k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the radix sort algorithm. Radix sort sorts numbers by processing individual digits in a number. 
 		It uses counting sort as a subroutine to sort each digit.
@@ -2628,6 +2736,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/bucket-sort/",
                 "complexity": "Time: O(n+k), Space: O(n+k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Sort an array using the bucket sort algorithm. Bucket sort divides the array into a number of buckets, sorts each bucket, 
 		and then concatenates the sorted buckets.
@@ -2650,6 +2759,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/two-sum/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers, return the indices of the two numbers such that they add up to a specific target.
 		You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -2669,6 +2779,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/group-anagrams/",
                 "complexity": "Time: O(n * k), Space: O(n * k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of strings, group the anagrams together.
 		You can return the answer in any order.
@@ -2688,6 +2799,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 		Your algorithm should run in O(n) complexity.
@@ -2708,6 +2820,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers and an integer k, find the total number of continuous subarrays whose sum equals to k.
 	  `,
@@ -2726,6 +2839,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/contains-duplicate/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array, return true if any value appears at least twice in the array, and return false if every element is distinct.
 	  `,
@@ -2744,6 +2858,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/happy-number/",
                 "complexity": "Time: O(log n), Space: O(log n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Write an algorithm to determine if a number is "happy". A happy number is defined by the following process:
 		1. Starting with any positive integer, replace the number by the sum of the squares of its digits.
@@ -2765,6 +2880,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/find-the-duplicate-number/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. 
 		Find the duplicate one.
@@ -2784,6 +2900,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two arrays, write a function to compute their intersection.
 		Each element in the result should appear as many times as it shows in both arrays.
@@ -2803,6 +2920,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/valid-sudoku/",
                 "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 		- Each row must contain the digits 1-9 without repetition.
@@ -2824,6 +2942,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/top-k-frequent-elements/",
                 "complexity": "Time: O(n log k), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array, return the k most frequent elements.
 	  `,
@@ -2844,6 +2963,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/daily-temperatures/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a list of daily temperatures, where temperatures[i] is the temperature of the day i.
 		Return a list of the number of days you have to wait until a warmer temperature. 
@@ -2864,6 +2984,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/next-greater-element-i/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		You are given two arrays nums1 and nums2 where nums1 is a subset of nums2.
 		For each element of nums1, find the next greater element in nums2. 
@@ -2886,6 +3007,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers heights representing the histogram's bar heights where the width of each bar is 1, 
 		find the area of the largest rectangle in the histogram.
@@ -2905,6 +3027,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/next-greater-element-ii/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a circular array nums (nums[0] and nums[nums.length-1] are adjacent), 
 		find the next greater element of each element of the array.
@@ -2926,6 +3049,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/trapping-rain-water/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given n non-negative integers representing an elevation map where the width of each bar is 1, 
 		compute how much water it can trap after raining.
@@ -2945,6 +3069,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/remove-duplicate-letters/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		You are given a string s. You need to remove duplicate letters so that every letter appears once and only once. 
 		You must make sure that the resulting string is the smallest in lexicographical order among all possible results.
@@ -2964,6 +3089,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/sum-of-subarray-minimums/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of integers arr, find the sum of the minimums of every subarray of arr. 
 		As the answer may be very large, return the answer modulo 10^9 + 7.
@@ -2983,6 +3109,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/largest-rectangle-in-histogram-ii/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a matrix of m x n elements representing a binary matrix, find the largest rectangle containing only 1's.
 	  `,
@@ -3001,6 +3128,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximal-rectangle/",
                 "complexity": "Time: O(m * n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
 	  `,
@@ -3019,6 +3147,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/largest-rectangle-in-skyline/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a series of building heights represented by an array, find the largest rectangular area possible in the skyline.
 	  `,
@@ -3039,6 +3168,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary tree, return the inorder traversal of its nodes' values.
 	  `,
@@ -3057,6 +3187,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary tree, return the level order traversal of its nodes' values.
 		(From left to right, level by level).
@@ -3075,6 +3206,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
                 "complexity": "Time: O(n), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary tree, return its maximum depth.
 		A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
@@ -3093,6 +3225,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/symmetric-tree/",
                 "complexity": "Time: O(n), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary tree, determine if it is a mirror of itself (symmetric around its center).
 	  `,
@@ -3111,6 +3244,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/path-sum-ii/",
                 "complexity": "Time: O(n), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a binary tree and a target sum, return all root-to-leaf paths where each path's sum equals the given target sum.
 	  `,
@@ -3129,6 +3263,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/validate-binary-search-tree/",
                 "complexity": "Time: O(n), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary tree, determine if it is a valid binary search tree (BST).
 		A valid BST is a tree where for each node:
@@ -3151,6 +3286,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
                 "complexity": "Time: O(n), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 		The LCA is the deepest node that is an ancestor of both nodes.
@@ -3170,6 +3306,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
                 "complexity": "Time: O(h + k), Space: O(h)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given the root of a binary search tree (BST), return the kth smallest value (1-indexed) of all the nodes' values.
 	  `,
@@ -3188,6 +3325,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the binary tree, 
 		construct and return the binary tree.
@@ -3206,6 +3344,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
                 "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Design an algorithm to serialize and deserialize a binary tree.
 		Serialization is the process of converting a binary tree into a string, while deserialization is the reverse process.
@@ -3227,6 +3366,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combinations/",
                 "complexity": "Time: O(C(n, k) * k), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
 	  `,
@@ -3244,6 +3384,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/permutations/",
                 "complexity": "Time: O(n!), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of distinct integers, return all the possible permutations of the array.
 	  `,
@@ -3261,6 +3402,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/subsets/",
                 "complexity": "Time: O(2^n), Space: O(2^n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array nums, return all possible subsets (the power set).
 		The solution set must not contain duplicate subsets.
@@ -3279,6 +3421,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum/",
                 "complexity": "Time: O(2^n), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an array of candidate numbers (candidates) and a target number (target), 
 		find all unique combinations in candidates where the candidate numbers sum to target.
@@ -3299,6 +3442,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum-ii/",
                 "complexity": "Time: O(2^n), Space: O(k)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a collection of candidate numbers (candidates) and a target number (target), 
 		find all unique combinations in candidates where the candidate numbers sum to target.
@@ -3319,6 +3463,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
                 "complexity": "Time: O(4^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string containing digits from 2-9 inclusive, return all possible letter combinations
 		that the number could represent. Return the answer in any order.
@@ -3339,6 +3484,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/palindrome-partitioning/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a string s, partition s such that every substring of the partition is a palindrome.
 		Return all possible palindrome partitioning of s.
@@ -3357,6 +3503,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
                 "complexity": "Time: O(n * target), Space: O(target)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given a non-empty array of integers, determine if it can be partitioned into two subsets such that
 		the sum of the elements in both subsets is equal.
@@ -3376,6 +3523,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/combination-sum-iv/",
                 "complexity": "Time: O(target * n), Space: O(target)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given an integer array nums and an integer target, return the number of possible combinations that add up to target.
 		- The same number in nums can be used an unlimited number of times.
@@ -3394,6 +3542,7 @@ const patternDescriptions = {
                 "link": "https://leetcode.com/problems/generate-parentheses/",
                 "complexity": "Time: O(2^n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
                 problemStatement: `
 		Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 	  `,
@@ -3414,6 +3563,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/reverse-linked-list/",
 			"complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Reverse a singly linked list.
 		  `,
@@ -3433,6 +3583,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/linked-list-cycle/",
 			"complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Determine if a linked list has a cycle in it.
 			Use Floyd's cycle-finding algorithm (Tortoise and Hare) to detect the cycle.
@@ -3453,6 +3604,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/merge-two-sorted-lists/",
 			"complexity": "Time: O(n + m), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Merge two sorted linked lists and return it as a new sorted list.
 			The new list should be made by splicing together the nodes of the first two lists.
@@ -3472,6 +3624,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
 			"complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Given the head of a linked list, remove the nth node from the end of the list and return its head.
 		  `,
@@ -3492,6 +3645,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/add-two-numbers/",
 			"complexity": "Time: O(max(m,n)), Space: O(max(m,n))",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Given two non-empty linked lists representing two non-negative integers, 
 			add the two numbers and return it as a linked list.
@@ -3513,6 +3667,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
 			"complexity": "Time: O(m + n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Find the node where two linked lists intersect.
 			Note that the intersection is defined based on reference, not value.
@@ -3534,6 +3689,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
 			"complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Flatten a multilevel doubly linked list, where each node can have a next pointer, a prev pointer, and a child pointer.
 			Flatten the list such that all nodes appear in a single-level doubly linked list.
@@ -3553,6 +3709,7 @@ const patternDescriptions = {
 			"link": "https://leetcode.com/problems/swap-nodes-in-pairs/",
 			"complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 			problemStatement: `
 			Given a linked list, swap every two adjacent nodes and return its head.
 		  `,
@@ -3571,6 +3728,7 @@ const patternDescriptions = {
 		"link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
 		"complexity": "Time: O(n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 		problemStatement: `
 		Remove all duplicates from a sorted linked list such that each element appears only once.
 	  `,
@@ -3589,6 +3747,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
 	  "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		A linked list is given where each node contains two pointers:
 		- \`next\` points to the next node in the list,
@@ -3612,6 +3771,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/nim-game/",
 	  "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		You are playing the following Nim Game:
 		- Initially, there is a pile of stones.
@@ -3635,6 +3795,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/predict-the-winner/",
 	  "complexity": "Time: O(n^2), Space: O(n^2)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		Given an integer array nums, the objective is to determine if the first player can win the game.
 		In each turn, a player can choose either the first or the last element from the array.
@@ -3656,6 +3817,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/stone-game/",
 	  "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		In the Stone Game, two players take turns to pick a pile of stones. On each turn, a player can choose either 
 		the first or the last pile from the available stones. The player with the maximum score wins.
@@ -3676,6 +3838,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/can-i-win/",
 	  "complexity": "Time: O(2^n), Space: O(2^n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		You are given a game where two players take turns removing 1 to x stones from a pile of n stones.
 		Determine if you can win the game assuming both players play optimally.
@@ -3695,6 +3858,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/divisor-game/",
 	  "complexity": "Time: O(1), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		In the divisor game, Alice starts with an integer n. In each turn, Alice chooses any x such that 
 		0 < x < n and n % x == 0. Then, Alice reduces n by x, and it’s Bob's turn.
@@ -3715,6 +3879,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/maximal-rectangle/",
 	  "complexity": "Time: O(n^2), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		Find the maximal rectangle in a 2D binary matrix that contains only 1's.
 		Return the area of the largest rectangle.
@@ -3735,6 +3900,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/ugly-number-ii/",
 	  "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		Ugly numbers are numbers whose only prime factors are 2, 3, or 5.
 		Given an integer n, return the nth ugly number.
@@ -3754,6 +3920,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/game-of-life/",
 	  "complexity": "Time: O(m * n), Space: O(1)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		According to the rules of the Game of Life, each cell in a grid can be live or dead. 
 		- Any live cell with fewer than two live neighbors dies (as if caused by under-population).
@@ -3778,6 +3945,7 @@ const patternDescriptions = {
 	  "link": "https://leetcode.com/problems/find-the-winner-of-a-circular-game/",
 	  "complexity": "Time: O(n), Space: O(n)",
 				difficulty: "easy",
+				companies: ["To be added soon"],
 	  problemStatement: `
 		There are n people in a circle, numbered from 1 to n. 
 		They start at 1 and every second person is eliminated until only one remains. 
@@ -3834,6 +4002,7 @@ async function loadCode(filePath) {
             <option value="cpp">C++</option>
           </select>
           <span class="difficulty-marker ${question.difficulty}"></span>
+		  <span class="companies-tooltip" data-companies="${question.companies.join(', ')}">💼</span>
         </div>
       </div>
       <div class="solution">
