@@ -2,7 +2,8 @@
 :root {
   --site-color: #780C28;
   --question-background: #F2EFE7;
-  --right-pane-background: #FFE6C9
+  --right-pane-background: #FFE6C9;
+  --time-complexity:#780C28;
   
 }
 
@@ -86,7 +87,7 @@ header p {
 
 /* Questions Section */
 .questions {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 #pattern-title {
@@ -101,8 +102,8 @@ header p {
 }
 
 #questions-list li {
-  padding: 10px;
-  margin: 5px 0;
+  padding: 12px;
+  margin: 20px 0;
   background-color: var(--question-background);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -147,7 +148,7 @@ header p {
 
 .solution h4 {
   margin: 10px 0 5px;
-  color: #1D1842;
+  color: var(--time-complexity);
 }
 
 .solution p {
