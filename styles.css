@@ -199,16 +199,44 @@ code[class*="language-"] {
   margin-left: 10px;
 }
 
-.difficulty-marker.easy {
+.difficulty-marker.Easy {
   background-color: #118B50; /* Green for easy */
 }
 
-.difficulty-marker.medium {
+.difficulty-marker.Medium {
   background-color: #FFF100; /* Yellow for medium */
 }
 
-.difficulty-marker.hard {
+.difficulty-marker.Hard {
   background-color: #FF2929; /* Red for hard */
+}
+
+.difficulty-marker {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.difficulty-marker::after {
+  content: attr(data-difficulty);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: var(--site-color);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.difficulty-marker:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 
@@ -261,3 +289,4 @@ code[class*="language-"] {
     opacity: 1;
     visibility: visible;
 }
+
