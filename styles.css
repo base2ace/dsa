@@ -101,7 +101,7 @@ header p {
 }
 
 #questions-list li {
-  padding: 12px;
+  padding: 6px;
   margin: 20px 0;
   background-color: var(--question-background);
   border-radius: 4px;
