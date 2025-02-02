@@ -1,31 +1,35 @@
-#include <iostream>
 #include <vector>
+#include <iostream>
+
 using namespace std;
 
 int removeDuplicates(vector<int>& nums) {
-    if (nums.empty()) return 0;
+    if (nums.empty()) return 0;  // If array is empty, return 0
 
-    int unique_index = 0;  // Pointer for the position of the next unique element
+    int i = 0;  // Pointer to track unique elements
 
-    for (int i = 1; i < nums.size(); i++) {
-        if (nums[i] != nums[unique_index]) {  // Found a new unique element
-            unique_index++;
-            nums[unique_index] = nums[i];
+    for (int j = 1; j < nums.size(); j++) {  // Iterate from second element
+        if (nums[j] != nums[i]) {  // Found a new unique element
+            i++;  // Move unique element pointer forward
+            nums[i] = nums[j];  // Place the new unique element at correct position
         }
     }
 
-    return unique_index + 1;  // Length of the unique elements
+    return i + 1;  // The length of the unique elements part
 }
 
+// Example usage
 int main() {
-    vector<int> nums = {1, 1, 2};
-    int length = removeDuplicates(nums);
-    
-    cout << length << ", [";
-    for (int i = 0; i < length; i++) {
-        cout << nums[i] << (i < length - 1 ? ", " : "");
+    vector<int> nums = {1, 1, 2, 2, 3, 4, 4, 5}; 
+    int uniqueCount = removeDuplicates(nums);
+
+    // Print the unique elements part of the array
+    cout << "Number of unique elements: " << uniqueCount << endl;
+    cout << "Modified array: ";
+    for (int i = 0; i < uniqueCount; i++) {
+        cout << nums[i] << " ";
     }
-    cout << "]" << endl;  // Output: 2, [1, 2]
+    cout << endl;
 
     return 0;
 }

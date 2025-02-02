@@ -1,17 +1,19 @@
-#include <iostream>
 #include <vector>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
 int maxArea(vector<int>& height) {
-    int left = 0, right = height.size() - 1;  // Two-pointer approach
-    int max_water = 0;
+    int left = 0, right = height.size() - 1; // Two pointers
+    int max_area = 0;
 
     while (left < right) {
-        // Calculate the area formed by height[left] and height[right]
+        // Compute area between left and right lines
         int area = min(height[left], height[right]) * (right - left);
-        max_water = max(max_water, area);
+        max_area = max(max_area, area);  // Update max area if necessary
 
-        // Move the pointer with the smaller height to try and find a larger area
+        // Move the pointer pointing to the shorter line
         if (height[left] < height[right]) {
             left++;
         } else {
@@ -19,11 +21,12 @@ int maxArea(vector<int>& height) {
         }
     }
 
-    return max_water;
+    return max_area;
 }
 
+// Example usage
 int main() {
-    vector<int> height = {1,8,6,2,5,4,8,3,7};
-    cout << maxArea(height) << endl;  // Output: 49
+    vector<int> height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+    cout << "Maximum water that can be contained: " << maxArea(height) << endl;
     return 0;
 }

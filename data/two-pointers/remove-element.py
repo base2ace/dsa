@@ -1,20 +1,22 @@
 def removeElement(nums, val):
-    # Pointer for where to place the next element that is not equal to val
-    i = 0
+    """
+    Removes all instances of 'val' from the array 'nums' in-place.
     
-    # Iterate through the array
-    for j in range(len(nums)):
-        # If the current element is not the value to be removed
-        if nums[j] != val:
-            # Place the element at the next available position
-            nums[i] = nums[j]
-            i += 1
+    :param nums: List[int] - List of integers
+    :param val: int - The value to be removed from the array
+    :return: int - The new length of the array after removal
+    """
+    k = 0  # Pointer to keep track of where to place the next valid element
     
-    # The new length of the array is 'i' (as 'i' will have moved past the valid elements)
-    return i
+    for i in range(len(nums)):  # Iterate through the array
+        if nums[i] != val:  # If current element is not 'val'
+            nums[k] = nums[i]  # Place it at the correct position
+            k += 1  # Increment k for the next valid position
+    
+    return k  # Return the length of the modified array
 
-# Example 
-nums = [3, 2, 2, 3, 4]
+# Example Usage
+nums = [3, 2, 2, 3, 4, 3, 5]
 val = 3
 new_length = removeElement(nums, val)
-print(nums[:new_length])  # Output will be [2, 2, 4]
+print(nums[:new_length])  # Output: [2, 2, 4, 5]

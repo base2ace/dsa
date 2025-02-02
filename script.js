@@ -679,7 +679,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy", // Add difficulty level				
-				companies: ["To be added soon"],
+				companies: ["Facebook", "Amazon", "Apple", "Uber", "Bloomberg", "LinkedIn"],
 				problemStatement: `
       Given a 1-indexed array of integers \`numbers\` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target.
       Return the indices of the two numbers.
@@ -721,7 +721,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/container-with-most-water/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Microsoft", "Apple", "Netflix", "Uber", "Bloomberg"],
 				problemStatement: `
       Given an integer array \`height\` where each element represents a vertical line at that index, find two lines that form a container with the most water.
     `,
@@ -740,7 +740,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Amazon", "Apple", "Netflix", "Uber", "Bloomberg"],
 				problemStatement: `
       Given a sorted array \`nums\`, remove the duplicates in-place such that each unique element appears only once.
     `,
@@ -759,7 +759,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/merge-sorted-array/",
                 complexity: "Time: O(m + n), Space: O(1)",
 				difficulty: "Medium",
-				companies: ["To be added soon"],
+				companies: ["Facebook", "Amazon", "Apple", "Netflix", "Uber", "Bloomberg", "LinkedIn"],
 				problemStatement: `
       Given two sorted arrays \`nums1\` and \`nums2\`, merge them into one sorted array.
     `,
@@ -779,7 +779,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/valid-palindrome/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Facebook", "Amazon", "Apple", "Uber", "Bloomberg", "LinkedIn"],
 				problemStatement: `
       Given a string \`s\`, return true if it is a palindrome considering only alphanumeric characters and ignoring cases.
     `,
@@ -798,7 +798,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/move-zeroes/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Microsoft", "Amazon", "Google", "Bloomberg", "Adobe", "Uber"],
 				problemStatement: `
       Given an integer array \`nums\`, move all 0's to the end while maintaining the relative order of non-zero elements.
     `,
@@ -816,7 +816,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/reverse-string/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Facebook", "Amazon", "Apple", "Netflix", "Uber"],
 				problemStatement: `
       Write a function that reverses a string. The input string is given as an array of characters.
     `,
@@ -834,7 +834,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/sort-colors/",
                 complexity: "Time: O(n), Space: O(1)",
 				difficulty: "Hard",
-				companies: ["To be added soon"],
+				companies: ["Facebook", "Amazon", "Apple", "Uber", "Bloomberg", "LinkedIn"],
 				problemStatement: `
       Given an array \`nums\` with colors (0, 1, 2), sort them in-place without using extra space.
     `,

@@ -1,30 +1,26 @@
 def sortColors(nums):
-    # Step 1: Initialize three pointers
-    left, mid, right = 0, 0, len(nums) - 1  # 'left' points to the next position for 0, 'mid' is the current element, 'right' points to the next position for 2
+    """
+    Sorts the array in-place such that all 0's come first, followed by all 1's, and then all 2's.
     
-    # Step 2: Process elements using the 'mid' pointer
-    while mid <= right:
-        if nums[mid] == 0:  # If the current element is 0
-            # Swap the current element (nums[mid]) with nums[left], and move both 'left' and 'mid' pointers forward
-            nums[left], nums[mid] = nums[mid], nums[left]
-            left += 1  # Increment 'left' as it now points to the next available position for 0
-            mid += 1   # Increment 'mid' as we move past the 0 we just swapped
-        elif nums[mid] == 1:  # If the current element is 1
-            # No swap needed for 1, just move 'mid' pointer forward to continue sorting
+    :param nums: List[int] - List containing the integers 0, 1, and 2
+    """
+    low, mid, high = 0, 0, len(nums) - 1  # Initialize three pointers
+    
+    while mid <= high:  # Traverse through the array
+        if nums[mid] == 0:
+            # Swap 0 to the 'low' position
+            nums[low], nums[mid] = nums[mid], nums[low]
+            low += 1
             mid += 1
-        else:  # If the current element is 2
-            # Swap the current element (nums[mid]) with nums[right], and move 'right' pointer backward
-            nums[mid], nums[right] = nums[right], nums[mid]
-            right -= 1  # Decrement 'right' as it now points to the next available position for 2
-            # We don't move 'mid' here because we need to check the element we swapped to 'mid'
+        elif nums[mid] == 1:
+            # If it's 1, just move forward
+            mid += 1
+        else:
+            # Swap 2 to the 'high' position
+            nums[high], nums[mid] = nums[mid], nums[high]
+            high -= 1
     
-    # No need to return anything since the list is modified in place.
-
-
 # Example Usage
 nums = [2, 0, 2, 1, 1, 0]
 sortColors(nums)
 print(nums)  # Output: [0, 0, 1, 1, 2, 2]
-
-
-# This Dutch National Flag Algorithm efficiently sorts the array in just one pass.

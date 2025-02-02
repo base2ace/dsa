@@ -1,20 +1,32 @@
 def merge(nums1, m, nums2, n):
-    # Start merging from the end of nums1
-    i, j, k = m - 1, n - 1, m + n - 1
+    """
+    Merges two sorted arrays in-place.
 
-    while j >= 0:
-        if i >= 0 and nums1[i] > nums2[j]:
-            nums1[k] = nums1[i]
-            i -= 1
-        else:
-            nums1[k] = nums2[j]
-            j -= 1
-        k -= 1
+    :param nums1: List[int] - First sorted array with extra space at the end.
+    :param m: int - Number of initialized elements in nums1.
+    :param nums2: List[int] - Second sorted array.
+    :param n: int - Number of elements in nums2.
+    """
+    p1, p2, p = m - 1, n - 1, m + n - 1  # Initialize pointers
 
-# Example Usage
+    # Merge from the end of nums1
+    while p1 >= 0 and p2 >= 0:
+        if nums1[p1] > nums2[p2]:  # If nums1's element is larger, place it at the end
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:  # Otherwise, place nums2's element
+            nums1[p] = nums2[p2]
+            p2 -= 1
+        p -= 1
+
+    # If nums2 still has elements left, copy them
+    while p2 >= 0:
+        nums1[p] = nums2[p2]
+        p2 -= 1
+        p -= 1
+
+# Example usage:
 nums1 = [1, 2, 3, 0, 0, 0]
 m = 3
 nums2 = [2, 5, 6]
 n = 3
-merge(nums1, m, nums2, n)
-print(nums1)  # Output: [1, 2, 2, 3, 5, 6]
