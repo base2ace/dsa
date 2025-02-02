@@ -852,7 +852,7 @@ const patternDescriptions = {
                 link: "https://leetcode.com/problems/remove-element/",
                 complexity: "Time: O(n), Space: O(1)",
                 difficulty: "Easy",
-				companies: ["To be added soon"],
+				companies: ["Amazon", "Apple", "Uber", "Bloomberg", "LinkedIn"],
 				problemStatement: `
       Given an array \`nums\` and a value \`val\`, remove all instances of that value in-place.
     `,
