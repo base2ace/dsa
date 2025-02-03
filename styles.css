@@ -21,7 +21,10 @@ body {
 
 /* Sidebar */
 .sidebar {
+  position: fixed;
   width: 250px;
+  height: 100vh; /* Full height */
+  overflow-y: auto;
   background-color: var(--site-color);
   color: white;
   padding: 20px;
@@ -64,7 +67,9 @@ body {
 /* Main Content */
 .content {
   flex: 1;
-  padding: 20px;
+  margin-left: 270px; /* Ensure space for sidebar */
+  margin-right: 420px; /* Ensure space for right pane */
+  padding: 40px;
   background-color: #f4f4f9;
 }
 
@@ -172,7 +177,11 @@ code[class*="language-"] {
 
 /* Right Pane */
 .right-pane {
+  position: fixed;
+  right: 0;
   width: 400px;
+  height: 100vh; /* Full height */
+  overflow-y: auto;
   padding: 20px;
   background-color: var(--right-pane-background);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
