@@ -693,6 +693,7 @@ const patternDescriptions = {
                 files: {
                     python: "data/two-pointers/two-sum.py",
                     cpp: "data/two-pointers/two-sum.cpp",
+					visual: "animation/two-pointers/two-sum.html",
                 }
             }, {
                 name: "Three Sum",
@@ -3981,6 +3982,11 @@ async function loadCode(filePath) {
     }
 }
 
+	function openNewPage(relativePath) {
+		window.open(relativePath, '_blank'); // Opens the relative page in a new tab
+	}
+
+
     // Function to load questions for a pattern
     async function loadQuestions(pattern) {
         const questions = questionsData[pattern] || [];
@@ -4003,6 +4009,8 @@ async function loadCode(filePath) {
           </select>
           <span class="difficulty-marker ${question.difficulty}"  data-difficulty="${question.difficulty}"></span>
 		  <span class="companies-tooltip" data-companies="${question.companies.join(', ')}">💼</span>
+		  <a href="${question.files['visual']}" target="_blank"><span class="eye-icon">👁️</span></a>
+		  
         </div>
       </div>
       <div class="solution">

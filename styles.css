@@ -299,3 +299,28 @@ code[class*="language-"] {
     visibility: visible;
 }
 
+.copy-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #1d6fa5;
+    transform: scale(1.05);
+}
+
+.eye-icon {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.eye-icon:hover {
+    color: blue; /* Change color on hover */
+}

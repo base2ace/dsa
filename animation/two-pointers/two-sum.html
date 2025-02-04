@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Sum Algorithm Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .array-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .array-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            font-size: 20px;
+            position: relative;
+        }
+        .pointer {
+            position: absolute;
+            top: -25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: red;
+        }
+        .right-pointer {
+            color: green;
+        }
+        .highlight {
+            background-color: lightblue;
+        }
+        .variables {
+            font-size: 18px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .code-container {
+            text-align: left;
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 16px;
+            width: 400px;
+            height: 220px;
+        }
+        .code-line {
+            padding: 4px;
+            margin: 2px 0;
+        }
+        .highlight-line {
+            background-color: rgba(255, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Two Sum Algorithm Visualization</h1>
+
+    <div class="container">
+        <!-- Algorithm Visualization -->
+        <div>
+            <div class="array-container" id="array-container"></div>
+            <p class="variables">Left Pointer: <span id="left-var">0</span>, Right Pointer: <span id="right-var">3</span>, Sum: <span id="sum-var">0</span></p>
+            <button onclick="nextStep()">Next Step</button>
+            <p id="result"></p>
+        </div>
+
+        <!-- Code Display -->
+        <div class="code-container">
+            <p class="code-line" id="line1">1. left = 0, right = len(numbers) - 1</p>
+            <p class="code-line" id="line2">2. while left < right:</p>
+            <p class="code-line" id="line3">3. &nbsp;&nbsp;&nbsp; total = numbers[left] + numbers[right]</p>
+            <p class="code-line" id="line4">4. &nbsp;&nbsp;&nbsp; if total == target:</p>
+            <p class="code-line" id="line5">5. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return [left + 1, right + 1]</p>
+            <p class="code-line" id="line6">6. &nbsp;&nbsp;&nbsp; elif total < target:</p>
+            <p class="code-line" id="line7">7. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left += 1</p>
+            <p class="code-line" id="line8">8. &nbsp;&nbsp;&nbsp; else:</p>
+            <p class="code-line" id="line9">9. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right -= 1</p>
+        </div>
+    </div>
+
+    <script>
+        const numbers = [2, 7, 11, 15, 17, 19, 23, 25];
+        const target = 40;
+        let left = 0;
+        let right = numbers.length - 1;
+        let found = false;
+
+        function renderArray() {
+            const container = document.getElementById("array-container");
+            container.innerHTML = "";
+
+            numbers.forEach((num, index) => {
+                const box = document.createElement("div");
+                box.classList.add("array-box");
+                box.innerText = num;
+
+                if (index === left) {
+                    const leftPointer = document.createElement("div");
+                    leftPointer.innerText = "Left ↓";
+                    leftPointer.classList.add("pointer");
+                    box.appendChild(leftPointer);
+                    box.classList.add("highlight");
+                }
+
+                if (index === right) {
+                    const rightPointer = document.createElement("div");
+                    rightPointer.innerText = "Right ↓";
+                    rightPointer.classList.add("pointer", "right-pointer");
+                    box.appendChild(rightPointer);
+                    box.classList.add("highlight");
+                }
+
+                container.appendChild(box);
+            });
+
+            document.getElementById("left-var").innerText = left;
+            document.getElementById("right-var").innerText = right;
+            document.getElementById("sum-var").innerText = numbers[left] + numbers[right];
+        }
+
+        function highlightLine(lineNumber) {
+            document.querySelectorAll(".code-line").forEach(line => line.classList.remove("highlight-line"));
+            document.getElementById(`line${lineNumber}`).classList.add("highlight-line");
+        }
+
+        function nextStep() {
+            if (found) return;
+
+            highlightLine(3);
+            let total = numbers[left] + numbers[right];
+            document.getElementById("sum-var").innerText = total;
+
+            setTimeout(() => {
+                if (total === target) {
+                    highlightLine(4);
+                    setTimeout(() => {
+                        highlightLine(5);
+                        document.getElementById("result").innerText = `Solution found! Indices: [${left + 1}, ${right + 1}]`;
+                        found = true;
+                    }, 1000);
+                    return;
+                } else if (total < target) {
+                    highlightLine(6);
+                    setTimeout(() => {
+                        highlightLine(7);
+                        left++;
+                        renderArray();
+                    }, 1000);
+                } else {
+                    highlightLine(8);
+                    setTimeout(() => {
+                        highlightLine(9);
+                        right--;
+                        renderArray();
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        renderArray();
+        highlightLine(1);
+    </script>
+
+</body>
+</html>
