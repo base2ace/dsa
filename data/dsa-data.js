@@ -1,0 +1,2958 @@
+window.DSA_DATA = {
+  "patterns": {
+    "two-pointers": "\n        The <strong>Two Pointers</strong> technique is used to solve problems involving arrays or sequences by using two pointers \n        to traverse the data structure. The two pointers typically move towards each other (from opposite ends) or \n        move in the same direction (from the same starting point) depending on the problem. \n        This technique is often used to solve problems like finding pairs, subarrays, or other patterns in linear time.<br><br>\n        \n        <strong>Example Problem</strong>: Finding if there exists a pair in a sorted array that sums to a target value.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given a sorted array of integers, <code>arr = [1, 2, 3, 4, 6]</code>, and a target sum of 6, use the two-pointers technique \n        to find if there exists a pair that sums to the target.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Initialize two pointers, one at the beginning (<code>left = 0</code>) and the other at the end (<code>right = arr.length - 1</code>).<br>\n        2. Check the sum of the values at both pointers: <code>arr[left] + arr[right]</code>.<br>\n        3. If the sum equals the target, return <code>true</code> (pair found).<br>\n        4. If the sum is smaller than the target, move the <code>left</code> pointer rightwards (<code>left++</code>).<br>\n        5. If the sum is larger than the target, move the <code>right</code> pointer leftwards (<code>right--</code>).<br>\n        6. Repeat until the pointers meet.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n) because we only traverse the array once.<br>\n        <strong>Space Complexity</strong>: O(1) as we only use a constant amount of space for the two pointers.\n    ",
+    "sliding-window": "\n        The <strong>Sliding Window</strong> technique is used to solve problems involving subarrays or substrings by maintaining \n        a window that slides over the data structure. This technique works by expanding the window to include more \n        elements and shrinking it to exclude elements, keeping track of relevant information within the window.<br><br>\n        \n        The sliding window is especially useful for problems like finding the maximum sum of a subarray of a given size, \n        or finding the longest substring with unique characters.<br><br>\n        \n        <strong>Example Problem</strong>: Finding the longest substring without repeating characters.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given a string <code>s = \"abcabcbb\"</code>, find the length of the longest substring without repeating characters.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Initialize two pointers, <code>left</code> and <code>right</code>, both starting at the beginning of the string.<br>\n        2. Expand the window by moving <code>right</code> and include characters in the current window.<br>\n        3. Keep track of the characters using a hashmap to count their frequency within the window.<br>\n        4. If a character is repeated, move the <code>left</code> pointer to the right to shrink the window until there are no repeated characters.<br>\n        5. Track the maximum length of the substring without repeating characters.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        - Start with <code>left = 0</code> and <code>right = 0</code>, and expand the window.<br>\n        - When <code>right</code> reaches index 3, the window contains \"abc\", which is unique. The length of the substring is 3.<br>\n        - When <code>right</code> moves to index 4, the window now contains \"abca\", with a repeating \"a\". Move <code>left</code> to 1 to shrink the window.<br>\n        - Continue this process until the entire string is processed.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n) because we only iterate over the string once.<br>\n        <strong>Space Complexity</strong>: O(min(n, m)) where <code>n</code> is the length of the string and <code>m</code> is the size of the character set, \n        which is the space used to store characters in the sliding window.\n    ",
+    "greedy": "\n        The <strong>Greedy Algorithm</strong> technique is used to solve optimization problems by making locally optimal choices \n        at each step, with the hope of finding a global optimum. The idea is to select the best option available at each \n        decision point without worrying about the consequences of previous decisions.<br><br>\n        \n        Greedy algorithms are typically used in problems where you can make decisions step-by-step, and once you make \n        a choice, you don't need to reconsider it.<br><br>\n        \n        <strong>Example Problem</strong>: Activity Selection Problem.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given a set of activities with their start and finish times, select the maximum number of activities that don't \n        overlap.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Sort the activities by their finish time.<br>\n        2. Select the first activity.<br>\n        3. For each subsequent activity, select it if its start time is greater than or equal to the finish time of the \n        last selected activity.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        - Given activities with start times [1, 3, 0, 5, 8, 5] and finish times [2, 4, 6, 7, 9, 9].<br>\n        - Select the activity (1, 2), then (3, 4), and finally (8, 9).<br><br>\n        \n        <strong>Time Complexity</strong>: O(n log n) because we need to sort the activities.<br>\n        <strong>Space Complexity</strong>: O(1), as we are using a constant amount of space for tracking the selected activities.\n    ",
+    "dynamic-programming": "\n        The <strong>Dynamic Programming</strong> technique is used to solve problems by breaking them down into simpler subproblems \n        and storing the solutions to these subproblems to avoid redundant work. This technique is typically used when the problem \n        can be broken down into overlapping subproblems and has an optimal substructure.<br><br>\n        \n        Dynamic programming involves two key techniques:\n        <ul>\n            <li><strong>Memoization</strong>: Storing the results of expensive function calls and reusing them when needed.</li>\n            <li><strong>Tabulation</strong>: Building up a table (or array) iteratively to store solutions to subproblems.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: The Knapsack Problem.<br><br>\n        \n        <strong>Example</strong>:<br>\n        You are given a set of items, each with a weight and a value, and a maximum weight capacity. Your goal is to \n        determine the maximum value you can obtain by picking items without exceeding the weight capacity.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Create a 2D array `dp` where `dp[i][w]` represents the maximum value that can be obtained with the first \n        `i` items and a weight limit `w`.<br>\n        2. If the weight of the `i`-th item is less than or equal to the current weight limit `w`, choose the maximum \n        between including the item or excluding it.<br>\n        3. Otherwise, exclude the item.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        Given items with weights [1, 2, 3] and values [10, 20, 30], and a knapsack with capacity 4.<br>\n        The 2D array `dp` will help us calculate the optimal value at each step.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n * W) where `n` is the number of items and `W` is the weight capacity.<br>\n        <strong>Space Complexity</strong>: O(n * W) for the DP table.\n    ",
+    "backtracking": "\n        The <strong>Backtracking</strong> technique is used to solve problems by incrementally building a solution \n        and abandoning it (backtracking) if it is found to be invalid or incomplete. The technique is often applied to \n        problems that involve making decisions step by step, where each decision leads to subsequent decisions. Backtracking \n        is particularly useful in combinatorial problems, where a solution is built up piece by piece and can be discarded \n        if it violates constraints.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Recursive Exploration</strong>: The solution space is explored recursively by making a series of choices.</li>\n            <li><strong>Pruning</strong>: If a partial solution is found to be invalid, the algorithm \"backtracks\" and discards the solution.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: The N-Queens Problem.<br><br>\n        \n        <strong>Example</strong>:<br>\n        You are given an N x N chessboard, and your goal is to place N queens on the board such that no two queens \n        threaten each other. This means no two queens can be in the same row, column, or diagonal.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Start by placing a queen in the first row and explore all possible positions in that row.<br>\n        2. Move to the next row and try placing a queen in each column, checking if it is safe (i.e., not in the same column or diagonal as any previously placed queens).<br>\n        3. If a valid placement is found, continue placing queens in the next row.<br>\n        4. If a row is reached where no valid placement is possible, backtrack by removing the queen from the previous row and trying the next possible position.<br>\n        5. Repeat this process until all queens are placed on the board or until all possibilities have been explored.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For a 4x4 board, the algorithm places queens step by step and backtracks if a conflict is detected. This results in \n        the solution where the queens are placed such that no two queens threaten each other.<br><br>\n        \n        <strong>Time Complexity</strong>: O(N!) where N is the number of queens. In the worst case, we need to check all \n        possible placements for each queen.<br>\n        <strong>Space Complexity</strong>: O(N) for the recursion stack and storing the positions of queens on the board.\n    ",
+    "divide-and-conquer": "\n        The <strong>Divide and Conquer</strong> technique is used to solve problems by recursively breaking them down into smaller subproblems, \n        solving each subproblem individually, and then combining their results to obtain the final solution. This technique is effective for problems \n        that can be divided into similar smaller subproblems, where solving each smaller problem and combining them is more efficient than solving \n        the entire problem at once.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Divide</strong>: Break the problem into smaller subproblems that are similar to the original problem.</li>\n            <li><strong>Conquer</strong>: Solve each subproblem independently, often recursively.</li>\n            <li><strong>Combine</strong>: Merge the results of the subproblems to form the solution to the original problem.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: Merge Sort.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an unsorted array of integers, the task is to sort the array using the divide and conquer strategy.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. **Divide**: Split the unsorted array into two halves.<br>\n        2. **Conquer**: Recursively sort each half by repeating the divide and conquer process.<br>\n        3. **Combine**: Merge the two sorted halves into a single sorted array.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        Given the array <code>[38, 27, 43, 3, 9, 82, 10]</code>, the divide and conquer approach splits the array into smaller arrays \n        until each array has only one element. Then, the arrays are merged back together while sorting them, resulting in the sorted array: \n        <code>[3, 9, 10, 27, 38, 43, 82]</code>.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n log n), as the array is split into halves at each level of recursion (log n levels), \n        and each level requires linear time (O(n)) to merge the results.<br>\n        <strong>Space Complexity</strong>: O(n), as additional space is required for the temporary arrays during the merge process.\n    ",
+    "graph-traversal": "\n        The <strong>Graph Traversal</strong> technique is used to explore all the nodes and edges of a graph systematically. \n        Graph traversal is crucial for various applications such as finding the shortest path, detecting cycles, or exploring all connected nodes in a graph. \n        The two primary graph traversal techniques are **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Breadth-First Search (BFS)</strong>: Explores the graph level by level, starting from a given node and visiting all its neighbors before moving on to their neighbors. It uses a queue data structure to manage the nodes to be visited.</li>\n            <li><strong>Depth-First Search (DFS)</strong>: Explores the graph by going deep into each branch before backtracking. It uses a stack (either implicitly via recursion or explicitly) to keep track of nodes to be visited.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: Finding the Shortest Path in an Unweighted Graph.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an unweighted graph represented as an adjacency list, find the shortest path from a source node to a destination node.<br><br>\n        \n        <strong>Approach (using BFS)</strong>:<br>\n        1. Initialize a queue and enqueue the source node.<br>\n        2. While the queue is not empty, dequeue a node and check its neighbors.<br>\n        3. For each neighbor, if it has not been visited, mark it as visited and enqueue it.<br>\n        4. Track the distance from the source node to each visited node.<br>\n        5. Once the destination node is reached, the shortest path is found.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For a graph represented as an adjacency list:\n        <code>graph = { 0: [1, 2], 1: [0, 3], 2: [0, 3], 3: [1, 2] }</code>\n        Starting from node 0, the BFS will explore the graph level by level, and the shortest path from node 0 to node 3 is found.<br><br>\n        \n        <strong>Time Complexity</strong>: O(V + E) where V is the number of vertices and E is the number of edges. Both BFS and DFS visit each vertex and edge once.<br>\n        <strong>Space Complexity</strong>: O(V) for the queue or recursion stack, as each node is stored while it is being processed.\n    ",
+    "bit-manipulation": "\n        The <strong>Bit Manipulation</strong> technique involves manipulating individual bits of data in a number. \n        It is an efficient way to solve problems that involve binary numbers or require low-level operations. By using bitwise operators, \n        problems such as determining the parity of a number, flipping specific bits, or finding the unique element in a list can be solved efficiently.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Bitwise AND (&amp;)</strong>: This operator compares two bits and returns 1 if both bits are 1, otherwise returns 0.</li>\n            <li><strong>Bitwise OR (|)</strong>: This operator compares two bits and returns 1 if at least one bit is 1, otherwise returns 0.</li>\n            <li><strong>Bitwise XOR (^)</strong>: This operator compares two bits and returns 1 if the bits are different, otherwise returns 0.</li>\n            <li><strong>Bitwise NOT (~)</strong>: This operator flips the bits (1s become 0s and vice versa).</li>\n            <li><strong>Left Shift (<<)</strong>: Shifts the bits of a number to the left, effectively multiplying the number by 2 for each shift.</li>\n            <li><strong>Right Shift (>>)</strong>: Shifts the bits of a number to the right, effectively dividing the number by 2 for each shift.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: Finding the unique number in an array where every element appears twice except one.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an array of integers, where every element appears twice except for one, find the element that appears only once.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Initialize a variable <code>result = 0</code>.<br>\n        2. Iterate through the array and XOR each element with the current <code>result</code>: <code>result ^= num</code>.<br>\n        3. The property of XOR ensures that pairs of equal numbers cancel out, leaving the unique number in the <code>result</code>.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For the array <code>[4, 1, 2, 1, 2]</code>, the XOR operation is performed as follows:\n        <code>result = 0 ^ 4 ^ 1 ^ 2 ^ 1 ^ 2 = 4</code>, so the unique number is <code>4</code>.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n) where <code>n</code> is the number of elements in the array, as each element is processed once.<br>\n        <strong>Space Complexity</strong>: O(1), as only a constant amount of space is used (the <code>result</code> variable).\n    ",
+    "prefix-sum": "\n        The <strong>Prefix Sum</strong> technique is used to solve problems that require efficient computation of cumulative sums over a range of elements, \n        such as finding the sum of elements in a subarray. It involves preprocessing an array to store the cumulative sum up to each index, \n        allowing for fast range sum queries.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Prefix Sum Array</strong>: An array where each element at index <code>i</code> represents the sum of all elements from index 0 to <code>i</code> in the original array.</li>\n            <li><strong>Range Sum Query</strong>: By using a prefix sum array, we can compute the sum of elements in any subarray <code>arr[l...r]</code> efficiently.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: Finding the sum of elements in a subarray given an array of integers.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an array <code>arr = [1, 2, 3, 4, 5]</code>, calculate the sum of elements in the subarray from index 1 to 3 (i.e., the sum of <code>[2, 3, 4]</code>).<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. First, preprocess the array to create a prefix sum array where each element at index <code>i</code> is the sum of all elements in <code>arr[0...i]</code>.<br>\n        2. The prefix sum array for <code>arr = [1, 2, 3, 4, 5]</code> will be <code>prefixSum = [1, 3, 6, 10, 15]</code>.<br>\n        3. To calculate the sum of the subarray <code>arr[l...r]</code>, use the formula:\n        <pre>sum = prefixSum[r] - (l > 0 ? prefixSum[l-1] : 0)</pre><br>\n        4. For the subarray from index 1 to 3, <code>sum = prefixSum[3] - prefixSum[0] = 10 - 1 = 9</code>.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For the array <code>arr = [1, 2, 3, 4, 5]</code> and the query for the subarray from index 1 to 3, the prefix sum array is:\n        <code>prefixSum = [1, 3, 6, 10, 15]</code>, and the sum is <code>prefixSum[3] - prefixSum[0] = 10 - 1 = 9</code>.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n) for preprocessing the array to create the prefix sum array, and O(1) for each range sum query.<br>\n        <strong>Space Complexity</strong>: O(n) for storing the prefix sum array.\n    ",
+    "recursion": "\n        The <strong>Recursion</strong> technique is a fundamental concept in computer science where a function calls itself to solve a problem. \n        Recursion is typically used to break down problems into smaller, more manageable subproblems. Each recursive call works on a smaller \n        portion of the problem until a base case is reached, at which point the function returns a solution.<br><br>\n        \n        <strong>Key Concepts:</strong>\n        <ul>\n            <li><strong>Base Case</strong>: The simplest, smallest instance of the problem, which can be solved directly without further recursion.</li>\n            <li><strong>Recursive Case</strong>: The step where the problem is divided into smaller subproblems and the function calls itself to solve these subproblems.</li>\n        </ul><br>\n\n        <strong>Example Problem</strong>: Calculating the factorial of a number.<br><br>\n        \n        <strong>Example</strong>:<br>\n        The factorial of a number <code>n</code>, denoted as <code>n!</code>, is the product of all positive integers less than or equal to <code>n</code>. \n        The factorial of a number can be defined as:<br>\n        <pre>n! = n * (n - 1) * (n - 2) * ... * 1</pre>\n        And the recursive definition is:<br>\n        <pre>n! = n * (n - 1)!</pre>\n        The base case is: <code>0! = 1</code>.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Define a function <code>factorial(n)</code> that calculates the factorial of <code>n</code> recursively.<br>\n        2. If <code>n</code> equals 0, return 1 as the base case.<br>\n        3. Otherwise, call the function recursively with <code>n - 1</code> and multiply the result by <code>n</code>.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For <code>factorial(4)</code>, the recursive calls would look like:\n        <pre>factorial(4) = 4 * factorial(3)</pre>\n        <pre>factorial(3) = 3 * factorial(2)</pre>\n        <pre>factorial(2) = 2 * factorial(1)</pre>\n        <pre>factorial(1) = 1 * factorial(0)</pre>\n        <pre>factorial(0) = 1 (base case)</pre><br>\n        Then the recursion unwinds, returning the result: <code>4 * 3 * 2 * 1 = 24</code>.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n) where <code>n</code> is the input number, as there are <code>n</code> recursive calls.<br>\n        <strong>Space Complexity</strong>: O(n) for the recursive call stack, as each recursive call adds a new frame to the stack.\n    ",
+    "sorting": "\n        The <strong>Sorting</strong> technique is used to arrange the elements of a data structure (usually an array or list) in a particular order. \n        Sorting is a fundamental operation in computer science, and many algorithms rely on sorting to optimize other operations or solve problems. \n        The common orderings are ascending and descending, though other custom orders may also be used.<br><br>\n        \n        <strong>Key Sorting Algorithms:</strong>\n        <ul>\n            <li><strong>Bubble Sort</strong>: A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</li>\n            <li><strong>Selection Sort</strong>: This algorithm repeatedly selects the smallest (or largest) element from the unsorted part and swaps it with the element at the beginning of the unsorted part.</li>\n            <li><strong>Insertion Sort</strong>: It builds the sorted array one item at a time, by taking elements from the unsorted part and inserting them into the correct position in the sorted part.</li>\n            <li><strong>Merge Sort</strong>: A divide-and-conquer algorithm that splits the list into halves, recursively sorts them, and then merges the sorted halves.</li>\n            <li><strong>Quick Sort</strong>: Another divide-and-conquer algorithm that selects a pivot element, partitions the array into two sub-arrays, and recursively sorts them.</li>\n            <li><strong>Heap Sort</strong>: A comparison-based sorting algorithm that uses a binary heap to build a heap structure and sort elements.</li>\n        </ul><br>\n\n        <strong>Example Problem</strong>: Sorting an array of integers.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an array of integers <code>arr = [5, 2, 9, 1, 5, 6]</code>, we want to sort this array in ascending order.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        We can use one of the sorting algorithms to sort the array. Let’s use **Merge Sort** for this example.<br><br>\n        \n        <strong>Merge Sort Approach</strong>:<br>\n        1. Divide the array into two halves.<br>\n        2. Recursively sort both halves.<br>\n        3. Merge the two sorted halves into a single sorted array.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        Given the array <code>arr = [5, 2, 9, 1, 5, 6]</code>, the recursive steps of merge sort would look like this:\n        <ul>\n            <li>Divide into two halves: <code>[5, 2, 9]</code> and <code>[1, 5, 6]</code>.</li>\n            <li>Recursively sort each half: <code>[2, 5, 9]</code> and <code>[1, 5, 6]</code>.</li>\n            <li>Merge the two halves: <code>[1, 2, 5, 5, 6, 9]</code>.</li>\n        </ul><br><br>\n\n        <strong>Time Complexity</strong>: O(n log n) for both average and worst-case scenarios in Merge Sort, where <code>n</code> is the number of elements in the array.<br>\n        <strong>Space Complexity</strong>: O(n) for Merge Sort due to the additional space used for the auxiliary array during merging.<br><br>\n\n        <strong>Space and Time Complexity of Other Algorithms:</strong>\n        <ul>\n            <li><strong>Bubble Sort</strong>: Time Complexity O(n²), Space Complexity O(1)</li>\n            <li><strong>Selection Sort</strong>: Time Complexity O(n²), Space Complexity O(1)</li>\n            <li><strong>Insertion Sort</strong>: Time Complexity O(n²), Space Complexity O(1)</li>\n            <li><strong>Quick Sort</strong>: Time Complexity O(n log n) on average, O(n²) in the worst case, Space Complexity O(log n)</li>\n            <li><strong>Heap Sort</strong>: Time Complexity O(n log n), Space Complexity O(1)</li>\n        </ul>\n    ",
+    "hashing": "\n        The <strong>Hashing</strong> technique is used to efficiently map data to unique values using a hash function. \n        A hash function takes an input (or 'key') and returns a fixed-size string, often a number, which represents the data. \n        Hashing is commonly used to implement data structures like hash tables, hash maps, and sets, which provide quick lookups, insertions, and deletions.<br><br>\n        \n        Hashing is particularly useful when you need to store and retrieve data in constant time, O(1), and avoid collisions \n        (when two different inputs produce the same hash). Hash functions are designed to minimize collisions, but they are not \n        entirely avoidable. When collisions happen, techniques like chaining or open addressing are used to resolve them.<br><br>\n        \n        <strong>Common Hashing Structures:</strong>\n        <ul>\n            <li><strong>Hash Table</strong>: A key-value store that uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.</li>\n            <li><strong>Hash Map</strong>: A type of hash table where the keys are unique and can be used to store and retrieve values efficiently.</li>\n            <li><strong>Set</strong>: A collection of unique elements, often implemented using hashing to allow for quick membership testing.</li>\n        </ul><br>\n\n        <strong>Example Problem</strong>: Checking if two arrays have the same elements (with duplicates).<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given two arrays <code>arr1 = [1, 2, 3, 4, 5]</code> and <code>arr2 = [5, 4, 3, 2, 1]</code>, check if they contain the same elements, \n        even if they are in different orders.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Create a hash map to store the frequency of each element in the first array.<br>\n        2. Iterate through the second array and check if each element exists in the hash map with the same frequency.<br>\n        3. If all elements match, return true. Otherwise, return false.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For <code>arr1 = [1, 2, 3, 4, 5]</code> and <code>arr2 = [5, 4, 3, 2, 1]</code>:\n        <ul>\n            <li>Create a hash map for <code>arr1</</code>: {1: 1, 2: 1, 3: 1, 4: 1, 5: 1}</li>\n            <li>Check each element of <code>arr2</code> against the map: all elements are found with the correct frequency.</li>\n            <li>Return true, since the arrays are equal when disregarding order.</li>\n        </ul><br><br>\n\n        <strong>Time Complexity</strong>: O(n), where <code>n</code> is the number of elements in the arrays, since each lookup and insertion in the hash map takes constant time.<br>\n        <strong>Space Complexity</strong>: O(n), where <code>n</code> is the number of elements in the array, as we store each element's frequency in the hash map.<br><br>\n\n        <strong>Handling Collisions in Hashing:</strong>\n        <ul>\n            <li><strong>Chaining</strong>: If two keys hash to the same index, store them in a linked list at that index.</li>\n            <li><strong>Open Addressing</strong>: If a collision occurs, find another open slot in the table using methods like linear probing, quadratic probing, or double hashing.</li>\n        </ul>\n    ",
+    "monotonic-stack": "\n        The <strong>Monotonic Stack</strong> technique is used to solve problems involving stacks where the elements in the stack\n        either increase or decrease monotonically (i.e., the stack maintains a specific order). This technique is especially \n        useful when solving problems related to finding the next greater or smaller element in an array or for finding elements \n        that satisfy specific constraints, like maintaining a range or order.<br><br>\n        \n        A monotonic stack can either be:<br>\n        <ul>\n            <li><strong>Increasing</strong>: where the elements are pushed onto the stack in an increasing order, and each new element is smaller \n            than the previous one.</li>\n            <li><strong>Decreasing</strong>: where the elements are pushed onto the stack in a decreasing order, and each new element is larger \n            than the previous one.</li>\n        </ul><br>\n        \n        This technique is highly efficient for solving problems with linear time complexity, O(n), where n is the number of elements in the array.<br><br>\n        \n        <strong>Example Problem</strong>: Finding the next greater element for each element in the array.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given an array <code>arr = [4, 5, 2, 10, 8]</code>, for each element in the array, find the next greater element.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Initialize an empty stack.<br>\n        2. Iterate through the array from left to right.<br>\n        3. For each element, check if the stack is empty or if the current element is greater than the element at the top of the stack.<br>\n        4. If the current element is greater than the stack's top, pop the stack and record the current element as the next greater element.<br>\n        5. Push the current element onto the stack.<br>\n        6. Repeat until the end of the array.<br><br>\n        \n        <strong>Example Execution</strong>:<br>\n        For <code>arr = [4, 5, 2, 10, 8]</code>:\n        <ul>\n            <li>Start with an empty stack.</li>\n            <li>Process element <code>4</code>, push it onto the stack.</li>\n            <li>Process element <code>5</code>, pop <code>4</code> (because 5 > 4), and record <code>5</code> as the next greater element of <code>4</code>.</li>\n            <li>Push <code>5</code> onto the stack.</li>\n            <li>Process element <code>2</code>, push it onto the stack.</li>\n            <li>Process element <code>10</code>, pop <code>2</code> and <code>5</code> (because 10 > 2 and 10 > 5), and record <code>10</code> as the next greater element for both.</li>\n            <li>Push <code>10</code> onto the stack.</li>\n            <li>Process element <code>8</code>, push it onto the stack.</li>\n            <li>Final result: [5, 10, 10, -1, -1] (next greater elements for each).</li>\n        </ul><br><br>\n        \n        <strong>Time Complexity</strong>: O(n), where n is the number of elements in the array. Each element is pushed and popped from the stack at most once.<br>\n        <strong>Space Complexity</strong>: O(n), where n is the number of elements in the array, for storing the stack.<br><br>\n\n        <strong>Use Cases of Monotonic Stack:</strong>\n        <ul>\n            <li><strong>Next Greater Element</strong>: Find the next greater element for each element in an array.</li>\n            <li><strong>Previous Greater Element</strong>: Find the previous greater element for each element in an array.</li>\n            <li><strong>Largest Rectangle in Histogram</strong>: Find the largest rectangle in a histogram (array of heights).</li>\n            <li><strong>Valid Parentheses</strong>: Check whether a string has valid parentheses using a monotonic stack.</li>\n        </ul>\n    ",
+    "tree-traversal": "\n        <strong>Tree Traversal</strong> refers to the process of visiting each node in a tree data structure exactly once in a systematic way. \n        Tree traversal is an essential concept for many tree-based algorithms and can be classified into three main types: Pre-order, In-order, and Post-order.<br><br>\n        \n        Tree traversal is crucial for operations like searching, inserting, and deleting nodes in binary trees, binary search trees, or other types of trees.<br><br>\n\n        <strong>Types of Tree Traversal</strong>:<br>\n        <ul>\n            <li><strong>Pre-order Traversal</strong>: In pre-order traversal, the nodes are recursively visited in this order:\n                <code>Root -> Left Subtree -> Right Subtree</code>.</li>\n            <li><strong>In-order Traversal</strong>: In in-order traversal, the nodes are recursively visited in this order:\n                <code>Left Subtree -> Root -> Right Subtree</code>. This is particularly useful for binary search trees because it visits the nodes in ascending order.</li>\n            <li><strong>Post-order Traversal</strong>: In post-order traversal, the nodes are recursively visited in this order:\n                <code>Left Subtree -> Right Subtree -> Root</code>.</li>\n        </ul><br>\n\n        <strong>Example Problem</strong>: Given a binary tree, perform pre-order, in-order, and post-order traversals.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given a binary tree:<br>\n        <code>       1</code><br>\n        <code>     /   \\</code><br>\n        <code>    2     3</code><br>\n        <code>   / \\</code><br>\n        <code>  4   5</code><br><br>\n\n        The results of the tree traversals would be as follows:<br><br>\n        \n        <strong>Pre-order Traversal</strong>: <code>1, 2, 4, 5, 3</code><br>\n        <strong>In-order Traversal</strong>: <code>4, 2, 5, 1, 3</code><br>\n        <strong>Post-order Traversal</strong>: <code>4, 5, 2, 3, 1</code><br><br>\n        \n        <strong>Approach</strong>:<br>\n        - **Pre-order**: Visit the root node first, then traverse the left subtree, followed by the right subtree.<br>\n        - **In-order**: Traverse the left subtree first, then visit the root node, followed by the right subtree.<br>\n        - **Post-order**: Traverse the left subtree first, then the right subtree, and finally visit the root node.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n), where n is the number of nodes in the tree, because each node is visited exactly once.<br>\n        <strong>Space Complexity</strong>: O(h), where h is the height of the tree. The space complexity is proportional to the recursion stack size in the case of recursive tree traversal.<br><br>\n        \n        <strong>Use Cases of Tree Traversal:</strong>\n        <ul>\n            <li><strong>Binary Search Tree (BST) Traversal</strong>: In-order traversal is often used to get elements in sorted order.</li>\n            <li><strong>Expression Trees</strong>: Traversals are used to evaluate or print expressions represented as binary trees.</li>\n            <li><strong>Binary Tree Algorithms</strong>: Traversals are used for implementing algorithms such as searching for a node, calculating depth, and others.</li>\n            <li><strong>Level-order Traversal</strong>: A breadth-first traversal technique for visiting nodes level by level (using a queue).</li>\n        </ul>\n    ",
+    "linked-list-manipulation": "\n        <strong>Linked List Manipulation</strong> refers to the operations and techniques applied to manipulate linked lists. A linked list is a linear data structure where elements, called nodes, are connected via pointers. Each node has two parts:\n        - The <strong>data</strong> or value part.\n        - The <strong>next</strong> pointer which points to the next node in the sequence.<br><br>\n        \n        Linked lists are commonly used in problems involving data insertion, deletion, or searching. Operations on linked lists include:\n        - **Inserting nodes** at the beginning, middle, or end of the list.\n        - **Deleting nodes** based on specific conditions.\n        - **Reversing** a linked list.\n        - **Detecting cycles** (loop detection).\n        - **Merging** two sorted linked lists.<br><br>\n\n        <strong>Types of Linked Lists</strong>:<br>\n        <ul>\n            <li><strong>Single Linked List</strong>: Each node points to the next node in the list.</li>\n            <li><strong>Doubly Linked List</strong>: Each node has two pointers: one pointing to the next node and the other pointing to the previous node.</li>\n            <li><strong>Circular Linked List</strong>: The last node points back to the first node, forming a circular structure.</li>\n        </ul><br>\n        \n        <strong>Example Problem</strong>: Reverse a singly linked list.<br><br>\n        \n        <strong>Example</strong>:<br>\n        Given a singly linked list: <code>head -> 1 -> 2 -> 3 -> 4 -> 5</code>, reverse the list to: <code>head -> 5 -> 4 -> 3 -> 2 -> 1</code>.<br><br>\n        \n        <strong>Approach</strong>:<br>\n        1. Initialize three pointers: <code>prev</code> as <code>null</code>, <code>current</code> as <code>head</code>, and <code>next</code> as <code>null</code>.<br>\n        2. Traverse the linked list. For each node:\n            - Save the next node <code>next = current.next</code>.\n            - Reverse the current node's pointer by setting <code>current.next = prev</code>.\n            - Move the <code>prev</code> pointer to the current node and <code>current</code> to the next node.<br>\n        3. Continue until all nodes are reversed.<br><br>\n        \n        <strong>Time Complexity</strong>: O(n), where n is the number of nodes in the list, because we need to traverse each node once.<br>\n        <strong>Space Complexity</strong>: O(1), because we are only using a constant amount of extra space for the pointers.<br><br>\n        \n        <strong>Common Linked List Manipulation Problems</strong>:<br>\n        <ul>\n            <li><strong>Detecting Cycle (Floyd's Tortoise and Hare)</strong>: Detect if a linked list has a cycle using two pointers moving at different speeds.</li>\n            <li><strong>Finding the Middle of a Linked List</strong>: Use the two-pointer technique to find the middle node of the list.</li>\n            <li><strong>Removing N-th Node from the End</strong>: Traverse the list to remove a node from the end by using two pointers.</li>\n            <li><strong>Reversing K Nodes in a Linked List</strong>: Reverse nodes in groups of k while preserving the rest of the list.</li>\n            <li><strong>Merge Two Sorted Linked Lists</strong>: Merge two sorted linked lists into a single sorted list.</li>\n        </ul>\n    ",
+    "combination-generation": "\n        <strong>Combination Generation</strong> refers to the process of generating all possible subsets or combinations of a set of elements, typically used in combinatorics and optimization problems. Unlike permutations, where the order of elements matters, combinations focus on selecting a subset of elements without considering the order.<br><br>\n\n        Common use cases of combination generation include:\n        - Generating all possible combinations of elements from a set.\n        - Solving problems where order does not matter but selection does.\n        - Finding combinations that meet certain criteria, such as summing to a specific value.<br><br>\n\n        The key to solving combination problems is to generate all possible ways of picking elements from a set while ensuring no repeated selections.<br><br>\n\n        <strong>Example Problem</strong>: Generate all combinations of size <code>k</code> from a set of <code>n</code> elements.<br><br>\n\n        <strong>Example</strong>:<br>\n        Given a set of numbers <code>nums = [1, 2, 3, 4]</code> and a combination size <code>k = 2</code>, the goal is to generate all possible combinations of 2 elements from the set.<br><br>\n\n        <strong>Example Output</strong>:<br>\n        <code>[[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]</code><br><br>\n\n        <strong>Approach</strong>:<br>\n        1. Use a backtracking approach to explore all combinations.<br>\n        2. Start with an empty list and try to add elements to the list one by one.<br>\n        3. When the list reaches the desired size <code>k</code>, add it to the result list.<br>\n        4. After adding an element, move forward and recursively try adding the next element to the combination.<br>\n        5. Backtrack by removing the last added element and try the next possible combination.<br><br>\n\n        <strong>Recursive Backtracking Approach Example</strong>:<br>\n        Given <code>nums = [1, 2, 3, 4]</code> and <code>k = 2</code>:\n        - Start with an empty combination.\n        - Add 1, then recurse with the remaining numbers [2, 3, 4].\n        - Add 2, then recurse further.\n        - Continue until all combinations are generated.<br><br>\n\n        <strong>Time Complexity</strong>: O(C(n, k)) where C(n, k) is the number of combinations possible, which is calculated as <code>n! / (k!(n-k)!)</code>.<br>\n        <strong>Space Complexity</strong>: O(k) due to the recursive call stack and the size of each combination.<br><br>\n\n        <strong>Common Combination Generation Problems</strong>:<br>\n        <ul>\n            <li><strong>Subset Generation</strong>: Generate all possible subsets (also known as the power set) of a set.</li>\n            <li><strong>Combination Sum</strong>: Find all unique combinations of numbers that sum to a target value.</li>\n            <li><strong>Combination Sum II</strong>: Find all unique combinations from a collection of candidate numbers that sum to a target, allowing each number to be used once.</li>\n            <li><strong>Permutations</strong>: Generate all possible permutations (ordered combinations) of a set of elements.</li>\n            <li><strong>Combination with Repetition</strong>: Generate combinations where repetition of elements is allowed (e.g., selecting items from a bag of the same type).</li>\n        </ul>\n    ",
+    "game-theory": "\n        <strong>Game Theory</strong> is a mathematical framework used to study and analyze the strategic interactions between rational decision-makers, often referred to as players. It is used to model situations in which the outcome depends on the choices of multiple agents or players, and the decisions of each player affect the others.<br><br>\n\n        Game theory can be applied to a wide range of problems, including economics, politics, psychology, and competitive environments such as video games or markets. Key concepts in game theory include:\n        - **Nash Equilibrium**: A situation in which no player can improve their situation by unilaterally changing their strategy.\n        - **Zero-sum Games**: A situation where one player's gain is another player's loss, such as in competitive games like chess.\n        - **Minimax Strategy**: In zero-sum games, the strategy of minimizing the possible loss for a worst-case scenario.<br><br>\n\n        The two most common types of games studied in game theory are:\n        - **Cooperative Games**: Where players can form coalitions and work together to achieve a common goal.\n        - **Non-Cooperative Games**: Where players act independently to maximize their individual utility.<br><br>\n\n        <strong>Example Problem</strong>: The Prisoner's Dilemma.<br><br>\n\n        <strong>Example</strong>:<br>\n        Two criminals are arrested and charged with a crime. The prosecutors offer each a deal:\n        - If both criminals remain silent, both will serve 1 year in prison.\n        - If one betrays the other (defects) while the other remains silent, the betrayer goes free while the other serves 3 years in prison.\n        - If both betray each other, both will serve 2 years in prison.<br><br>\n\n        The dilemma is that, while cooperating (remaining silent) leads to the best overall outcome for both, each prisoner has a strong incentive to defect (betray), leading to a worse outcome for both.<br><br>\n\n        <strong>Approach</strong>:<br>\n        1. Analyze the payoffs for each player in every possible scenario (cooperate, defect).\n        2. Identify the Nash Equilibrium, where neither player has an incentive to deviate from their strategy.\n        3. In the Prisoner's Dilemma, the Nash Equilibrium occurs when both players defect, even though both would be better off if they both cooperated.<br><br>\n\n        <strong>Example Execution</strong>:<br>\n        - Player 1 has two choices: Cooperate or Defect.\n        - Player 2 also has two choices: Cooperate or Defect.\n        - Payoff Matrix:\n            <code>\n            |           | Cooperate | Defect  |\n            |-----------|----------|---------|\n            | Cooperate | (1, 1)   | (3, 0)  |\n            | Defect    | (0, 3)   | (2, 2)  |\n            </code><br><br>\n\n        In this case, (2, 2) is the Nash Equilibrium, where both players defect.<br><br>\n\n        <strong>Time Complexity</strong>: O(n), where <code>n</code> is the number of players or possible strategies.<br>\n        <strong>Space Complexity</strong>: O(n) due to the need to store the payoffs or strategies of players.<br><br>\n\n        <strong>Common Game Theory Problems</strong>:<br>\n        <ul>\n            <li><strong>Prisoner's Dilemma</strong>: A problem that highlights the conflict between cooperation and self-interest.</li>\n            <li><strong>Battle of the Sexes</strong>: A game where two players prefer different outcomes but want to coordinate.</li>\n            <li><strong>Chicken Game</strong>: A game where players must decide whether to cooperate or risk mutual destruction.</li>\n            <li><strong>Zero-Sum Games</strong>: Games where the total sum of outcomes for all players is constant, and one player's gain is another's loss.</li>\n            <li><strong>Evolutionary Game Theory</strong>: The study of strategies that evolve over time in populations of agents (e.g., in biology).</li>\n        </ul>\n    "
+  },
+  "questions": {
+    "two-pointers": [
+      {
+        "name": "Two Sum II - Input Array Is Sorted",
+        "link": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Facebook",
+          "Amazon",
+          "Apple",
+          "Uber",
+          "Bloomberg",
+          "LinkedIn"
+        ],
+        "problemStatement": "\n      Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target.\n      Return the indices of the two numbers.\n    ",
+        "exampleInput": "numbers = [2, 7, 11, 15], target = 9",
+        "exampleOutput": "[1, 2]",
+        "explanation": "\n      - numbers[0] + numbers[1] = 2 + 7 = 9.\n      - So we return indices [1, 2] (1-based indexing).\n    ",
+        "files": {
+          "python": "data/two-pointers/two-sum.py",
+          "cpp": "data/two-pointers/two-sum.cpp",
+          "visual": "animation/two-pointers/two-sum.html"
+        }
+      },
+      {
+        "name": "Three Sum",
+        "link": "https://leetcode.com/problems/3sum/",
+        "complexity": "Time: O(n^2), Space: O(1)",
+        "difficulty": "Medium",
+        "companies": [
+          "Google",
+          "Adobe",
+          "Bloomberg"
+        ],
+        "problemStatement": "\n      Given an integer array `nums`, return all the unique triplets `[nums[i], nums[j], nums[k]]` such that:\n      - i ≠ j, i ≠ k, and j ≠ k\n      - nums[i] + nums[j] + nums[k] == 0.\n    ",
+        "exampleInput": "nums = [-1, 0, 1, 2, -1, -4]",
+        "exampleOutput": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "\n      - (-1) + (-1) + 2 = 0\n      - (-1) + 0 + 1 = 0\n      - Only unique triplets are returned.\n    ",
+        "files": {
+          "python": "data/two-pointers/three-sum.py",
+          "cpp": "data/two-pointers/three-sum.cpp"
+        }
+      },
+      {
+        "name": "Container With Most Water",
+        "link": "https://leetcode.com/problems/container-with-most-water/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Microsoft",
+          "Apple",
+          "Netflix",
+          "Uber",
+          "Bloomberg"
+        ],
+        "problemStatement": "\n      Given an integer array `height` where each element represents a vertical line at that index, find two lines that form a container with the most water.\n    ",
+        "exampleInput": "height = [1,8,6,2,5,4,8,3,7]",
+        "exampleOutput": "49",
+        "explanation": "\n      - The max water is formed between indices 1 and 8.\n      - Min(height[1], height[8]) * (8 - 1) = 7 * 7 = 49.\n    ",
+        "files": {
+          "python": "data/two-pointers/container-with-most-water.py",
+          "cpp": "data/two-pointers/container-with-most-water.cpp"
+        }
+      },
+      {
+        "name": "Remove Duplicates from Sorted Array",
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Amazon",
+          "Apple",
+          "Netflix",
+          "Uber",
+          "Bloomberg"
+        ],
+        "problemStatement": "\n      Given a sorted array `nums`, remove the duplicates in-place such that each unique element appears only once.\n    ",
+        "exampleInput": "nums = [1,1,2]",
+        "exampleOutput": "2, nums = [1,2,_]",
+        "explanation": "\n      - The modified array should only contain unique values.\n      - Remaining elements can be ignored.\n    ",
+        "files": {
+          "python": "data/two-pointers/remove-duplicates.py",
+          "cpp": "data/two-pointers/remove-duplicates.cpp"
+        }
+      },
+      {
+        "name": "Merge Sorted Array",
+        "link": "https://leetcode.com/problems/merge-sorted-array/",
+        "complexity": "Time: O(m + n), Space: O(1)",
+        "difficulty": "Medium",
+        "companies": [
+          "Facebook",
+          "Amazon",
+          "Apple",
+          "Netflix",
+          "Uber",
+          "Bloomberg",
+          "LinkedIn"
+        ],
+        "problemStatement": "\n      Given two sorted arrays `nums1` and `nums2`, merge them into one sorted array.\n    ",
+        "exampleInput": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "exampleOutput": "[1,2,2,3,5,6]",
+        "explanation": "\n      - nums1 has three initial elements: [1,2,3].\n      - nums2 contains: [2,5,6].\n      - After merging, the sorted array is [1,2,2,3,5,6].\n    ",
+        "files": {
+          "python": "data/two-pointers/merge-sorted-array.py",
+          "cpp": "data/two-pointers/merge-sorted-array.cpp"
+        }
+      },
+      {
+        "name": "Valid Palindrome",
+        "link": "https://leetcode.com/problems/valid-palindrome/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Facebook",
+          "Amazon",
+          "Apple",
+          "Uber",
+          "Bloomberg",
+          "LinkedIn"
+        ],
+        "problemStatement": "\n      Given a string `s`, return true if it is a palindrome considering only alphanumeric characters and ignoring cases.\n    ",
+        "exampleInput": "s = 'A man, a plan, a canal: Panama'",
+        "exampleOutput": "true",
+        "explanation": "\n      - After removing non-alphanumeric characters, the string becomes \"amanaplanacanalpanama\".\n      - It reads the same forward and backward.\n    ",
+        "files": {
+          "python": "data/two-pointers/valid-palindrome.py",
+          "cpp": "data/two-pointers/valid-palindrome.cpp"
+        }
+      },
+      {
+        "name": "Move Zeroes",
+        "link": "https://leetcode.com/problems/move-zeroes/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Microsoft",
+          "Amazon",
+          "Google",
+          "Bloomberg",
+          "Adobe",
+          "Uber"
+        ],
+        "problemStatement": "\n      Given an integer array `nums`, move all 0's to the end while maintaining the relative order of non-zero elements.\n    ",
+        "exampleInput": "nums = [0,1,0,3,12]",
+        "exampleOutput": "[1,3,12,0,0]",
+        "explanation": "\n      - All zeros are moved to the end while non-zero elements keep their order.\n    ",
+        "files": {
+          "python": "data/two-pointers/move-zeroes.py",
+          "cpp": "data/two-pointers/move-zeroes.cpp"
+        }
+      },
+      {
+        "name": "Reverse String",
+        "link": "https://leetcode.com/problems/reverse-string/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Facebook",
+          "Amazon",
+          "Apple",
+          "Netflix",
+          "Uber"
+        ],
+        "problemStatement": "\n      Write a function that reverses a string. The input string is given as an array of characters.\n    ",
+        "exampleInput": "s = ['h','e','l','l','o']",
+        "exampleOutput": "['o','l','l','e','h']",
+        "explanation": "\n      - The function modifies the array in place to reverse the characters.\n    ",
+        "files": {
+          "python": "data/two-pointers/reverse-string.py",
+          "cpp": "data/two-pointers/reverse-string.cpp"
+        }
+      },
+      {
+        "name": "Sort Colors",
+        "link": "https://leetcode.com/problems/sort-colors/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Hard",
+        "companies": [
+          "Facebook",
+          "Amazon",
+          "Apple",
+          "Uber",
+          "Bloomberg",
+          "LinkedIn"
+        ],
+        "problemStatement": "\n      Given an array `nums` with colors (0, 1, 2), sort them in-place without using extra space.\n    ",
+        "exampleInput": "nums = [2,0,2,1,1,0]",
+        "exampleOutput": "[0,0,1,1,2,2]",
+        "explanation": "\n      - The array is sorted such that 0s come first, then 1s, then 2s.\n    ",
+        "files": {
+          "python": "data/two-pointers/sort-colors.py",
+          "cpp": "data/two-pointers/sort-colors.cpp"
+        }
+      },
+      {
+        "name": "Remove Element",
+        "link": "https://leetcode.com/problems/remove-element/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "Amazon",
+          "Apple",
+          "Uber",
+          "Bloomberg",
+          "LinkedIn"
+        ],
+        "problemStatement": "\n      Given an array `nums` and a value `val`, remove all instances of that value in-place.\n    ",
+        "exampleInput": "nums = [3,2,2,3], val = 3",
+        "exampleOutput": "2, nums = [2,2,_]",
+        "explanation": "\n      - The array should only contain elements ≠ val.\n      - Remaining elements can be ignored.\n    ",
+        "files": {
+          "python": "data/two-pointers/remove-element.py",
+          "cpp": "data/two-pointers/remove-element.cpp"
+        }
+      }
+    ],
+    "sliding-window": [
+      {
+        "name": "Longest Substring Without Repeating Characters",
+        "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "complexity": "Time: O(n), Space: O(min(n, m))",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given a string `s`, find the length of the longest substring without repeating characters.\n    ",
+        "exampleInput": "s = 'abcabcbb'",
+        "exampleOutput": "3",
+        "explanation": "\n      - The longest substring without repeating characters is \"abc\" with length 3.\n    ",
+        "files": {
+          "python": "data/sliding-window/longest-substring.py",
+          "cpp": "data/sliding-window/longest-substring.cpp"
+        }
+      },
+      {
+        "name": "Sliding Window Maximum",
+        "link": "https://leetcode.com/problems/sliding-window-maximum/",
+        "complexity": "Time: O(n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given an array `nums` and an integer `k`, return the maximum value in each sliding window of size `k`.\n    ",
+        "exampleInput": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "exampleOutput": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "\n      - The max value in each window of size 3 is recorded in the output.\n    ",
+        "files": {
+          "python": "data/sliding-window/sliding-window-maximum.py",
+          "cpp": "data/sliding-window/sliding-window-maximum.cpp"
+        }
+      },
+      {
+        "name": "Minimum Size Subarray Sum",
+        "link": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given an array of positive integers `nums` and a target sum `target`, find the minimal length of a contiguous subarray of which the sum is at least `target`.\n    ",
+        "exampleInput": "target = 7, nums = [2,3,1,2,4,3]",
+        "exampleOutput": "2",
+        "explanation": "\n      - The subarray [4,3] has a sum ≥ 7 and has the minimum length of 2.\n    ",
+        "files": {
+          "python": "data/sliding-window/minimum-size-subarray.py",
+          "cpp": "data/sliding-window/minimum-size-subarray.cpp"
+        }
+      },
+      {
+        "name": "Permutation in String",
+        "link": "https://leetcode.com/problems/permutation-in-string/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given two strings `s1` and `s2`, return true if `s2` contains a permutation of `s1`.\n    ",
+        "exampleInput": "s1 = 'ab', s2 = 'eidbaooo'",
+        "exampleOutput": "true",
+        "explanation": "\n      - The substring 'ba' in 'eidbaooo' is a permutation of 'ab'.\n    ",
+        "files": {
+          "python": "data/sliding-window/permutation-in-string.py",
+          "cpp": "data/sliding-window/permutation-in-string.cpp"
+        }
+      },
+      {
+        "name": "Find All Anagrams in a String",
+        "link": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given two strings `s` and `p`, return all start indices of `p`'s anagrams in `s`.\n    ",
+        "exampleInput": "s = 'cbaebabacd', p = 'abc'",
+        "exampleOutput": "[0, 6]",
+        "explanation": "\n      - 'cba' and 'bac' are anagrams of 'abc' and appear at indices 0 and 6.\n    ",
+        "files": {
+          "python": "data/sliding-window/find-all-anagrams.py",
+          "cpp": "data/sliding-window/find-all-anagrams.cpp"
+        }
+      },
+      {
+        "name": "Longest Repeating Character Replacement",
+        "link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given a string `s` and an integer `k`, return the length of the longest substring that contains the same letter after at most `k` replacements.\n    ",
+        "exampleInput": "s = 'AABABBA', k = 1",
+        "exampleOutput": "4",
+        "explanation": "\n      - Replacing one 'B' in 'AABABBA' results in 'AAAA' which has length 4.\n    ",
+        "files": {
+          "python": "data/sliding-window/longest-repeating-char-replacement.py",
+          "cpp": "data/sliding-window/longest-repeating-char-replacement.cpp"
+        }
+      },
+      {
+        "name": "Binary Subarrays With Sum",
+        "link": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given a binary array `nums` and an integer `goal`, return the number of non-empty subarrays with sum equal to `goal`.\n    ",
+        "exampleInput": "nums = [1,0,1,0,1], goal = 2",
+        "exampleOutput": "4",
+        "explanation": "\n      - The subarrays [1,0,1], [0,1,0,1], [1,0,1], and [1,0,1] sum to 2.\n    ",
+        "files": {
+          "python": "data/sliding-window/binary-subarrays-sum.py",
+          "cpp": "data/sliding-window/binary-subarrays-sum.cpp"
+        }
+      },
+      {
+        "name": "Fruit Into Baskets",
+        "link": "https://leetcode.com/problems/fruit-into-baskets/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given an integer array `fruits` where `fruits[i]` represents the type of fruit at index `i`, find the maximum number of fruits you can collect in two baskets.\n    ",
+        "exampleInput": "fruits = [1,2,1,2,3]",
+        "exampleOutput": "4",
+        "explanation": "\n      - The longest subarray with at most two types is [1,2,1,2], which has length 4.\n    ",
+        "files": {
+          "python": "data/sliding-window/fruit-into-baskets.py",
+          "cpp": "data/sliding-window/fruit-into-baskets.cpp"
+        }
+      },
+      {
+        "name": "Maximum Points You Can Obtain from Cards",
+        "link": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given an array `cardPoints` and an integer `k`, return the maximum points you can get by picking exactly `k` cards from either the start or the end.\n    ",
+        "exampleInput": "cardPoints = [1,2,3,4,5,6,1], k = 3",
+        "exampleOutput": "12",
+        "explanation": "\n      - The best choice is to pick the last three cards: 6, 5, and 1, giving a sum of 12.\n    ",
+        "files": {
+          "python": "data/sliding-window/max-points-from-cards.py",
+          "cpp": "data/sliding-window/max-points-from-cards.cpp"
+        }
+      },
+      {
+        "name": "Subarrays with K Different Integers",
+        "link": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+        "complexity": "Time: O(n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n      Given an integer array `nums` and an integer `k`, return the number of subarrays that contain exactly `k` different integers.\n    ",
+        "exampleInput": "nums = [1,2,1,2,3], k = 2",
+        "exampleOutput": "7",
+        "explanation": "\n      - There are 7 subarrays that contain exactly 2 different integers.\n    ",
+        "files": {
+          "python": "data/sliding-window/subarrays-with-k-different-integers.py",
+          "cpp": "data/sliding-window/subarrays-with-k-different-integers.cpp"
+        }
+      }
+    ],
+    "greedy": [
+      {
+        "name": "Jump Game",
+        "link": "https://leetcode.com/problems/jump-game/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of non-negative integers `nums`, you are initially positioned at the first index.\n\t\tEach element in the array represents your maximum jump length at that position.\n\t\tDetermine if you can reach the last index.\n\t  ",
+        "exampleInput": "nums = [2, 3, 1, 1, 4]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Jump 1 step from index 0 to 1, then 3 steps to the last index.\n\t  ",
+        "files": {
+          "python": "data/greedy/jump-game.py",
+          "cpp": "data/greedy/jump-game.cpp"
+        }
+      },
+      {
+        "name": "Gas Station",
+        "link": "https://leetcode.com/problems/gas-station/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tThere are `n` gas stations along a circular route.\n\t\tGiven two integer arrays `gas` and `cost`, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1.\n\t  ",
+        "exampleInput": "gas = [1, 2, 3, 4, 5], cost = [3, 4, 5, 1, 2]",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Start at station 3 (index 3) and fill up with 4 units of gas. Your tank = 0 + 4 = 4.\n\t\t- Travel to station 4. Your tank = 4 - 1 + 5 = 8.\n\t\t- Travel to station 0. Your tank = 8 - 2 + 1 = 7.\n\t\t- Travel to station 1. Your tank = 7 - 3 + 2 = 6.\n\t\t- Travel to station 2. Your tank = 6 - 4 + 3 = 5.\n\t\t- Travel to station 3. The cost is 5. Your tank = 5 - 5 + 4 = 4.\n\t\t- You have enough gas to travel back to station 3.\n\t  ",
+        "files": {
+          "python": "data/greedy/gas-station.py",
+          "cpp": "data/greedy/gas-station.cpp"
+        }
+      },
+      {
+        "name": "Maximum Subarray",
+        "link": "https://leetcode.com/problems/maximum-subarray/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.\n\t  ",
+        "exampleInput": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- The contiguous subarray [4, -1, 2, 1] has the largest sum = 6.\n\t  ",
+        "files": {
+          "python": "data/greedy/maximum-subarray.py",
+          "cpp": "data/greedy/maximum-subarray.cpp"
+        }
+      },
+      {
+        "name": "Best Time to Buy and Sell Stock II",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day, find the maximum profit you can achieve by buying and selling stocks multiple times.\n\t  ",
+        "exampleInput": "prices = [7, 1, 5, 3, 6, 4]",
+        "exampleOutput": "7",
+        "explanation": "\n\t\t- Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5 - 1 = 4.\n\t\t- Buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6 - 3 = 3.\n\t\t- Total profit = 4 + 3 = 7.\n\t  ",
+        "files": {
+          "python": "data/greedy/best-time-to-buy-and-sell-stock-ii.py",
+          "cpp": "data/greedy/best-time-to-buy-and-sell-stock-ii.cpp"
+        }
+      },
+      {
+        "name": "Assign Cookies",
+        "link": "https://leetcode.com/problems/assign-cookies/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tAssume you are an awesome parent and want to give your children some cookies.\n\t\tGiven two integer arrays `g` (greed factor of children) and `s` (size of cookies), return the maximum number of content children.\n\t  ",
+        "exampleInput": "g = [1, 2, 3], s = [1, 1]",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3.\n\t\t- You can only satisfy the child with greed factor 1.\n\t  ",
+        "files": {
+          "python": "data/greedy/assign-cookies.py",
+          "cpp": "data/greedy/assign-cookies.cpp"
+        }
+      },
+      {
+        "name": "Minimum Number of Arrows to Burst Balloons",
+        "link": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of balloon intervals `points`, where `points[i] = [x_start, x_end]`, return the minimum number of arrows needed to burst all balloons.\n\t  ",
+        "exampleInput": "points = [[10, 16], [2, 8], [1, 6], [7, 12]]",
+        "exampleOutput": "2",
+        "explanation": "\n\t\t- Shoot an arrow at x = 6 (bursting [2, 8] and [1, 6]).\n\t\t- Shoot another arrow at x = 11 (bursting [10, 16] and [7, 12]).\n\t  ",
+        "files": {
+          "python": "data/greedy/minimum-arrows-to-burst-balloons.py",
+          "cpp": "data/greedy/minimum-arrows-to-burst-balloons.cpp"
+        }
+      },
+      {
+        "name": "Non-overlapping Intervals",
+        "link": "https://leetcode.com/problems/non-overlapping-intervals/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of intervals `intervals`, where `intervals[i] = [start, end]`, return the minimum number of intervals you need to remove to make the rest non-overlapping.\n\t  ",
+        "exampleInput": "intervals = [[1, 2], [2, 3], [3, 4], [1, 3]]",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- Remove [1, 3] to make the rest of the intervals non-overlapping.\n\t  ",
+        "files": {
+          "python": "data/greedy/non-overlapping-intervals.py",
+          "cpp": "data/greedy/non-overlapping-intervals.cpp"
+        }
+      },
+      {
+        "name": "Task Scheduler",
+        "link": "https://leetcode.com/problems/task-scheduler/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a characters array `tasks`, representing tasks CPU needs to do, and an integer `n`, representing the cooldown period between two same tasks, return the least number of units of time the CPU will take to finish all the tasks.\n\t  ",
+        "exampleInput": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2",
+        "exampleOutput": "8",
+        "explanation": "\n\t\t- A -> B -> idle -> A -> B -> idle -> A -> B.\n\t  ",
+        "files": {
+          "python": "data/greedy/task-scheduler.py",
+          "cpp": "data/greedy/task-scheduler.cpp"
+        }
+      },
+      {
+        "name": "Partition Labels",
+        "link": "https://leetcode.com/problems/partition-labels/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string `s`, partition the string into as many parts as possible so that each letter appears in at most one part.\n\t\tReturn a list of integers representing the size of these parts.\n\t  ",
+        "exampleInput": "s = 'abacdc'",
+        "exampleOutput": "[3, 3]",
+        "explanation": "\n\t\t- The partition is \"aba\" and \"cdc\".\n\t  ",
+        "files": {
+          "python": "data/greedy/partition-labels.py",
+          "cpp": "data/greedy/partition-labels.cpp"
+        }
+      },
+      {
+        "name": "Lemonade Change",
+        "link": "https://leetcode.com/problems/lemonade-change/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tAt a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills).\n\t\tEach customer will only buy one lemonade and pay with either a $5, $10, or $20 bill.\n\t\tReturn `true` if you can provide every customer with the correct change, otherwise return `false`.\n\t  ",
+        "exampleInput": "bills = [5, 5, 5, 10, 20]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Collect $5 from the first 3 customers.\n\t\t- Give $5 back to the 4th customer.\n\t\t- Give $10 back to the 5th customer.\n\t  ",
+        "files": {
+          "python": "data/greedy/lemonade-change.py",
+          "cpp": "data/greedy/lemonade-change.cpp"
+        }
+      }
+    ],
+    "dynamic-programming": [
+      {
+        "name": "0/1 Knapsack Problem",
+        "link": "https://leetcode.com/problems/knapsack-problem/",
+        "complexity": "Time: O(nW), Space: O(nW)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a set of items, each with a weight and a value, determine the maximum value that can be obtained by selecting items such that the total weight does not exceed a given capacity.\n\t  ",
+        "exampleInput": "weights = [2, 3, 4, 5], values = [3, 4, 5, 6], W = 5",
+        "exampleOutput": "7",
+        "explanation": "\n\t\t- You can select items with weights 2 and 3, which gives a value of 7.\n\t  ",
+        "files": {
+          "python": "data/dp/knapsack.py",
+          "cpp": "data/dp/knapsack.cpp"
+        }
+      },
+      {
+        "name": "Longest Increasing Subsequence",
+        "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "complexity": "Time: O(n^2), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array, return the length of the longest strictly increasing subsequence.\n\t  ",
+        "exampleInput": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- The longest increasing subsequence is [2, 3, 7, 101].\n\t  ",
+        "files": {
+          "python": "data/dp/longest-increasing-subsequence.py",
+          "cpp": "data/dp/longest-increasing-subsequence.cpp"
+        }
+      },
+      {
+        "name": "Coin Change Problem",
+        "link": "https://leetcode.com/problems/coin-change/",
+        "complexity": "Time: O(n * amount), Space: O(amount)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array of coins and an integer amount, return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.\n\t  ",
+        "exampleInput": "coins = [1, 2, 5], amount = 11",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- You can use 5 + 5 + 1 to make 11.\n\t  ",
+        "files": {
+          "python": "data/dp/coin-change.py",
+          "cpp": "data/dp/coin-change.cpp"
+        }
+      },
+      {
+        "name": "Longest Common Subsequence",
+        "link": "https://leetcode.com/problems/longest-common-subsequence/",
+        "complexity": "Time: O(mn), Space: O(mn)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two strings, return the length of their longest common subsequence.\n\t  ",
+        "exampleInput": "text1 = 'abcde', text2 = 'ace' ",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- The longest common subsequence is 'ace'.\n\t  ",
+        "files": {
+          "python": "data/dp/longest-common-subsequence.py",
+          "cpp": "data/dp/longest-common-subsequence.cpp"
+        }
+      },
+      {
+        "name": "Unique Paths",
+        "link": "https://leetcode.com/problems/unique-paths/",
+        "complexity": "Time: O(mn), Space: O(mn)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tThere is a robot on an m x n grid. The robot starts at the top-left corner and can only move either down or right at any point in time. How many unique paths does the robot take to reach the bottom-right corner?\n\t  ",
+        "exampleInput": "m = 3, n = 7",
+        "exampleOutput": "28",
+        "explanation": "\n\t\t- There are 28 unique paths from the top-left corner to the bottom-right corner.\n\t  ",
+        "files": {
+          "python": "data/dp/unique-paths.py",
+          "cpp": "data/dp/unique-paths.cpp"
+        }
+      },
+      {
+        "name": "Edit Distance",
+        "link": "https://leetcode.com/problems/edit-distance/",
+        "complexity": "Time: O(mn), Space: O(mn)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two strings, return the minimum number of operations required to convert one string to the other. Operations include insert, delete, or replace a character.\n\t  ",
+        "exampleInput": "word1 = 'horse', word2 = 'ros'",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- The three operations are: 'horse' -> 'rorse' -> 'rose' -> 'ros'.\n\t  ",
+        "files": {
+          "python": "data/dp/edit-distance.py",
+          "cpp": "data/dp/edit-distance.cpp"
+        }
+      },
+      {
+        "name": "House Robber",
+        "link": "https://leetcode.com/problems/house-robber/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and it will automatically contact the police if two adjacent houses are robbed.\n\t\tReturn the maximum amount of money you can rob tonight without alerting the police.\n\t  ",
+        "exampleInput": "nums = [2, 7, 9, 3, 1]",
+        "exampleOutput": "12",
+        "explanation": "\n\t\t- The maximum amount you can rob is 12 (rob houses 1, 3, and 5).\n\t  ",
+        "files": {
+          "python": "data/dp/house-robber.py",
+          "cpp": "data/dp/house-robber.cpp"
+        }
+      },
+      {
+        "name": "Subset Sum Problem",
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "complexity": "Time: O(n * sum), Space: O(n * sum)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a set of positive integers, find whether there is a subset whose sum is equal to a given number.\n\t  ",
+        "exampleInput": "nums = [1, 5, 11, 5], sum = 11",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- You can find a subset [1, 5, 5] that sums to 11.\n\t  ",
+        "files": {
+          "python": "data/dp/subset-sum.py",
+          "cpp": "data/dp/subset-sum.cpp"
+        }
+      },
+      {
+        "name": "Palindromic Substrings",
+        "link": "https://leetcode.com/problems/palindromic-substrings/",
+        "complexity": "Time: O(n^2), Space: O(n^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string, return the number of palindromic substrings in it.\n\t  ",
+        "exampleInput": "s = 'aaa'",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- The palindromic substrings are: 'a', 'a', 'a', 'aa', 'aa', 'aaa'.\n\t  ",
+        "files": {
+          "python": "data/dp/palindromic-substrings.py",
+          "cpp": "data/dp/palindromic-substrings.cpp"
+        }
+      },
+      {
+        "name": "Word Break Problem",
+        "link": "https://leetcode.com/problems/word-break/",
+        "complexity": "Time: O(n^2), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.\n\t  ",
+        "exampleInput": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- The string 'leetcode' can be segmented as 'leet code'.\n\t  ",
+        "files": {
+          "python": "data/dp/word-break.py",
+          "cpp": "data/dp/word-break.cpp"
+        }
+      }
+    ],
+    "backtracking": [
+      {
+        "name": "N-Queens Problem",
+        "link": "https://leetcode.com/problems/n-queens/",
+        "complexity": "Time: O(N!), Space: O(N^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tThe N-Queens puzzle is the problem of placing N chess queens on an N×N chessboard so that no two queens threaten each other. A queen can attack another queen if they share the same row, column, or diagonal.\n\t\tReturn all distinct solutions to the N-Queens puzzle.\n\t  ",
+        "exampleInput": "n = 4",
+        "exampleOutput": "[['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']]",
+        "explanation": "\n\t\t- For n = 4, there are two distinct solutions where no queens threaten each other.\n\t  ",
+        "files": {
+          "python": "data/backtracking/n-queens.py",
+          "cpp": "data/backtracking/n-queens.cpp"
+        }
+      },
+      {
+        "name": "Permutations",
+        "link": "https://leetcode.com/problems/permutations/",
+        "complexity": "Time: O(n!), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of distinct integers, return all possible permutations of the array.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3]",
+        "exampleOutput": "[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+        "explanation": "\n\t\t- There are 6 possible permutations of the array [1, 2, 3].\n\t  ",
+        "files": {
+          "python": "data/backtracking/permutations.py",
+          "cpp": "data/backtracking/permutations.cpp"
+        }
+      },
+      {
+        "name": "Combinations",
+        "link": "https://leetcode.com/problems/combinations/",
+        "complexity": "Time: O(n choose k), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].\n\t  ",
+        "exampleInput": "n = 4, k = 2",
+        "exampleOutput": "[[2, 4], [3, 4], [1, 2], [2, 3], [1, 3], [1, 4]]",
+        "explanation": "\n\t\t- The combinations of 2 numbers from the set [1, 2, 3, 4] are listed.\n\t  ",
+        "files": {
+          "python": "data/backtracking/combinations.py",
+          "cpp": "data/backtracking/combinations.cpp"
+        }
+      },
+      {
+        "name": "Subset Sum Problem",
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a set of positive integers, find whether there is a subset whose sum is equal to a given number.\n\t  ",
+        "exampleInput": "nums = [1, 5, 11, 5], sum = 11",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- You can find a subset [1, 5, 5] that sums to 11.\n\t  ",
+        "files": {
+          "python": "data/backtracking/subset-sum.py",
+          "cpp": "data/backtracking/subset-sum.cpp"
+        }
+      },
+      {
+        "name": "Word Search",
+        "link": "https://leetcode.com/problems/word-search/",
+        "complexity": "Time: O(m * n * 4^L), Space: O(m * n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an m x n board of characters and a string word, find if the word exists in the grid.\n\t\tThe word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring.\n\t  ",
+        "exampleInput": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'ABCCED'",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- The word 'ABCCED' exists in the grid.\n\t  ",
+        "files": {
+          "python": "data/backtracking/word-search.py",
+          "cpp": "data/backtracking/word-search.cpp"
+        }
+      },
+      {
+        "name": "Palindrome Partitioning",
+        "link": "https://leetcode.com/problems/palindrome-partitioning/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string s, partition s such that every substring of the partition is a palindrome.\n\t\tReturn all possible palindrome partitioning of s.\n\t  ",
+        "exampleInput": "s = 'aab'",
+        "exampleOutput": "[['a', 'a', 'b'], ['aa', 'b']]",
+        "explanation": "\n\t\t- The two palindrome partitions of 'aab' are ['a', 'a', 'b'] and ['aa', 'b'].\n\t  ",
+        "files": {
+          "python": "data/backtracking/palindrome-partitioning.py",
+          "cpp": "data/backtracking/palindrome-partitioning.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum",
+        "link": "https://leetcode.com/problems/combination-sum/",
+        "complexity": "Time: O(2^n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.\n\t\tThe same repeated number may be chosen from candidates unlimited times.\n\t  ",
+        "exampleInput": "candidates = [2, 3, 6, 7], target = 7",
+        "exampleOutput": "[[2, 2, 3], [7]]",
+        "explanation": "\n\t\t- The combinations that sum to 7 are [2, 2, 3] and [7].\n\t  ",
+        "files": {
+          "python": "data/backtracking/combination-sum.py",
+          "cpp": "data/backtracking/combination-sum.cpp"
+        }
+      },
+      {
+        "name": "Letter Case Permutation",
+        "link": "https://leetcode.com/problems/letter-case-permutation/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string s, you can transform every letter individually to be lowercase or uppercase to create a new string. Return all possible strings we could create.\n\t  ",
+        "exampleInput": "s = 'a1b2'",
+        "exampleOutput": "['a1b2', 'A1b2', 'a1B2', 'A1B2']",
+        "explanation": "\n\t\t- The possible strings are ['a1b2', 'A1b2', 'a1B2', 'A1B2'].\n\t  ",
+        "files": {
+          "python": "data/backtracking/letter-case-permutation.py",
+          "cpp": "data/backtracking/letter-case-permutation.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum II",
+        "link": "https://leetcode.com/problems/combination-sum-ii/",
+        "complexity": "Time: O(2^n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination.\n\t  ",
+        "exampleInput": "candidates = [10, 1, 2, 7, 6, 5], target = 8",
+        "exampleOutput": "[[1, 2, 5], [1, 7], [2, 6]]",
+        "explanation": "\n\t\t- The unique combinations that sum to 8 are [1, 2, 5], [1, 7], and [2, 6].\n\t  ",
+        "files": {
+          "python": "data/backtracking/combination-sum-ii.py",
+          "cpp": "data/backtracking/combination-sum-ii.cpp"
+        }
+      },
+      {
+        "name": "Sudoku Solver",
+        "link": "https://leetcode.com/problems/sudoku-solver/",
+        "complexity": "Time: O(9^81), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSolve a Sudoku puzzle by filling the empty cells. Each number 1-9 must appear exactly once in each row, column, and 3x3 subgrid.\n\t  ",
+        "exampleInput": "board = [['5', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.']]",
+        "exampleOutput": "[['5', '3', '4', '6', '7', '8', '9', '1', '2'], ['6', '7', '2', '1', '9', '5', '3', '4', '8'], ['1', '9', '8', '3', '4', '2', '5', '6', '7']]",
+        "explanation": "\n\t\t- The Sudoku puzzle is solved by filling all empty cells.\n\t  ",
+        "files": {
+          "python": "data/backtracking/sudoku-solver.py",
+          "cpp": "data/backtracking/sudoku-solver.cpp"
+        }
+      }
+    ],
+    "divide-and-conquer": [
+      {
+        "name": "Merge Sort",
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "complexity": "Time: O(n log n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array in ascending order using the merge sort algorithm.\n\t\tMerge Sort is a divide and conquer algorithm that divides the array into two halves, recursively sorts them, and merges them back together.\n\t  ",
+        "exampleInput": "nums = [5, 2, 9, 1, 5, 6]",
+        "exampleOutput": "[1, 2, 5, 5, 6, 9]",
+        "explanation": "\n\t\t- Merge Sort divides the array into smaller subarrays, sorts each, and merges them to produce the final sorted array.\n\t  ",
+        "files": {
+          "python": "data/dac/merge-sort.py",
+          "cpp": "data/dac/merge-sort.cpp"
+        }
+      },
+      {
+        "name": "Quick Sort",
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "complexity": "Time: O(n log n), Space: O(log n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array in ascending order using the quick sort algorithm.\n\t\tQuick Sort is a divide and conquer algorithm that picks a pivot element and partitions the array around the pivot. The algorithm is recursively applied to the subarrays.\n\t  ",
+        "exampleInput": "nums = [3, 1, 4, 1, 5, 9]",
+        "exampleOutput": "[1, 1, 3, 4, 5, 9]",
+        "explanation": "\n\t\t- Quick Sort uses a pivot to divide the array, recursively sorting the subarrays until the whole array is sorted.\n\t  ",
+        "files": {
+          "python": "data/dac/quick-sort.py",
+          "cpp": "data/dac/quick-sort.cpp"
+        }
+      },
+      {
+        "name": "Binary Search",
+        "link": "https://leetcode.com/problems/binary-search/",
+        "complexity": "Time: O(log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement binary search to find the target value in a sorted array.\n\t\tBinary search divides the search interval in half, comparing the target value to the midpoint, and recursively narrows the search.\n\t  ",
+        "exampleInput": "nums = [-1, 0, 3, 5, 9, 12], target = 9",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- The target value 9 is found at index 4 using binary search.\n\t  ",
+        "files": {
+          "python": "data/dac/binary-search.py",
+          "cpp": "data/dac/binary-search.cpp"
+        }
+      },
+      {
+        "name": "Find Peak Element",
+        "link": "https://leetcode.com/problems/find-peak-element/",
+        "complexity": "Time: O(log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tA peak element in an array is an element that is strictly greater than its neighbors.\n\t\tFind a peak element in the array. The array may not be sorted, and you may not need to find all peaks.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3, 1]",
+        "exampleOutput": "2",
+        "explanation": "\n\t\t- In this array, element 3 is a peak because it is greater than both its neighbors (2 and 1).\n\t  ",
+        "files": {
+          "python": "data/dac/find-peak-element.py",
+          "cpp": "data/dac/find-peak-element.cpp"
+        }
+      },
+      {
+        "name": "Closest Pair of Points",
+        "link": "https://leetcode.com/problems/minimum-distance-between-bst-nodes/",
+        "complexity": "Time: O(n log n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of points, find the closest pair of points.\n\t\tUse divide and conquer to efficiently solve this problem by dividing the points into smaller subsets.\n\t  ",
+        "exampleInput": "points = [[1, 3], [2, 5], [3, 1], [4, 4]]",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- Divide and conquer finds the closest pair of points, which is the distance between points [1, 3] and [3, 1].\n\t  ",
+        "files": {
+          "python": "data/dac/closest-pair.py",
+          "cpp": "data/dac/closest-pair.cpp"
+        }
+      },
+      {
+        "name": "Strassen's Matrix Multiplication",
+        "link": "https://leetcode.com/problems/matrix-multiplication/",
+        "complexity": "Time: O(n^log7), Space: O(n^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement Strassen's matrix multiplication algorithm to multiply two matrices efficiently using divide and conquer.\n\t\tThis algorithm reduces the number of multiplications required for matrix multiplication.\n\t  ",
+        "exampleInput": "matrix1 = [[1, 2], [3, 4]], matrix2 = [[5, 6], [7, 8]]",
+        "exampleOutput": "[[19, 22], [43, 50]]",
+        "explanation": "\n\t\t- Strassen's algorithm performs matrix multiplication more efficiently by dividing the matrices into submatrices.\n\t  ",
+        "files": {
+          "python": "data/dac/strassens-matrix-multiplication.py",
+          "cpp": "data/dac/strassens-matrix-multiplication.cpp"
+        }
+      },
+      {
+        "name": "Karatsuba Multiplication",
+        "link": "https://leetcode.com/problems/multiply-strings/",
+        "complexity": "Time: O(n^log3), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement Karatsuba's algorithm to multiply large numbers efficiently using divide and conquer.\n\t\tKaratsuba reduces the number of multiplications needed for large number multiplication.\n\t  ",
+        "exampleInput": "num1 = '1234', num2 = '5678'",
+        "exampleOutput": "'7006652'",
+        "explanation": "\n\t\t- Karatsuba's algorithm splits the numbers and recursively multiplies smaller parts to compute the result.\n\t  ",
+        "files": {
+          "python": "data/dac/karatsuba-multiplication.py",
+          "cpp": "data/dac/karatsuba-multiplication.cpp"
+        }
+      },
+      {
+        "name": "Maximum Subarray Problem (Divide and Conquer Approach)",
+        "link": "https://leetcode.com/problems/maximum-subarray/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the contiguous subarray (containing at least one number) which has the largest sum.\n\t\tThis can be solved using the divide and conquer approach.\n\t  ",
+        "exampleInput": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- The maximum subarray is [4, -1, 2, 1], which sums to 6.\n\t  ",
+        "files": {
+          "python": "data/dac/maximum-subarray.py",
+          "cpp": "data/dac/maximum-subarray.cpp"
+        }
+      },
+      {
+        "name": "Ternary Search",
+        "link": "https://leetcode.com/problems/ternary-search/",
+        "complexity": "Time: O(log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement ternary search to find the target in a sorted array.\n\t\tTernary search divides the array into three parts and recursively narrows down the search.\n\t  ",
+        "exampleInput": "nums = [1, 3, 5, 7, 9], target = 7",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- The target value 7 is found at index 3 using ternary search.\n\t  ",
+        "files": {
+          "python": "data/dac/ternary-search.py",
+          "cpp": "data/dac/ternary-search.cpp"
+        }
+      },
+      {
+        "name": "Find the Majority Element",
+        "link": "https://leetcode.com/problems/majority-element/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of size n, find the majority element, which is the element that appears more than ⌊ n/2 ⌋ times.\n\t\tUse a divide and conquer approach to solve this problem.\n\t  ",
+        "exampleInput": "nums = [3, 3, 4, 2, 4, 4, 2, 4, 4]",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- The majority element is 4, as it appears 5 times, which is greater than ⌊ 9/2 ⌋ = 4.\n\t  ",
+        "files": {
+          "python": "data/dac/majority-element.py",
+          "cpp": "data/dac/majority-element.cpp"
+        }
+      }
+    ],
+    "graph-traversal": [
+      {
+        "name": "Depth First Search (DFS)",
+        "link": "https://leetcode.com/problems/number-of-islands/",
+        "complexity": "Time: O(V + E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement Depth First Search (DFS) to traverse or search through a graph.\n\t\tDFS explores as far as possible along a branch before backtracking.\n\t  ",
+        "exampleInput": "graph = [[1, 2], [0, 2], [0, 1, 3], [2]]",
+        "exampleOutput": "[0, 1, 2, 3]",
+        "explanation": "\n\t\t- Starting from node 0, DFS explores node 1, then node 2, and finally node 3.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/dfs.py",
+          "cpp": "data/graph-traversal/dfs.cpp"
+        }
+      },
+      {
+        "name": "Breadth First Search (BFS)",
+        "link": "https://leetcode.com/problems/clone-graph/",
+        "complexity": "Time: O(V + E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement Breadth First Search (BFS) to traverse or search through a graph.\n\t\tBFS explores all the neighbors at the present depth level before moving on to nodes at the next depth level.\n\t  ",
+        "exampleInput": "graph = [[1, 2], [0, 2], [0, 1, 3], [2]]",
+        "exampleOutput": "[0, 1, 2, 3]",
+        "explanation": "\n\t\t- BFS starts from node 0, visits all neighbors at distance 1 (nodes 1 and 2), then visits node 3.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/bfs.py",
+          "cpp": "data/graph-traversal/bfs.cpp"
+        }
+      },
+      {
+        "name": "Topological Sort",
+        "link": "https://leetcode.com/problems/course-schedule-ii/",
+        "complexity": "Time: O(V + E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tPerform a topological sort on a Directed Acyclic Graph (DAG).\n\t\tTopological sorting orders vertices of a directed graph such that for every directed edge (u, v), vertex u comes before vertex v in the ordering.\n\t  ",
+        "exampleInput": "graph = [[2, 3], [3], [3], []]",
+        "exampleOutput": "[0, 1, 2, 3]",
+        "explanation": "\n\t\t- A topological ordering of the vertices is [0, 1, 2, 3], respecting the dependencies between them.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/topological-sort.py",
+          "cpp": "data/graph-traversal/topological-sort.cpp"
+        }
+      },
+      {
+        "name": "Dijkstra's Algorithm",
+        "link": "https://leetcode.com/problems/network-delay-time/",
+        "complexity": "Time: O((V + E) log V), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the shortest path from a source vertex to all other vertices in a graph with non-negative edge weights using Dijkstra's Algorithm.\n\t  ",
+        "exampleInput": "graph = [[0, 1, 2], [1, 2], [2], []], start = 0",
+        "exampleOutput": "[0, 1, 2, 4]",
+        "explanation": "\n\t\t- Starting from vertex 0, Dijkstra’s algorithm finds the shortest distances to all other vertices.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/dijkstra.py",
+          "cpp": "data/graph-traversal/dijkstra.cpp"
+        }
+      },
+      {
+        "name": "Bellman-Ford Algorithm",
+        "link": "https://leetcode.com/problems/shortest-path-in-undirected-graph-with-weights/",
+        "complexity": "Time: O(V * E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the shortest path from a source vertex to all other vertices in a graph, allowing negative edge weights using Bellman-Ford's Algorithm.\n\t  ",
+        "exampleInput": "graph = [[0, 1, 2], [1, 2], [2], []], start = 0",
+        "exampleOutput": "[0, 1, 2, 4]",
+        "explanation": "\n\t\t- Bellman-Ford computes shortest paths and detects negative weight cycles.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/bellman-ford.py",
+          "cpp": "data/graph-traversal/bellman-ford.cpp"
+        }
+      },
+      {
+        "name": "Floyd-Warshall Algorithm",
+        "link": "https://leetcode.com/problems/shortest-path-in-graph-with-negative-edges/",
+        "complexity": "Time: O(V^3), Space: O(V^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tCompute shortest paths between all pairs of vertices in a graph using the Floyd-Warshall Algorithm.\n\t\tWorks for graphs with negative weights but no negative weight cycles.\n\t  ",
+        "exampleInput": "graph = [[0, 5, INF], [INF, 0, 2], [INF, INF, 0]]",
+        "exampleOutput": "[[0, 5, 7], [INF, 0, 2], [INF, INF, 0]]",
+        "explanation": "\n\t\t- The shortest paths between all pairs of vertices are calculated.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/floyd-warshall.py",
+          "cpp": "data/graph-traversal/floyd-warshall.cpp"
+        }
+      },
+      {
+        "name": "Kruskal's Algorithm",
+        "link": "https://leetcode.com/problems/minimum-spanning-tree/",
+        "complexity": "Time: O(E log E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the Minimum Spanning Tree (MST) of a graph using Kruskal's Algorithm.\n\t\tKruskal's algorithm sorts all edges and adds them to the MST if they do not form a cycle.\n\t  ",
+        "exampleInput": "graph = [[0, 1, 3], [1, 2, 5], [2, 3, 1]]",
+        "exampleOutput": "[[0, 1, 3], [2, 3, 1]]",
+        "explanation": "\n\t\t- The MST of the graph consists of edges [(0, 1, 3), (2, 3, 1)].\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/kruskal.py",
+          "cpp": "data/graph-traversal/kruskal.cpp"
+        }
+      },
+      {
+        "name": "Prim's Algorithm",
+        "link": "https://leetcode.com/problems/minimum-spanning-tree/",
+        "complexity": "Time: O(E log V), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the Minimum Spanning Tree (MST) of a graph using Prim's Algorithm.\n\t\tPrim's algorithm starts with an arbitrary vertex and grows the MST by adding the shortest edge that connects a vertex in the MST to a vertex outside of it.\n\t  ",
+        "exampleInput": "graph = [[0, 1, 3], [1, 2, 5], [2, 3, 1]]",
+        "exampleOutput": "[[0, 1, 3], [2, 3, 1]]",
+        "explanation": "\n\t\t- The MST of the graph consists of edges [(0, 1, 3), (2, 3, 1)].\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/prims.py",
+          "cpp": "data/graph-traversal/prims.cpp"
+        }
+      },
+      {
+        "name": "Johnson's Algorithm",
+        "link": "https://leetcode.com/problems/all-pairs-shortest-path/",
+        "complexity": "Time: O(V^2 log V + VE), Space: O(V^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the shortest paths between all pairs of vertices in a graph with negative weights using Johnson’s Algorithm.\n\t\tThis algorithm works by transforming the graph to make all edge weights non-negative and then running Bellman-Ford and Dijkstra's algorithms.\n\t  ",
+        "exampleInput": "graph = [[0, 5, INF], [INF, 0, 2], [INF, INF, 0]]",
+        "exampleOutput": "[[0, 5, 7], [INF, 0, 2], [INF, INF, 0]]",
+        "explanation": "\n\t\t- Johnson’s algorithm computes shortest paths between all pairs of vertices in a graph with negative weights.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/johnsons-algorithm.py",
+          "cpp": "data/graph-traversal/johnsons-algorithm.cpp"
+        }
+      },
+      {
+        "name": "Cycle Detection (DFS)",
+        "link": "https://leetcode.com/problems/course-schedule-ii/",
+        "complexity": "Time: O(V + E), Space: O(V)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tDetect a cycle in a directed graph using Depth First Search (DFS).\n\t\tDFS can be used to detect cycles by marking nodes during traversal and checking if we revisit a node.\n\t  ",
+        "exampleInput": "graph = [[1], [2], [3], [1]]",
+        "exampleOutput": "True",
+        "explanation": "\n\t\t- The graph contains a cycle involving nodes 1, 2, and 3.\n\t  ",
+        "files": {
+          "python": "data/graph-traversal/cycle-detection.py",
+          "cpp": "data/graph-traversal/cycle-detection.cpp"
+        }
+      }
+    ],
+    "bit-manipulation": [
+      {
+        "name": "Single Number",
+        "link": "https://leetcode.com/problems/single-number/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a non-empty array of integers, every element appears twice except for one. Find that single one.\n\t\tYou must implement a solution that runs in linear time and uses only constant space.\n\t  ",
+        "exampleInput": "nums = [2, 2, 1]",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- Using the XOR operation, we can find the number that appears only once because all numbers that appear twice cancel each other out.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/single-number.py",
+          "cpp": "data/bit-manipulation/single-number.cpp"
+        }
+      },
+      {
+        "name": "Power of Two",
+        "link": "https://leetcode.com/problems/power-of-two/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer n, return true if it is a power of two. Otherwise, return false.\n\t\tAn integer is a power of two if there exists an integer x such that n == 2^x.\n\t  ",
+        "exampleInput": "n = 16",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- We check if n is greater than 0 and if it has exactly one '1' bit in its binary representation.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/power-of-two.py",
+          "cpp": "data/bit-manipulation/power-of-two.cpp"
+        }
+      },
+      {
+        "name": "Counting Bits",
+        "link": "https://leetcode.com/problems/counting-bits/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.\n\t  ",
+        "exampleInput": "n = 5",
+        "exampleOutput": "[0, 1, 1, 2, 1, 2]",
+        "explanation": "\n\t\t- For each number from 0 to n, we count the number of set bits (1's) using the built-in method.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/counting-bits.py",
+          "cpp": "data/bit-manipulation/counting-bits.cpp"
+        }
+      },
+      {
+        "name": "Reverse Bits",
+        "link": "https://leetcode.com/problems/reverse-bits/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tReverse the bits of a given 32-bit unsigned integer.\n\t  ",
+        "exampleInput": "n = 43261596",
+        "exampleOutput": "964176192",
+        "explanation": "\n\t\t- The input is a 32-bit unsigned integer, and we reverse its binary representation.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/reverse-bits.py",
+          "cpp": "data/bit-manipulation/reverse-bits.cpp"
+        }
+      },
+      {
+        "name": "Missing Number",
+        "link": "https://leetcode.com/problems/missing-number/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.\n\t  ",
+        "exampleInput": "nums = [3, 7, 1, 2, 8, 4, 5]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- Using XOR, we can XOR all elements in the array with all numbers from 0 to n. The result will be the missing number.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/missing-number.py",
+          "cpp": "data/bit-manipulation/missing-number.cpp"
+        }
+      },
+      {
+        "name": "Sum of Two Integers",
+        "link": "https://leetcode.com/problems/sum-of-two-integers/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two integers a and b, return their sum without using the operator + and -.\n\t  ",
+        "exampleInput": "a = 1, b = 2",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- We can calculate the sum using bitwise XOR and bitwise AND with left shifts to handle carry.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/sum-of-two-integers.py",
+          "cpp": "data/bit-manipulation/sum-of-two-integers.cpp"
+        }
+      },
+      {
+        "name": "Single Number II",
+        "link": "https://leetcode.com/problems/single-number-ii/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array nums where every element appears three times except for one, which appears exactly once. Find that single one.\n\t  ",
+        "exampleInput": "nums = [2, 2, 3, 2]",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Using bitwise operations, we can identify the number that appears exactly once.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/single-number-ii.py",
+          "cpp": "data/bit-manipulation/single-number-ii.cpp"
+        }
+      },
+      {
+        "name": "Add Binary",
+        "link": "https://leetcode.com/problems/add-binary/",
+        "complexity": "Time: O(max(m, n)), Space: O(max(m, n))",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two binary strings a and b, return their sum as a binary string.\n\t  ",
+        "exampleInput": "a = '11', b = '1'",
+        "exampleOutput": "'100'",
+        "explanation": "\n\t\t- Perform binary addition using bitwise operations for each corresponding bit.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/add-binary.py",
+          "cpp": "data/bit-manipulation/add-binary.cpp"
+        }
+      },
+      {
+        "name": "Integer to Roman",
+        "link": "https://leetcode.com/problems/integer-to-roman/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tConvert an integer to a Roman numeral.\n\t  ",
+        "exampleInput": "num = 58",
+        "exampleOutput": "'LVIII'",
+        "explanation": "\n\t\t- We use bitwise operations to determine the number's components in the Roman numeral system.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/integer-to-roman.py",
+          "cpp": "data/bit-manipulation/integer-to-roman.cpp"
+        }
+      },
+      {
+        "name": "Roman to Integer",
+        "link": "https://leetcode.com/problems/roman-to-integer/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tConvert a Roman numeral to an integer.\n\t  ",
+        "exampleInput": "s = 'IX'",
+        "exampleOutput": "9",
+        "explanation": "\n\t\t- Traverse the Roman numeral string and subtract values when a smaller numeral appears before a larger one.\n\t  ",
+        "files": {
+          "python": "data/bit-manipulation/roman-to-integer.py",
+          "cpp": "data/bit-manipulation/roman-to-integer.cpp"
+        }
+      }
+    ],
+    "prefix-sum": [
+      {
+        "name": "Prefix Sum Array",
+        "link": "https://leetcode.com/problems/range-sum-query-immutable/",
+        "complexity": "Time: O(1) for queries, O(n) for building the array, Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement a prefix sum array to quickly compute the sum of elements in a given range.\n\t\tYou are given an integer array and you need to implement a method that computes the sum of the elements in a given range [i, j] inclusive in constant time.\n\t  ",
+        "exampleInput": "nums = [-2, 0, 3, -5, 2, -1], i = 0, j = 2",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- The prefix sum array allows constant-time range sum queries by storing the cumulative sum of elements at each index.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/prefix-sum-array.py",
+          "cpp": "data/prefix-sum/prefix-sum-array.cpp"
+        }
+      },
+      {
+        "name": "Range Sum Query - 2D",
+        "link": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+        "complexity": "Time: O(1) for queries, O(m * n) for building the array, Space: O(m * n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement a 2D prefix sum array to calculate the sum of elements in a 2D submatrix.\n\t\tYou are given a 2D matrix and need to compute the sum of elements in a submatrix using the prefix sum array.\n\t  ",
+        "exampleInput": "matrix = [[3, 0, 1, 4], [5, 6, 3, 2], [1, 2, 0, 1]], topLeft = (2, 1), bottomRight = (1, 2)",
+        "exampleOutput": "11",
+        "explanation": "\n\t\t- We use a 2D prefix sum array to efficiently compute the sum of elements in the given submatrix.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/range-sum-query-2d.py",
+          "cpp": "data/prefix-sum/range-sum-query-2d.cpp"
+        }
+      },
+      {
+        "name": "Subarray Sum Equals K",
+        "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers and an integer k, find the total number of continuous subarrays whose sum equals k.\n\t\tUsing a prefix sum array helps to efficiently track sums of subarrays and avoid redundant computations.\n\t  ",
+        "exampleInput": "nums = [1, 1, 1], k = 2",
+        "exampleOutput": "2",
+        "explanation": "\n\t\t- We compute the prefix sum for each index and track how many times a subarray sum equals k.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/subarray-sum-equals-k.py",
+          "cpp": "data/prefix-sum/subarray-sum-equals-k.cpp"
+        }
+      },
+      {
+        "name": "Maximum Sum of Subarray of Size K",
+        "link": "https://leetcode.com/problems/maximum-sum-of-subarray-of-size-k/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers and a number k, find the maximum sum of a subarray of size k.\n\t\tYou can use a sliding window approach along with a prefix sum array for efficient computation.\n\t  ",
+        "exampleInput": "nums = [2, 1, 5, 1, 3, 2], k = 3",
+        "exampleOutput": "9",
+        "explanation": "\n\t\t- We maintain a sliding window of size k and compute the sum using prefix sums to find the maximum sum.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/maximum-sum-of-subarray.py",
+          "cpp": "data/prefix-sum/maximum-sum-of-subarray.cpp"
+        }
+      },
+      {
+        "name": "Product of Array Except Self",
+        "link": "https://leetcode.com/problems/product-of-array-except-self/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of n integers, return an array output such that output[i] is the product of all the elements of nums except nums[i].\n\t\tUse prefix and suffix products to avoid using division.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3, 4]",
+        "exampleOutput": "[24, 12, 8, 6]",
+        "explanation": "\n\t\t- Compute the prefix product and suffix product to calculate the result without using division.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/product-of-array-except-self.py",
+          "cpp": "data/prefix-sum/product-of-array-except-self.cpp"
+        }
+      },
+      {
+        "name": "Count of Subarrays with Given XOR",
+        "link": "https://leetcode.com/problems/subarray-xor-equals-k/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array and a value k, find the number of subarrays where the XOR of the elements equals k.\n\t\tUsing prefix XOR and hashmaps helps solve this problem efficiently.\n\t  ",
+        "exampleInput": "nums = [4, 2, 2, 6, 4], k = 6",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- We compute the XOR of all elements in the prefix sum array and use a hashmap to count the number of valid subarrays.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/count-of-subarrays-with-xor.py",
+          "cpp": "data/prefix-sum/count-of-subarrays-with-xor.cpp"
+        }
+      },
+      {
+        "name": "Subarray Sum Divisible by K",
+        "link": "https://leetcode.com/problems/subarray-sum-divisible-by-k/",
+        "complexity": "Time: O(n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers and an integer k, return the total number of subarrays whose sum is divisible by k.\n\t\tWe can use a prefix sum array to calculate the sum of subarrays efficiently.\n\t  ",
+        "exampleInput": "nums = [23, 2, 4, 6, 7], k = 6",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- Use the prefix sum array and modulus to identify subarrays whose sum is divisible by k.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/subarray-sum-divisible-by-k.py",
+          "cpp": "data/prefix-sum/subarray-sum-divisible-by-k.cpp"
+        }
+      },
+      {
+        "name": "Subarray with Sum at Most K",
+        "link": "https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array and an integer k, find the length of the longest subarray such that the sum of its elements is at most k.\n\t\tWe can use a sliding window technique combined with a prefix sum for efficient computation.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3, 4, 5], k = 11",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Use the sliding window to adjust the range and track the sum of the current subarray.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/subarray-with-sum-at-most-k.py",
+          "cpp": "data/prefix-sum/subarray-with-sum-at-most-k.cpp"
+        }
+      },
+      {
+        "name": "Find Pivot Index",
+        "link": "https://leetcode.com/problems/find-pivot-index/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers, find the pivot index where the sum of the elements on the left is equal to the sum of the elements on the right.\n\t\tUse a prefix sum approach to efficiently calculate the sums.\n\t  ",
+        "exampleInput": "nums = [1, 7, 3, 6, 5, 6]",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- We compute the prefix sum and track the left and right sums to find the pivot index.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/find-pivot-index.py",
+          "cpp": "data/prefix-sum/find-pivot-index.cpp"
+        }
+      },
+      {
+        "name": "Maximum Product Subarray",
+        "link": "https://leetcode.com/problems/maximum-product-subarray/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array, find the contiguous subarray (containing at least one number) which has the largest product.\n\t\tUsing a prefix product array, we can solve this problem more efficiently.\n\t  ",
+        "exampleInput": "nums = [2, 3, -2, 4]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- We maintain two running products (max and min) to handle both positive and negative numbers.\n\t  ",
+        "files": {
+          "python": "data/prefix-sum/maximum-product-subarray.py",
+          "cpp": "data/prefix-sum/maximum-product-subarray.cpp"
+        }
+      }
+    ],
+    "recursion": [
+      {
+        "name": "Fibonacci Number",
+        "link": "https://leetcode.com/problems/fibonacci-number/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tThe Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. \n\t\tWrite a function to return the nth Fibonacci number.\n\t  ",
+        "exampleInput": "n = 4",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Recursively calculate the Fibonacci number by summing the previous two numbers in the sequence.\n\t  ",
+        "files": {
+          "python": "data/recursion/fibonacci-number.py",
+          "cpp": "data/recursion/fibonacci-number.cpp"
+        }
+      },
+      {
+        "name": "Climbing Stairs",
+        "link": "https://leetcode.com/problems/climbing-stairs/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. \n\t\tHow many distinct ways can you climb to the top?\n\t  ",
+        "exampleInput": "n = 3",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Use recursion to break the problem into smaller subproblems where each step can either be a 1-step or 2-step climb.\n\t  ",
+        "files": {
+          "python": "data/recursion/climbing-stairs.py",
+          "cpp": "data/recursion/climbing-stairs.cpp"
+        }
+      },
+      {
+        "name": "Generate Parentheses",
+        "link": "https://leetcode.com/problems/generate-parentheses/",
+        "complexity": "Time: O(4^n / sqrt(n)), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n\t  ",
+        "exampleInput": "n = 3",
+        "exampleOutput": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "\n\t\t- Use recursion to add open and close parentheses in all possible valid configurations, ensuring that at no point the number of closing parentheses exceeds the number of open ones.\n\t  ",
+        "files": {
+          "python": "data/recursion/generate-parentheses.py",
+          "cpp": "data/recursion/generate-parentheses.cpp"
+        }
+      },
+      {
+        "name": "Permutations",
+        "link": "https://leetcode.com/problems/permutations/",
+        "complexity": "Time: O(n!), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of distinct integers, return all the possible permutations.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3]",
+        "exampleOutput": "[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+        "explanation": "\n\t\t- Use recursion to generate all possible permutations by choosing an element at each recursive step and then backtracking.\n\t  ",
+        "files": {
+          "python": "data/recursion/permutations.py",
+          "cpp": "data/recursion/permutations.cpp"
+        }
+      },
+      {
+        "name": "Subsets",
+        "link": "https://leetcode.com/problems/subsets/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a set of distinct integers, return all possible subsets.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3]",
+        "exampleOutput": "[[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]",
+        "explanation": "\n\t\t- Use recursion to generate all subsets by either including or excluding each element at each step.\n\t  ",
+        "files": {
+          "python": "data/recursion/subsets.py",
+          "cpp": "data/recursion/subsets.cpp"
+        }
+      },
+      {
+        "name": "N-Queens",
+        "link": "https://leetcode.com/problems/n-queens/",
+        "complexity": "Time: O(n!), Space: O(n^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tImplement the N-Queens puzzle. Solve the problem of placing n queens on an n x n chessboard such that no two queens attack each other.\n\t  ",
+        "exampleInput": "n = 4",
+        "exampleOutput": "[['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']]",
+        "explanation": "\n\t\t- Use recursion to place queens row by row and backtrack if an invalid placement is detected.\n\t  ",
+        "files": {
+          "python": "data/recursion/n-queens.py",
+          "cpp": "data/recursion/n-queens.cpp"
+        }
+      },
+      {
+        "name": "Letter Combinations of a Phone Number",
+        "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+        "complexity": "Time: O(4^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.\n\t\tYou can assume that the input is always valid.\n\t  ",
+        "exampleInput": "digits = '23'",
+        "exampleOutput": "[\"ad\", \"ae\", \"af\", \"bd\", \"be\", \"bf\", \"cd\", \"ce\", \"cf\"]",
+        "explanation": "\n\t\t- Use recursion to map each digit to corresponding letters and generate all possible combinations.\n\t  ",
+        "files": {
+          "python": "data/recursion/letter-combinations-of-phone-number.py",
+          "cpp": "data/recursion/letter-combinations-of-phone-number.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum",
+        "link": "https://leetcode.com/problems/combination-sum/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of distinct integers and a target number, find all unique combinations of numbers that sum up to the target.\n\t\tEach number in the array may be used more than once in the combination.\n\t  ",
+        "exampleInput": "candidates = [2, 3, 6, 7], target = 7",
+        "exampleOutput": "[[2, 2, 3], [7]]",
+        "explanation": "\n\t\t- Use recursion to explore all possible combinations of candidates that sum to the target.\n\t  ",
+        "files": {
+          "python": "data/recursion/combination-sum.py",
+          "cpp": "data/recursion/combination-sum.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum II",
+        "link": "https://leetcode.com/problems/combination-sum-ii/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a collection of candidate numbers (which may have duplicates) and a target number, find all unique combinations that sum up to the target.\n\t  ",
+        "exampleInput": "candidates = [10, 1, 2, 7, 6, 5], target = 8",
+        "exampleOutput": "[[1, 2, 5], [1, 7], [2, 6]]",
+        "explanation": "\n\t\t- Use recursion and backtracking to explore possible combinations and skip duplicates to avoid repeated results.\n\t  ",
+        "files": {
+          "python": "data/recursion/combination-sum-ii.py",
+          "cpp": "data/recursion/combination-sum-ii.cpp"
+        }
+      },
+      {
+        "name": "Unique Paths",
+        "link": "https://leetcode.com/problems/unique-paths/",
+        "complexity": "Time: O(m * n), Space: O(m * n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are given a m x n grid, starting from the top-left corner. You can only move either down or right at any point in time. \n\t\tFind how many unique paths exist from the top-left corner to the bottom-right corner.\n\t  ",
+        "exampleInput": "m = 3, n = 7",
+        "exampleOutput": "28",
+        "explanation": "\n\t\t- Use recursion to calculate the number of ways to reach each cell by combining the ways to reach from above and left cells.\n\t  ",
+        "files": {
+          "python": "data/recursion/unique-paths.py",
+          "cpp": "data/recursion/unique-paths.cpp"
+        }
+      }
+    ],
+    "sorting": [
+      {
+        "name": "Merge Sort",
+        "link": "https://leetcode.com/problems/merge-sorted-array/",
+        "complexity": "Time: O(n log n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the merge sort algorithm. Merge Sort is a divide and conquer algorithm that splits the array into two halves, \n\t\trecursively sorts each half, and then merges the two sorted halves.\n\t  ",
+        "exampleInput": "nums = [38, 27, 43, 3, 9, 82, 10]",
+        "exampleOutput": "[3, 9, 10, 27, 38, 43, 82]",
+        "explanation": "\n\t\t- Split the array into two halves.\n\t\t- Recursively sort each half.\n\t\t- Merge the sorted halves back together.\n\t  ",
+        "files": {
+          "python": "data/sorting/merge-sort.py",
+          "cpp": "data/sorting/merge-sort.cpp"
+        }
+      },
+      {
+        "name": "Quick Sort",
+        "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+        "complexity": "Time: O(n log n) on average, O(n^2) in the worst case, Space: O(log n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the quicksort algorithm. Quicksort is a divide and conquer algorithm that selects a pivot element and partitions\n\t\tthe array around it, recursively sorting the partitions.\n\t  ",
+        "exampleInput": "nums = [10, 80, 30, 90, 40, 50, 70]",
+        "exampleOutput": "[10, 30, 40, 50, 70, 80, 90]",
+        "explanation": "\n\t\t- Choose a pivot (usually the last element in the array).\n\t\t- Partition the array such that all elements smaller than the pivot are on the left, and all larger elements are on the right.\n\t\t- Recursively apply quicksort to the left and right partitions.\n\t  ",
+        "files": {
+          "python": "data/sorting/quick-sort.py",
+          "cpp": "data/sorting/quick-sort.cpp"
+        }
+      },
+      {
+        "name": "Bubble Sort",
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "complexity": "Time: O(n^2), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the bubble sort algorithm. Bubble sort works by repeatedly stepping through the list, comparing adjacent items\n\t\tand swapping them if they are in the wrong order.\n\t  ",
+        "exampleInput": "nums = [64, 34, 25, 12, 22, 11, 90]",
+        "exampleOutput": "[11, 12, 22, 25, 34, 64, 90]",
+        "explanation": "\n\t\t- Iterate through the array.\n\t\t- Swap adjacent elements if they are in the wrong order.\n\t\t- Repeat the process until the array is sorted.\n\t  ",
+        "files": {
+          "python": "data/sorting/bubble-sort.py",
+          "cpp": "data/sorting/bubble-sort.cpp"
+        }
+      },
+      {
+        "name": "Insertion Sort",
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "complexity": "Time: O(n^2), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the insertion sort algorithm. Insertion sort builds the final sorted array one item at a time by inserting \n\t\teach item into its correct position.\n\t  ",
+        "exampleInput": "nums = [12, 11, 13, 5, 6]",
+        "exampleOutput": "[5, 6, 11, 12, 13]",
+        "explanation": "\n\t\t- Take one element from the unsorted part of the array.\n\t\t- Insert it into its correct position in the sorted part.\n\t\t- Repeat until the whole array is sorted.\n\t  ",
+        "files": {
+          "python": "data/sorting/insertion-sort.py",
+          "cpp": "data/sorting/insertion-sort.cpp"
+        }
+      },
+      {
+        "name": "Selection Sort",
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "complexity": "Time: O(n^2), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the selection sort algorithm. Selection sort repeatedly selects the smallest element from the unsorted part \n\t\tand swaps it with the leftmost unsorted element.\n\t  ",
+        "exampleInput": "nums = [29, 10, 14, 37, 13]",
+        "exampleOutput": "[10, 13, 14, 29, 37]",
+        "explanation": "\n\t\t- Find the minimum element in the unsorted part of the array.\n\t\t- Swap it with the leftmost unsorted element.\n\t\t- Repeat the process for the remaining unsorted part.\n\t  ",
+        "files": {
+          "python": "data/sorting/selection-sort.py",
+          "cpp": "data/sorting/selection-sort.cpp"
+        }
+      },
+      {
+        "name": "Heap Sort",
+        "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+        "complexity": "Time: O(n log n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the heap sort algorithm. Heap sort builds a max heap and repeatedly extracts the largest element to \n\t\tbuild the sorted array.\n\t  ",
+        "exampleInput": "nums = [3, 2, 1, 5, 6, 4]",
+        "exampleOutput": "[1, 2, 3, 4, 5, 6]",
+        "explanation": "\n\t\t- Build a max heap.\n\t\t- Repeatedly extract the largest element from the heap and place it at the end of the array.\n\t\t- Heapify the remaining array.\n\t  ",
+        "files": {
+          "python": "data/sorting/heap-sort.py",
+          "cpp": "data/sorting/heap-sort.cpp"
+        }
+      },
+      {
+        "name": "Counting Sort",
+        "link": "https://leetcode.com/problems/counting-elements/",
+        "complexity": "Time: O(n+k), Space: O(n+k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the counting sort algorithm. Counting sort counts the occurrences of each element and then uses that \n\t\tinformation to place each element in its correct position.\n\t  ",
+        "exampleInput": "nums = [1, 2, 2, 1, 3, 3, 3]",
+        "exampleOutput": "[1, 1, 2, 2, 3, 3, 3]",
+        "explanation": "\n\t\t- Count the occurrences of each element.\n\t\t- Place each element in its correct position based on the count.\n\t  ",
+        "files": {
+          "python": "data/sorting/counting-sort.py",
+          "cpp": "data/sorting/counting-sort.cpp"
+        }
+      },
+      {
+        "name": "Radix Sort",
+        "link": "https://leetcode.com/problems/radix-sort/",
+        "complexity": "Time: O(nk), Space: O(n+k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the radix sort algorithm. Radix sort sorts numbers by processing individual digits in a number. \n\t\tIt uses counting sort as a subroutine to sort each digit.\n\t  ",
+        "exampleInput": "nums = [170, 45, 75, 90, 802, 24, 2, 66]",
+        "exampleOutput": "[2, 24, 45, 66, 75, 90, 170, 802]",
+        "explanation": "\n\t\t- Process each digit of the numbers starting from the least significant digit.\n\t\t- Use counting sort to sort the numbers by each digit.\n\t  ",
+        "files": {
+          "python": "data/sorting/radix-sort.py",
+          "cpp": "data/sorting/radix-sort.cpp"
+        }
+      },
+      {
+        "name": "Bucket Sort",
+        "link": "https://leetcode.com/problems/bucket-sort/",
+        "complexity": "Time: O(n+k), Space: O(n+k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tSort an array using the bucket sort algorithm. Bucket sort divides the array into a number of buckets, sorts each bucket, \n\t\tand then concatenates the sorted buckets.\n\t  ",
+        "exampleInput": "nums = [0.42, 0.32, 0.52, 0.62, 0.71, 0.83]",
+        "exampleOutput": "[0.32, 0.42, 0.52, 0.62, 0.71, 0.83]",
+        "explanation": "\n\t\t- Divide the array into buckets.\n\t\t- Sort each bucket using another sorting algorithm.\n\t\t- Concatenate the sorted buckets.\n\t  ",
+        "files": {
+          "python": "data/sorting/bucket-sort.py",
+          "cpp": "data/sorting/bucket-sort.cpp"
+        }
+      }
+    ],
+    "hashing": [
+      {
+        "name": "Two Sum",
+        "link": "https://leetcode.com/problems/two-sum/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers, return the indices of the two numbers such that they add up to a specific target.\n\t\tYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\t  ",
+        "exampleInput": "nums = [2, 7, 11, 15], target = 9",
+        "exampleOutput": "[0, 1]",
+        "explanation": "\n\t\t- Use a hash map to store the difference between the target and the current element as the key, \n\t\t  and its index as the value. If the difference is found in the hash map, return the indices.\n\t  ",
+        "files": {
+          "python": "data/hashing/two-sum.py",
+          "cpp": "data/hashing/two-sum.cpp"
+        }
+      },
+      {
+        "name": "Group Anagrams",
+        "link": "https://leetcode.com/problems/group-anagrams/",
+        "complexity": "Time: O(n * k), Space: O(n * k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of strings, group the anagrams together.\n\t\tYou can return the answer in any order.\n\t  ",
+        "exampleInput": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "exampleOutput": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "\n\t\t- Use a hash map to group strings by their sorted version or frequency of characters as the key.\n\t\t- The key will allow you to find anagrams efficiently.\n\t  ",
+        "files": {
+          "python": "data/hashing/group-anagrams.py",
+          "cpp": "data/hashing/group-anagrams.cpp"
+        }
+      },
+      {
+        "name": "Longest Consecutive Sequence",
+        "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an unsorted array of integers, find the length of the longest consecutive elements sequence.\n\t\tYour algorithm should run in O(n) complexity.\n\t  ",
+        "exampleInput": "nums = [100, 4, 200, 1, 3, 2]",
+        "exampleOutput": "4",
+        "explanation": "\n\t\t- Use a hash set to store all the elements.\n\t\t- For each element, check if it starts a sequence by verifying if the previous element exists.\n\t\t- Count the length of the sequence.\n\t  ",
+        "files": {
+          "python": "data/hashing/longest-consecutive-sequence.py",
+          "cpp": "data/hashing/longest-consecutive-sequence.cpp"
+        }
+      },
+      {
+        "name": "Subarray Sum Equals K",
+        "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers and an integer k, find the total number of continuous subarrays whose sum equals to k.\n\t  ",
+        "exampleInput": "nums = [1, 1, 1], k = 2",
+        "exampleOutput": "2",
+        "explanation": "\n\t\t- Use a hash map to store the cumulative sum up to the current index.\n\t\t- Check if the difference between the cumulative sum and k has been encountered before.\n\t  ",
+        "files": {
+          "python": "data/hashing/subarray-sum-equals-k.py",
+          "cpp": "data/hashing/subarray-sum-equals-k.cpp"
+        }
+      },
+      {
+        "name": "Contains Duplicate",
+        "link": "https://leetcode.com/problems/contains-duplicate/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array, return true if any value appears at least twice in the array, and return false if every element is distinct.\n\t  ",
+        "exampleInput": "nums = [1, 2, 3, 1]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use a hash set to store elements as you iterate through the array.\n\t\t- If an element is already present in the set, return true. Otherwise, continue.\n\t  ",
+        "files": {
+          "python": "data/hashing/contains-duplicate.py",
+          "cpp": "data/hashing/contains-duplicate.cpp"
+        }
+      },
+      {
+        "name": "Happy Number",
+        "link": "https://leetcode.com/problems/happy-number/",
+        "complexity": "Time: O(log n), Space: O(log n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tWrite an algorithm to determine if a number is \"happy\". A happy number is defined by the following process:\n\t\t1. Starting with any positive integer, replace the number by the sum of the squares of its digits.\n\t\t2. Repeat the process until the number equals 1 (where it will remain), or it loops endlessly in a cycle that does not include 1.\n\t\tReturn true if the number is happy, and false if not.\n\t  ",
+        "exampleInput": "n = 19",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use a hash set to keep track of the numbers that appear during the transformation.\n\t\t- If the number is repeated, it means the process is stuck in a cycle and the number is not happy.\n\t  ",
+        "files": {
+          "python": "data/hashing/happy-number.py",
+          "cpp": "data/hashing/happy-number.cpp"
+        }
+      },
+      {
+        "name": "Find the Duplicate Number",
+        "link": "https://leetcode.com/problems/find-the-duplicate-number/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. \n\t\tFind the duplicate one.\n\t  ",
+        "exampleInput": "nums = [1, 3, 4, 2, 2]",
+        "exampleOutput": "2",
+        "explanation": "\n\t\t- Use a hash set to track the numbers that have been encountered as you iterate through the array.\n\t\t- If a number has already been seen, it's the duplicate.\n\t  ",
+        "files": {
+          "python": "data/hashing/find-the-duplicate-number.py",
+          "cpp": "data/hashing/find-the-duplicate-number.cpp"
+        }
+      },
+      {
+        "name": "Intersection of Two Arrays II",
+        "link": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two arrays, write a function to compute their intersection.\n\t\tEach element in the result should appear as many times as it shows in both arrays.\n\t  ",
+        "exampleInput": "nums1 = [1, 2, 2, 1], nums2 = [2, 2]",
+        "exampleOutput": "[2, 2]",
+        "explanation": "\n\t\t- Use a hash map to store the frequency of each element in the first array.\n\t\t- Iterate through the second array and check if the element exists in the hash map.\n\t  ",
+        "files": {
+          "python": "data/hashing/intersection-of-two-arrays-ii.py",
+          "cpp": "data/hashing/intersection-of-two-arrays-ii.cpp"
+        }
+      },
+      {
+        "name": "Valid Sudoku",
+        "link": "https://leetcode.com/problems/valid-sudoku/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tDetermine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:\n\t\t- Each row must contain the digits 1-9 without repetition.\n\t\t- Each column must contain the digits 1-9 without repetition.\n\t\t- Each of the 9 sub-boxes must contain the digits 1-9 without repetition.\n\t  ",
+        "exampleInput": "board = [[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"],[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"],[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"] ...]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use hash sets to track the numbers seen in each row, column, and sub-box.\n\t\t- Ensure no number is repeated in any of these sets.\n\t  ",
+        "files": {
+          "python": "data/hashing/valid-sudoku.py",
+          "cpp": "data/hashing/valid-sudoku.cpp"
+        }
+      },
+      {
+        "name": "Top K Frequent Elements",
+        "link": "https://leetcode.com/problems/top-k-frequent-elements/",
+        "complexity": "Time: O(n log k), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array, return the k most frequent elements.\n\t  ",
+        "exampleInput": "nums = [1,1,1,2,2,3], k = 2",
+        "exampleOutput": "[1, 2]",
+        "explanation": "\n\t\t- Use a hash map to count the frequency of each element.\n\t\t- Use a heap or bucket sort to extract the k most frequent elements.\n\t  ",
+        "files": {
+          "python": "data/hashing/top-k-frequent-elements.py",
+          "cpp": "data/hashing/top-k-frequent-elements.cpp"
+        }
+      }
+    ],
+    "monotonic-stack": [
+      {
+        "name": "Daily Temperature",
+        "link": "https://leetcode.com/problems/daily-temperatures/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a list of daily temperatures, where temperatures[i] is the temperature of the day i.\n\t\tReturn a list of the number of days you have to wait until a warmer temperature. \n\t\tIf there is no future day for which this is possible, put 0 instead.\n\t  ",
+        "exampleInput": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "exampleOutput": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "\n\t\t- Use a monotonic stack to track the indices of the temperatures in descending order.\n\t\t- For each temperature, if it's warmer than the temperature at the top of the stack, pop the stack and calculate the difference in days.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/daily-temperatures.py",
+          "cpp": "data/monotonic-stack/daily-temperatures.cpp"
+        }
+      },
+      {
+        "name": "Next Greater Element I",
+        "link": "https://leetcode.com/problems/next-greater-element-i/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are given two arrays nums1 and nums2 where nums1 is a subset of nums2.\n\t\tFor each element of nums1, find the next greater element in nums2. \n\t\tThe next greater element of a number x in nums1 is the first greater number to the right of x in nums2. \n\t\tIf it does not exist, output -1 for this number.\n\t  ",
+        "exampleInput": "nums1 = [4,1,2], nums2 = [1,3,4,2,5]",
+        "exampleOutput": "[5, 3, -1]",
+        "explanation": "\n\t\t- Use a monotonic stack to store the elements of nums2.\n\t\t- For each element in nums2, find the next greater element by popping smaller elements from the stack.\n\t\t- Once the stack is processed, map the results to nums1.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/next-greater-element-i.py",
+          "cpp": "data/monotonic-stack/next-greater-element-i.cpp"
+        }
+      },
+      {
+        "name": "Largest Rectangle in Histogram",
+        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers heights representing the histogram's bar heights where the width of each bar is 1, \n\t\tfind the area of the largest rectangle in the histogram.\n\t  ",
+        "exampleInput": "heights = [2,1,5,6,2,3]",
+        "exampleOutput": "10",
+        "explanation": "\n\t\t- Use a monotonic stack to keep track of the indices of the histogram bars in increasing order.\n\t\t- Calculate the area by popping the stack when a shorter bar is encountered.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/largest-rectangle-in-histogram.py",
+          "cpp": "data/monotonic-stack/largest-rectangle-in-histogram.cpp"
+        }
+      },
+      {
+        "name": "Next Greater Element II",
+        "link": "https://leetcode.com/problems/next-greater-element-ii/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a circular array nums (nums[0] and nums[nums.length-1] are adjacent), \n\t\tfind the next greater element of each element of the array.\n\t\tThe next greater element of a number x is the first greater number to the right of x in the array. \n\t\tIf it does not exist, output -1 for this number.\n\t  ",
+        "exampleInput": "nums = [1,2,1]",
+        "exampleOutput": "[2,-1,2]",
+        "explanation": "\n\t\t- Use a monotonic stack to simulate the circular nature of the array by iterating twice over the array.\n\t\t- Track the next greater element for each element efficiently.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/next-greater-element-ii.py",
+          "cpp": "data/monotonic-stack/next-greater-element-ii.cpp"
+        }
+      },
+      {
+        "name": "Trapping Rain Water",
+        "link": "https://leetcode.com/problems/trapping-rain-water/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven n non-negative integers representing an elevation map where the width of each bar is 1, \n\t\tcompute how much water it can trap after raining.\n\t  ",
+        "exampleInput": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- Use a monotonic stack to keep track of the indices where water can be trapped.\n\t\t- For each element, calculate the trapped water by comparing the current element's height with the heights in the stack.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/trapping-rain-water.py",
+          "cpp": "data/monotonic-stack/trapping-rain-water.cpp"
+        }
+      },
+      {
+        "name": "Remove Duplicate Letters",
+        "link": "https://leetcode.com/problems/remove-duplicate-letters/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are given a string s. You need to remove duplicate letters so that every letter appears once and only once. \n\t\tYou must make sure that the resulting string is the smallest in lexicographical order among all possible results.\n\t  ",
+        "exampleInput": "s = \"bcabc\"",
+        "exampleOutput": "\"abc\"",
+        "explanation": "\n\t\t- Use a monotonic stack to track the characters in the lexicographically smallest order.\n\t\t- Ensure that each character appears only once in the final result.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/remove-duplicate-letters.py",
+          "cpp": "data/monotonic-stack/remove-duplicate-letters.cpp"
+        }
+      },
+      {
+        "name": "Sum of Subarray Minimums",
+        "link": "https://leetcode.com/problems/sum-of-subarray-minimums/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of integers arr, find the sum of the minimums of every subarray of arr. \n\t\tAs the answer may be very large, return the answer modulo 10^9 + 7.\n\t  ",
+        "exampleInput": "arr = [3,1,2,4]",
+        "exampleOutput": "17",
+        "explanation": "\n\t\t- Use a monotonic stack to calculate the minimum for each subarray by maintaining the previous smaller element's index.\n\t\t- Add the minimum values to get the sum.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/sum-of-subarray-minimums.py",
+          "cpp": "data/monotonic-stack/sum-of-subarray-minimums.cpp"
+        }
+      },
+      {
+        "name": "Largest Rectangle in Histogram II",
+        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram-ii/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a matrix of m x n elements representing a binary matrix, find the largest rectangle containing only 1's.\n\t  ",
+        "exampleInput": "matrix = [[1,0,1,0,0], [1,0,1,1,1], [1,1,1,1,1], [1,0,0,1,0]]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- Use a monotonic stack on each row to calculate the largest rectangle area as you treat each row as a histogram.\n\t\t- Calculate the maximum rectangle area iteratively.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/largest-rectangle-in-histogram-ii.py",
+          "cpp": "data/monotonic-stack/largest-rectangle-in-histogram-ii.cpp"
+        }
+      },
+      {
+        "name": "Maximal Rectangle",
+        "link": "https://leetcode.com/problems/maximal-rectangle/",
+        "complexity": "Time: O(m * n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.\n\t  ",
+        "exampleInput": "matrix = [[1,0,1,0,0], [1,0,1,1,1], [1,1,1,1,1], [1,0,0,1,0]]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- Use a monotonic stack on the histogram of each row of the matrix to compute the largest rectangle area.\n\t\t- Treat each row as a base and calculate the area for each row.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/maximal-rectangle.py",
+          "cpp": "data/monotonic-stack/maximal-rectangle.cpp"
+        }
+      },
+      {
+        "name": "Largest Rectangle in Skyline",
+        "link": "https://leetcode.com/problems/largest-rectangle-in-skyline/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a series of building heights represented by an array, find the largest rectangular area possible in the skyline.\n\t  ",
+        "exampleInput": "heights = [2,1,5,6,2,3]",
+        "exampleOutput": "10",
+        "explanation": "\n\t\t- Use a monotonic stack to maintain the indices of the building heights.\n\t\t- Calculate the area by determining the width of the rectangle formed with each building.\n\t  ",
+        "files": {
+          "python": "data/monotonic-stack/largest-rectangle-in-skyline.py",
+          "cpp": "data/monotonic-stack/largest-rectangle-in-skyline.cpp"
+        }
+      }
+    ],
+    "tree-traversal": [
+      {
+        "name": "Binary Tree Inorder Traversal",
+        "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary tree, return the inorder traversal of its nodes' values.\n\t  ",
+        "exampleInput": "root = [1,null,2,3]",
+        "exampleOutput": "[1,3,2]",
+        "explanation": "\n\t\t- Inorder traversal of a binary tree visits nodes in the left subtree, followed by the root node, and then the right subtree.\n\t\t- Use a recursive approach or stack-based iteration to achieve this.\n\t  ",
+        "files": {
+          "python": "data/tree/binary-tree-inorder-traversal.py",
+          "cpp": "data/tree/binary-tree-inorder-traversal.cpp"
+        }
+      },
+      {
+        "name": "Binary Tree Level Order Traversal",
+        "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary tree, return the level order traversal of its nodes' values.\n\t\t(From left to right, level by level).\n\t  ",
+        "exampleInput": "root = [3,9,20,null,null,15,7]",
+        "exampleOutput": "[[3],[9,20],[15,7]]",
+        "explanation": "\n\t\t- Perform a breadth-first search (BFS) traversal using a queue to process nodes level by level.\n\t  ",
+        "files": {
+          "python": "data/tree/binary-tree-level-order-traversal.py",
+          "cpp": "data/tree/binary-tree-level-order-traversal.cpp"
+        }
+      },
+      {
+        "name": "Maximum Depth of Binary Tree",
+        "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        "complexity": "Time: O(n), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary tree, return its maximum depth.\n\t\tA binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.\n\t  ",
+        "exampleInput": "root = [3,9,20,null,null,15,7]",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Use depth-first search (DFS) or breadth-first search (BFS) to calculate the maximum depth.\n\t  ",
+        "files": {
+          "python": "data/tree/maximum-depth-of-binary-tree.py",
+          "cpp": "data/tree/maximum-depth-of-binary-tree.cpp"
+        }
+      },
+      {
+        "name": "Symmetric Tree",
+        "link": "https://leetcode.com/problems/symmetric-tree/",
+        "complexity": "Time: O(n), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary tree, determine if it is a mirror of itself (symmetric around its center).\n\t  ",
+        "exampleInput": "root = [1,2,2,3,4,4,3]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use a recursive approach to compare the left and right subtrees of each node.\n\t\t- The tree is symmetric if its left and right subtrees are mirror images of each other.\n\t  ",
+        "files": {
+          "python": "data/tree/symmetric-tree.py",
+          "cpp": "data/tree/symmetric-tree.cpp"
+        }
+      },
+      {
+        "name": "Path Sum II",
+        "link": "https://leetcode.com/problems/path-sum-ii/",
+        "complexity": "Time: O(n), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a binary tree and a target sum, return all root-to-leaf paths where each path's sum equals the given target sum.\n\t  ",
+        "exampleInput": "root = [5,4,8,11,null,13,4,7,2,null,null,null,1], target = 22",
+        "exampleOutput": "[[5,4,11,2], [5,8,4,1]]",
+        "explanation": "\n\t\t- Use depth-first search (DFS) to explore all paths from root to leaf.\n\t\t- For each path, keep track of the sum and backtrack when necessary.\n\t  ",
+        "files": {
+          "python": "data/tree/path-sum-ii.py",
+          "cpp": "data/tree/path-sum-ii.cpp"
+        }
+      },
+      {
+        "name": "Validate Binary Search Tree",
+        "link": "https://leetcode.com/problems/validate-binary-search-tree/",
+        "complexity": "Time: O(n), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary tree, determine if it is a valid binary search tree (BST).\n\t\tA valid BST is a tree where for each node:\n\t\t- The left subtree's values are less than the node's value.\n\t\t- The right subtree's values are greater than the node's value.\n\t\t- Both subtrees must also be binary search trees.\n\t  ",
+        "exampleInput": "root = [2,1,3]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use a recursive approach to check if each node satisfies the BST property.\n\t\t- Track the valid range for each node as you traverse.\n\t  ",
+        "files": {
+          "python": "data/tree/validate-binary-search-tree.py",
+          "cpp": "data/tree/validate-binary-search-tree.cpp"
+        }
+      },
+      {
+        "name": "Lowest Common Ancestor of a Binary Tree",
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+        "complexity": "Time: O(n), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.\n\t\tThe LCA is the deepest node that is an ancestor of both nodes.\n\t  ",
+        "exampleInput": "root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- Use a recursive approach to traverse the tree and find the common ancestor.\n\t\t- Return the node when both left and right children are non-null.\n\t  ",
+        "files": {
+          "python": "data/tree/lowest-common-ancestor-of-binary-tree.py",
+          "cpp": "data/tree/lowest-common-ancestor-of-binary-tree.cpp"
+        }
+      },
+      {
+        "name": "Kth Smallest Element in a BST",
+        "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+        "complexity": "Time: O(h + k), Space: O(h)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven the root of a binary search tree (BST), return the kth smallest value (1-indexed) of all the nodes' values.\n\t  ",
+        "exampleInput": "root = [3,1,4,null,2], k = 1",
+        "exampleOutput": "1",
+        "explanation": "\n\t\t- Perform an in-order traversal of the BST, which gives the elements in sorted order.\n\t\t- Return the kth element.\n\t  ",
+        "files": {
+          "python": "data/tree/kth-smallest-element-in-bst.py",
+          "cpp": "data/tree/kth-smallest-element-in-bst.cpp"
+        }
+      },
+      {
+        "name": "Construct Binary Tree from Preorder and Inorder Traversal",
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the binary tree, \n\t\tconstruct and return the binary tree.\n\t  ",
+        "exampleInput": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+        "exampleOutput": "[3,9,20,null,null,15,7]",
+        "explanation": "\n\t\t- Use the preorder array to identify the root node and recursively build the left and right subtrees using the inorder array.\n\t  ",
+        "files": {
+          "python": "data/tree/construct-binary-tree-from-preorder-and-inorder-traversal.py",
+          "cpp": "data/tree/construct-binary-tree-from-preorder-and-inorder-traversal.cpp"
+        }
+      },
+      {
+        "name": "Serialize and Deserialize Binary Tree",
+        "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tDesign an algorithm to serialize and deserialize a binary tree.\n\t\tSerialization is the process of converting a binary tree into a string, while deserialization is the reverse process.\n\t  ",
+        "exampleInput": "root = [1,2,3,null,null,4,5]",
+        "exampleOutput": "Serialized: '1,2,3,null,null,4,5', Deserialized: Tree with root 1",
+        "explanation": "\n\t\t- Use level-order traversal to serialize the tree into a string.\n\t\t- Use the serialized string to reconstruct the tree using a queue.\n\t  ",
+        "files": {
+          "python": "data/tree/serialize-and-deserialize-binary-tree.py",
+          "cpp": "data/tree/serialize-and-deserialize-binary-tree.cpp"
+        }
+      }
+    ],
+    "combination-generation": [
+      {
+        "name": "Combinations",
+        "link": "https://leetcode.com/problems/combinations/",
+        "complexity": "Time: O(C(n, k) * k), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].\n\t  ",
+        "exampleInput": "n = 4, k = 2",
+        "exampleOutput": "[[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]",
+        "explanation": "\n\t\t- Generate all combinations by using backtracking. Recursively choose numbers, backtrack to explore all options.\n\t  ",
+        "files": {
+          "python": "data/combination/combinations.py",
+          "cpp": "data/combination/combinations.cpp"
+        }
+      },
+      {
+        "name": "Permutations",
+        "link": "https://leetcode.com/problems/permutations/",
+        "complexity": "Time: O(n!), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of distinct integers, return all the possible permutations of the array.\n\t  ",
+        "exampleInput": "nums = [1,2,3]",
+        "exampleOutput": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "\n\t\t- Generate permutations by recursively swapping elements and backtracking to explore all unique arrangements.\n\t  ",
+        "files": {
+          "python": "data/combination/permutations.py",
+          "cpp": "data/combination/permutations.cpp"
+        }
+      },
+      {
+        "name": "Subsets",
+        "link": "https://leetcode.com/problems/subsets/",
+        "complexity": "Time: O(2^n), Space: O(2^n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array nums, return all possible subsets (the power set).\n\t\tThe solution set must not contain duplicate subsets.\n\t  ",
+        "exampleInput": "nums = [1,2,3]",
+        "exampleOutput": "[[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]",
+        "explanation": "\n\t\t- Use backtracking to generate all possible subsets by including or excluding each element.\n\t  ",
+        "files": {
+          "python": "data/combination/subsets.py",
+          "cpp": "data/combination/subsets.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum",
+        "link": "https://leetcode.com/problems/combination-sum/",
+        "complexity": "Time: O(2^n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an array of candidate numbers (candidates) and a target number (target), \n\t\tfind all unique combinations in candidates where the candidate numbers sum to target.\n\t\tThe same number may be chosen from candidates an unlimited number of times.\n\t  ",
+        "exampleInput": "candidates = [2,3,6,7], target = 7",
+        "exampleOutput": "[[2,2,3],[7]]",
+        "explanation": "\n\t\t- Use backtracking to explore all combinations of candidates that sum up to the target.\n\t\t- Recurse with the same candidate to allow repetition.\n\t  ",
+        "files": {
+          "python": "data/combination/combination-sum.py",
+          "cpp": "data/combination/combination-sum.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum II",
+        "link": "https://leetcode.com/problems/combination-sum-ii/",
+        "complexity": "Time: O(2^n), Space: O(k)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a collection of candidate numbers (candidates) and a target number (target), \n\t\tfind all unique combinations in candidates where the candidate numbers sum to target.\n\t\tEach number in candidates may only be used once in the combination.\n\t  ",
+        "exampleInput": "candidates = [10,1,2,7,6,5], target = 8",
+        "exampleOutput": "[[1,2,5],[1,7],[2,6]]",
+        "explanation": "\n\t\t- Use backtracking and sort the candidates to avoid duplicates.\n\t\t- Skip duplicate candidates to ensure each combination is unique.\n\t  ",
+        "files": {
+          "python": "data/combination/combination-sum-ii.py",
+          "cpp": "data/combination/combination-sum-ii.cpp"
+        }
+      },
+      {
+        "name": "Letter Combinations of a Phone Number",
+        "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+        "complexity": "Time: O(4^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string containing digits from 2-9 inclusive, return all possible letter combinations\n\t\tthat the number could represent. Return the answer in any order.\n\t\tA mapping of digit to letters (just like on the telephone buttons) is given below:\n\t\t2 -> \"abc\", 3 -> \"def\", 4 -> \"ghi\", 5 -> \"jkl\", 6 -> \"mno\", 7 -> \"pqrs\", 8 -> \"tuv\", 9 -> \"wxyz\".\n\t  ",
+        "exampleInput": "digits = '23'",
+        "exampleOutput": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+        "explanation": "\n\t\t- Use backtracking to explore all combinations of letters corresponding to the digits.\n\t  ",
+        "files": {
+          "python": "data/combination/letter-combinations-of-phone-number.py",
+          "cpp": "data/combination/letter-combinations-of-phone-number.cpp"
+        }
+      },
+      {
+        "name": "Palindrome Partitioning",
+        "link": "https://leetcode.com/problems/palindrome-partitioning/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a string s, partition s such that every substring of the partition is a palindrome.\n\t\tReturn all possible palindrome partitioning of s.\n\t  ",
+        "exampleInput": "s = \"aab\"",
+        "exampleOutput": "[[\"a\",\"a\",\"b\"],[\"aa\",\"b\"]]",
+        "explanation": "\n\t\t- Use backtracking to partition the string into substrings, checking if each substring is a palindrome.\n\t  ",
+        "files": {
+          "python": "data/combination/palindrome-partitioning.py",
+          "cpp": "data/combination/palindrome-partitioning.cpp"
+        }
+      },
+      {
+        "name": "Subset Sum",
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "complexity": "Time: O(n * target), Space: O(target)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven a non-empty array of integers, determine if it can be partitioned into two subsets such that\n\t\tthe sum of the elements in both subsets is equal.\n\t  ",
+        "exampleInput": "nums = [1,5,11,5]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use dynamic programming to check if a subset of numbers can sum up to half of the total sum.\n\t\t- If it can, the remaining numbers will automatically sum to the other half.\n\t  ",
+        "files": {
+          "python": "data/combination/partition-equal-subset-sum.py",
+          "cpp": "data/combination/partition-equal-subset-sum.cpp"
+        }
+      },
+      {
+        "name": "Combination Sum IV",
+        "link": "https://leetcode.com/problems/combination-sum-iv/",
+        "complexity": "Time: O(target * n), Space: O(target)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array nums and an integer target, return the number of possible combinations that add up to target.\n\t\t- The same number in nums can be used an unlimited number of times.\n\t  ",
+        "exampleInput": "nums = [1,2,3], target = 4",
+        "exampleOutput": "7",
+        "explanation": "\n\t\t- Use dynamic programming or backtracking to count the number of ways to make up the target using elements from nums.\n\t  ",
+        "files": {
+          "python": "data/combination/combination-sum-iv.py",
+          "cpp": "data/combination/combination-sum-iv.cpp"
+        }
+      },
+      {
+        "name": "Combinations of Balanced Parentheses",
+        "link": "https://leetcode.com/problems/generate-parentheses/",
+        "complexity": "Time: O(2^n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n\t  ",
+        "exampleInput": "n = 3",
+        "exampleOutput": "[\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"][",
+        "explanation": "\n\t\t- Use backtracking to generate all valid combinations by ensuring that at any point, the number of closing brackets doesn't exceed the opening brackets.\n\t  ",
+        "files": {
+          "python": "data/combination/generate-parentheses.py",
+          "cpp": "data/combination/generate-parentheses.cpp"
+        }
+      }
+    ],
+    "linked-list-manipulation": [
+      {
+        "name": "Reverse Linked List",
+        "link": "https://leetcode.com/problems/reverse-linked-list/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tReverse a singly linked list.\n\t\t  ",
+        "exampleInput": "head = [1,2,3,4,5]",
+        "exampleOutput": "[5,4,3,2,1]",
+        "explanation": "\n\t\t\t- Traverse the list and reverse the links between nodes.\n\t\t\t- Use three pointers (prev, current, next) to reverse the links.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/reverse-linked-list.py",
+          "cpp": "data/linkedlist/reverse-linked-list.cpp"
+        }
+      },
+      {
+        "name": "Detect Cycle in Linked List",
+        "link": "https://leetcode.com/problems/linked-list-cycle/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tDetermine if a linked list has a cycle in it.\n\t\t\tUse Floyd's cycle-finding algorithm (Tortoise and Hare) to detect the cycle.\n\t\t  ",
+        "exampleInput": "head = [3,2,0,-4], pos = 1",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t\t- Traverse the list using two pointers, one moving at a slow pace and the other at a fast pace.\n\t\t\t- If they meet at any point, the list has a cycle.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/detect-cycle-in-linked-list.py",
+          "cpp": "data/linkedlist/detect-cycle-in-linked-list.cpp"
+        }
+      },
+      {
+        "name": "Merge Two Sorted Lists",
+        "link": "https://leetcode.com/problems/merge-two-sorted-lists/",
+        "complexity": "Time: O(n + m), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tMerge two sorted linked lists and return it as a new sorted list.\n\t\t\tThe new list should be made by splicing together the nodes of the first two lists.\n\t\t  ",
+        "exampleInput": "l1 = [1,2,4], l2 = [1,3,4]",
+        "exampleOutput": "[1,1,2,3,4,4]",
+        "explanation": "\n\t\t\t- Traverse both linked lists and compare the nodes' values, appending the smaller one to the result list.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/merge-two-sorted-lists.py",
+          "cpp": "data/linkedlist/merge-two-sorted-lists.cpp"
+        }
+      },
+      {
+        "name": "Remove Nth Node from End of List",
+        "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tGiven the head of a linked list, remove the nth node from the end of the list and return its head.\n\t\t  ",
+        "exampleInput": "head = [1,2,3,4,5], n = 2",
+        "exampleOutput": "[1,2,3,5]",
+        "explanation": "\n\t\t\t- Use two pointers to traverse the list.\n\t\t\t- First, move one pointer n steps ahead, then move both pointers until the first pointer reaches the end.\n\t\t\t- The second pointer will be at the node to remove.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/remove-nth-node-from-end-of-list.py",
+          "cpp": "data/linkedlist/remove-nth-node-from-end-of-list.cpp"
+        }
+      },
+      {
+        "name": "Add Two Numbers",
+        "link": "https://leetcode.com/problems/add-two-numbers/",
+        "complexity": "Time: O(max(m,n)), Space: O(max(m,n))",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tGiven two non-empty linked lists representing two non-negative integers, \n\t\t\tadd the two numbers and return it as a linked list.\n\t\t\tThe digits are stored in reverse order and each of their nodes contains a single digit.\n\t\t  ",
+        "exampleInput": "l1 = [2,4,3], l2 = [5,6,4]",
+        "exampleOutput": "[7,0,8]",
+        "explanation": "\n\t\t\t- Traverse both linked lists, adding corresponding digits and handling carry.\n\t\t\t- Create new nodes to store the sum and update the carry.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/add-two-numbers.py",
+          "cpp": "data/linkedlist/add-two-numbers.cpp"
+        }
+      },
+      {
+        "name": "Intersection of Two Linked Lists",
+        "link": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
+        "complexity": "Time: O(m + n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tFind the node where two linked lists intersect.\n\t\t\tNote that the intersection is defined based on reference, not value.\n\t\t  ",
+        "exampleInput": "headA = [4,1,8,4,5], headB = [5,0,1,8,4,5]",
+        "exampleOutput": "8",
+        "explanation": "\n\t\t\t- Use two pointers to traverse both lists.\n\t\t\t- If one pointer reaches the end of a list, switch it to the head of the other list.\n\t\t\t- The intersection will be the first node where the two pointers meet.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/intersection-of-two-linked-lists.py",
+          "cpp": "data/linkedlist/intersection-of-two-linked-lists.cpp"
+        }
+      },
+      {
+        "name": "Flatten a Multilevel Doubly Linked List",
+        "link": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tFlatten a multilevel doubly linked list, where each node can have a next pointer, a prev pointer, and a child pointer.\n\t\t\tFlatten the list such that all nodes appear in a single-level doubly linked list.\n\t\t  ",
+        "exampleInput": "head = [1,2,3,4,5,6,null,null,7,8,9,10]",
+        "exampleOutput": "[1,2,3,4,5,6,7,8,9,10]",
+        "explanation": "\n\t\t\t- Traverse the list, flattening any child nodes recursively while maintaining the correct order.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/flatten-a-multilevel-doubly-linked-list.py",
+          "cpp": "data/linkedlist/flatten-a-multilevel-doubly-linked-list.cpp"
+        }
+      },
+      {
+        "name": "Swap Nodes in Pairs",
+        "link": "https://leetcode.com/problems/swap-nodes-in-pairs/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\t\tGiven a linked list, swap every two adjacent nodes and return its head.\n\t\t  ",
+        "exampleInput": "head = [1,2,3,4]",
+        "exampleOutput": "[2,1,4,3]",
+        "explanation": "\n\t\t\t- Traverse the list in pairs and swap adjacent nodes by adjusting the next pointers.\n\t\t  ",
+        "files": {
+          "python": "data/linkedlist/swap-nodes-in-pairs.py",
+          "cpp": "data/linkedlist/swap-nodes-in-pairs.cpp"
+        }
+      },
+      {
+        "name": "Remove Duplicates from Sorted List",
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
+        "complexity": "Time: O(n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tRemove all duplicates from a sorted linked list such that each element appears only once.\n\t  ",
+        "exampleInput": "head = [1,1,2]",
+        "exampleOutput": "[1,2]",
+        "explanation": "\n\t\t- Traverse the list and remove nodes with the same value as the previous node.\n\t  ",
+        "files": {
+          "python": "data/linkedlist/remove-duplicates-from-sorted-list.py",
+          "cpp": "data/linkedlist/remove-duplicates-from-sorted-list.cpp"
+        }
+      },
+      {
+        "name": "Copy List with Random Pointer",
+        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tA linked list is given where each node contains two pointers:\n\t\t- `next` points to the next node in the list,\n\t\t- `random` points to any node in the list or null.\n\t\tYou need to create a deep copy of the list.\n\t  ",
+        "exampleInput": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "exampleOutput": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "\n\t\t- Use a hashmap or constant-space approach to store the mapping of original nodes to the new copied nodes.\n\t  ",
+        "files": {
+          "python": "data/linkedlist/copy-list-with-random-pointer.py",
+          "cpp": "data/linkedlist/copy-list-with-random-pointer.cpp"
+        }
+      }
+    ],
+    "game-theory": [
+      {
+        "name": "Nim Game",
+        "link": "https://leetcode.com/problems/nim-game/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are playing the following Nim Game:\n\t\t- Initially, there is a pile of stones.\n\t\t- You and your friend take turns removing 1 to 3 stones from the pile.\n\t\t- The player who removes the last stone wins.\n\t\tDetermine if you can win the game given that you go first. If so, return true, otherwise return false.\n\t  ",
+        "exampleInput": "n = 4",
+        "exampleOutput": "false",
+        "explanation": "\n\t\t- This problem can be solved using the modulo operation, as the game's state is periodic.\n\t\t- If the number of stones modulo 4 is 0, the second player can always win with optimal play.\n\t  ",
+        "files": {
+          "python": "data/game-theory/nim-game.py",
+          "cpp": "data/game-theory/nim-game.cpp"
+        }
+      },
+      {
+        "name": "Predict the Winner",
+        "link": "https://leetcode.com/problems/predict-the-winner/",
+        "complexity": "Time: O(n^2), Space: O(n^2)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tGiven an integer array nums, the objective is to determine if the first player can win the game.\n\t\tIn each turn, a player can choose either the first or the last element from the array.\n\t\tThe goal is to maximize the player's score while minimizing the opponent's score.\n\t  ",
+        "exampleInput": "nums = [1,5,233,7]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- Use dynamic programming to simulate the process and determine the best possible score a player can achieve.\n\t\t- The problem can be reduced to finding the optimal score difference between the two players.\n\t  ",
+        "files": {
+          "python": "data/game-theory/predict-the-winner.py",
+          "cpp": "data/game-theory/predict-the-winner.cpp"
+        }
+      },
+      {
+        "name": "Stone Game",
+        "link": "https://leetcode.com/problems/stone-game/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tIn the Stone Game, two players take turns to pick a pile of stones. On each turn, a player can choose either \n\t\tthe first or the last pile from the available stones. The player with the maximum score wins.\n\t\tDetermine if the first player can win.\n\t  ",
+        "exampleInput": "piles = [5,3,4,5]",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- This problem can be solved with dynamic programming by considering each game state and comparing outcomes for both players.\n\t  ",
+        "files": {
+          "python": "data/game-theory/stone-game.py",
+          "cpp": "data/game-theory/stone-game.cpp"
+        }
+      },
+      {
+        "name": "Can I Win",
+        "link": "https://leetcode.com/problems/can-i-win/",
+        "complexity": "Time: O(2^n), Space: O(2^n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tYou are given a game where two players take turns removing 1 to x stones from a pile of n stones.\n\t\tDetermine if you can win the game assuming both players play optimally.\n\t  ",
+        "exampleInput": "n = 10, x = 3",
+        "exampleOutput": "false",
+        "explanation": "\n\t\t- This problem can be solved using dynamic programming by considering each possible move and determining if the current player can force a win.\n\t  ",
+        "files": {
+          "python": "data/game-theory/can-i-win.py",
+          "cpp": "data/game-theory/can-i-win.cpp"
+        }
+      },
+      {
+        "name": "Divisor Game",
+        "link": "https://leetcode.com/problems/divisor-game/",
+        "complexity": "Time: O(1), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tIn the divisor game, Alice starts with an integer n. In each turn, Alice chooses any x such that \n\t\t0 < x < n and n % x == 0. Then, Alice reduces n by x, and it’s Bob's turn.\n\t\tDetermine if Alice can win the game.\n\t  ",
+        "exampleInput": "n = 2",
+        "exampleOutput": "true",
+        "explanation": "\n\t\t- The game is simple, if n is odd, Bob wins, and if n is even, Alice can always win with optimal play.\n\t  ",
+        "files": {
+          "python": "data/game-theory/divisor-game.py",
+          "cpp": "data/game-theory/divisor-game.cpp"
+        }
+      },
+      {
+        "name": "Maximal Rectangle",
+        "link": "https://leetcode.com/problems/maximal-rectangle/",
+        "complexity": "Time: O(n^2), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tFind the maximal rectangle in a 2D binary matrix that contains only 1's.\n\t\tReturn the area of the largest rectangle.\n\t  ",
+        "exampleInput": "matrix = [['1','0','1','0','0'], ['1','0','1','1','1'], ['1','1','1','1','1'], ['1','0','0','1','0']]",
+        "exampleOutput": "6",
+        "explanation": "\n\t\t- This problem is related to dynamic programming and histogram-based approaches to compute the maximal area.\n\t\t- Consider each row as the base of a histogram and calculate the maximal rectangle that can be formed.\n\t  ",
+        "files": {
+          "python": "data/game-theory/maximal-rectangle.py",
+          "cpp": "data/game-theory/maximal-rectangle.cpp"
+        }
+      },
+      {
+        "name": "Ugly Number II",
+        "link": "https://leetcode.com/problems/ugly-number-ii/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tUgly numbers are numbers whose only prime factors are 2, 3, or 5.\n\t\tGiven an integer n, return the nth ugly number.\n\t  ",
+        "exampleInput": "n = 10",
+        "exampleOutput": "12",
+        "explanation": "\n\t\t- Use dynamic programming to find the smallest possible numbers generated by multiplying 2, 3, or 5 with previous ugly numbers.\n\t  ",
+        "files": {
+          "python": "data/game-theory/ugly-number-ii.py",
+          "cpp": "data/game-theory/ugly-number-ii.cpp"
+        }
+      },
+      {
+        "name": "Game of Life",
+        "link": "https://leetcode.com/problems/game-of-life/",
+        "complexity": "Time: O(m * n), Space: O(1)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tAccording to the rules of the Game of Life, each cell in a grid can be live or dead. \n\t\t- Any live cell with fewer than two live neighbors dies (as if caused by under-population).\n\t\t- Any live cell with more than three live neighbors dies (as if by over-population).\n\t\t- Any live cell with exactly two or three live neighbors lives on to the next generation.\n\t\t- Any dead cell with exactly three live neighbors becomes a live cell (as if by reproduction).\n\t\tDetermine the next state (after one update) of the board.\n\t  ",
+        "exampleInput": "board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]",
+        "exampleOutput": "[[0,0,0],[1,1,1],[0,1,1],[0,1,0]]",
+        "explanation": "\n\t\t- This problem requires simulating the next generation based on the current state of the grid.\n\t\t- Carefully calculate neighbors to determine each cell's future state.\n\t  ",
+        "files": {
+          "python": "data/game-theory/game-of-life.py",
+          "cpp": "data/game-theory/game-of-life.cpp"
+        }
+      },
+      {
+        "name": "Find the Winner of a Circular Game",
+        "link": "https://leetcode.com/problems/find-the-winner-of-a-circular-game/",
+        "complexity": "Time: O(n), Space: O(n)",
+        "difficulty": "Easy",
+        "companies": [
+          "To be added soon"
+        ],
+        "problemStatement": "\n\t\tThere are n people in a circle, numbered from 1 to n. \n\t\tThey start at 1 and every second person is eliminated until only one remains. \n\t\tFind the winner of the game.\n\t  ",
+        "exampleInput": "n = 5, k = 2",
+        "exampleOutput": "3",
+        "explanation": "\n\t\t- This problem can be solved using the Josephus problem, which involves recursively eliminating every k-th person.\n\t  ",
+        "files": {
+          "python": "data/game-theory/find-winner-of-circular-game.py",
+          "cpp": "data/game-theory/find-winner-of-circular-game.cpp"
+        }
+      }
+    ]
+  }
+};
